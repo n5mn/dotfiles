@@ -1,0 +1,108 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "10 0 10 10",
+  //  "width": 70,
+    "modules-left": ["custom/pacman","custom/spotify"],
+    "modules-center": ["hyprland/workspaces"],
+  //  "modules-left": ["hyprlanad/workspaces","custom/pacman"],
+  // "modules-center": [""]
+    "modules-right": [ "battery","bluetooth","pulseaudio", "network", "custom/power", "clock"],
+    "spacing": 10,
+    "hyprland/workspaces": {
+        "active-only":false,
+        "all-outputs": false,
+        "format": "{}",
+        "on-click": "activate",
+        "persistent_workspaces":{
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+      },
+    "custom/pacman": {
+        "format": "",
+        "interval": 3600,
+        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+        "signal": 8,
+        "tooltip-position": "right,top",
+        "tooltip": false
+    },
+    
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+    
+    
+    "clock": {
+        "timezone": "America/Santiago",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "tooltip-position": "right"
+    },
+    
+    "battery": {
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip": false,
+        "on-click": "2"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 0.5,
+        "format":"{icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "bluetooth": {
+//        "format": "{icon}",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "睊",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },    
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
