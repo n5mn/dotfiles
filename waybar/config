@@ -37,7 +37,7 @@
         "tooltip-position": "right,top",
         "tooltip": false
     },
-    // TODO: make this shit work!
+    
     "custom/spotify": {
         "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/mediaplayer.py --player spotify",
         "format": "",
@@ -57,7 +57,7 @@
     
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": [" ", " ", " ", " ", " "],
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
         "interval": 30,
