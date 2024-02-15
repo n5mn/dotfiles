@@ -1,5 +1,4 @@
 #!/bin/bash
-# Install Script for RustyBucketz30 Arch Linux
 # ----------------------------------------------------------------------------------------- #
 source $(dirname "$0")/scripts/installer.sh
 
@@ -20,67 +19,47 @@ else
 fi
 
 echo "-> Installing main packages"
+
 # ----------------------------------------------------------------------------------------- #
 packagesPacman=(
-    # Package Management & Utilities
     "pacman-contrib" # pacman utilities
-    
-    # Terminals & Shells
     "alacritty" # for terminal management
     "starship" # for CLI customization
-    
-    # Text Editors
     "neovim" 
-    
-    # Launchers & Notifications
     "rofi" # for launching applications
     "dunst" # for notifications
-    
-    # Desktop Customization
     "nitrogen" # for wallpapers
     "lxappearance" # for theming
     "breeze" # for theming
     "breeze-gtk" # for theming
-    
-    # File Management & Utilities
     "dolphin"
     "exa"
     "tumbler"
     "cliphist"
-    
-    # Fonts
     "ttf-font-awesome"
     "ttf-fira-sans"
     "ttf-fira-code"
     "ttf-firacode-nerd"
-    
-    # Programming & Development
     "python-pip" # for python stuff
-    
     # Sound
     "pavucontrol" # for volume control
-    
     # Desktop Integration
     "xdg-desktop-portal-gtk" # needed for theming
     "xdg-desktop-portal-wlr" # needed for theming
-
     # System Info Display
     "neofetch" # to flex
     "cmatrix" # for fun
     "btop" # for performance monitoring
-    
-    # wifi - network management
+    "htop"# wifi - network management
     "networkmanager" # for network management
     "network-manager-applet" # the GUI network manager
     "networkmanager-openvpn" # for VPNs
     "ufw" # firewall
-
     # Bluetooth
     "blueman"
     "bluez"
     "bluez-utils"
-
-    # hyperland
+    
     "hyprland" # window manager
     "waybar" # for status bar 
 )
@@ -95,13 +74,9 @@ packagesYay=(
     "swww" # for wallpapers
     "wlogout" # for logging out
 )
-# ----------------------------------------------------------------------------------------- #
-
 # Install packages from official repositories and AUR
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
-
-# ----------------------------------------------------------------------------------------- #
 
 # Install pywal
 if [ -f /usr/bin/wal ]; then
@@ -110,11 +85,8 @@ else
     yay --noconfirm -S pywal
 fi
 
-# ----------------------------------------------------------------------------------------- #
-
 # Install login prompt and init pywal
-sudo cp ~/dotfiles/login/issue /etc/issue
+sudo cp $0/issue /etc/issue
 wal -i ~/dotfiles/wallpapers/default.jpg
 
-# ----------------------------------------------------------------------------------------- #
 echo "Finished! Do a sudo reboot."
