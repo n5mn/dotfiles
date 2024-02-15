@@ -1,7 +1,7 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
  * ----------------------------------------------------- */
-@import '../../.cache/wal/colors-wlogout.css';
+/* @import '../../.cache/wal/colors-wlogout.css'; */
 
 /* -----------------------------------------------------
  * General 
@@ -55,7 +55,7 @@ Buttons
 #shutdown {
 	margin: 10px;
 	border-radius: 20px;
-	background-image: image(url("shutdown.png"));
+	background-image: image(url("./shutdown.png"));
 }
 
 #reboot {
