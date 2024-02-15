@@ -5,16 +5,13 @@ Based on Rustybucketz dotfiles (https://github.com/rustybucketz30/dotfiles)
 ## Changes
 
 1. Update keybinds and Hyprland config to my needs
-2. Update Waybar to my needs
-3. I dont use nvim, so I added my vim configuration files
-4. Replace .bashrc for .zshrc.example
-5. Added p10k config
-6. Fix Audio stuff
-
-## Todo:
-1. Enable bluetooth on installer Script
 2. Create own installer Scripts
-
+3. Update Waybar to my needs
+4. I dont use nvim, so I added my vim configuration files
+5. Replace .bashrc for .zshrc.example
+6. Added p10k config 
+7. Fix Audio stuff
+8. Enable bluetooth on installer Script
 
 ===========================================================
 
