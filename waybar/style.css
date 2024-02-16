@@ -16,8 +16,8 @@ body,
     sans-serif;
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 0.5s ease-in-out;
-  border: 3px solid @color11;
-  border-radius: 20px;
+  border: 2px solid @color11;
+  border-radius: 15px;
 }
 
 #waybar:hover,
@@ -79,16 +79,21 @@ window#waybar {
     color: white;
 }
 
-
 #mode {
     background: #64727D;
     border-bottom: 3px solid #ffffff;
 }
 
-#bluetooth.on, #bluetooth.connected, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-    padding: 0 5px;
-    margin: 0px 5px;
+#bluetooth, #bluetooth.on, #bluetooth.connected, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #pulseaudio.muted, #custom-spotify, #tray, #mode, #idle_inhibitor {
+    padding: 0 1px;
+    margin: 0px 2px;
     color: @color11;
+}
+
+#network {
+    padding: 0px 5px;
+    /* i fking hate css */
+    margin: 0px 6px 0px 0px; 
 }
 
 #custom-pacman {
@@ -98,24 +103,15 @@ window#waybar {
 }
 
 #custom-power {
-    margin: 5px;
+    /* margin: 5px; */
+    padding: 0px 0px;
+    margin: 0px 4px;
     color: @color11;
 }
 
 
 #clock {
-    /*background-color: #64727D;*/
     font-weight: bold;
-   /* margin: 5px 20px; */
-   /* padding: 10px; */
-}
-
-#battery {
-    /*background-color: #000000;*/
-}
-
-#battery.charging {
-    /*background-color: #000000;*/
 }
 
 @keyframes blink {
@@ -132,24 +128,6 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#pulseaudio {
-    /*background: #000000;*/
-}
-
-#pulseaudio.muted {
-    /*background: #000000;*/
-    color: @color11;
-}
-
-#custom-media {
-    background: #66cc99;
-    color: #2a5c45;
-}
-
-.custom-spotify {
-    background: #66cc99;
 }
 
 .custom-vlc {

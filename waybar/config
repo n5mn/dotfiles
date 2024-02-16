@@ -3,11 +3,11 @@
     "position": "top",
     "margin": "10 0 10 10",
   //  "width": 70,
-    "modules-left": ["custom/pacman","custom/spotify"],
+    "modules-left": ["custom/pacman"],
     "modules-center": ["hyprland/workspaces"],
   //  "modules-left": ["hyprlanad/workspaces","custom/pacman"],
   // "modules-center": [""]
-    "modules-right": [ "battery","bluetooth","pulseaudio", "network", "custom/power", "clock"],
+    "modules-right": [ "battery","custom/spotify","bluetooth","pulseaudio", "network", "custom/power", "clock"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -39,12 +39,12 @@
     },
     
     "custom/spotify": {
-        "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/mediaplayer.py --player spotify",
+        "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/modules/mediaplayer.py --player spotify",
         "format": "",
         "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "on-click": "playerctl --player=spotify play-pause",
+        "on-click-right": "playerctl --player=spotify next",
+        "on-click-middle": "playerctl --player=spotify previous"
     },
     
     
@@ -85,7 +85,7 @@
         "tooltip": false
     },
     "bluetooth": {
-        "format": "",
+        "format": "󰂯",
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
