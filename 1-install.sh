@@ -24,8 +24,8 @@ echo "-> Installing main packages"
 
 # ----------------------------------------------------------------------------------------- #
 # Install packages from official repositories and AUR
-_installPackagesPacman "${packagesPacman[@]}";
-_installPackagesYay "${packagesYay[@]}";
+installPackagesPacman "${packagesPacman[@]}";
+installPackagesYay "${packagesYay[@]}";
 
 # Install pywal
 if [ -f /usr/bin/wal ]; then
