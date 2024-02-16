@@ -7,14 +7,14 @@ _isInstalledPacman() {
 }
 
 # Check if a package is installed using yay
-_isInstalledYay() {
+isInstalledYay() {
     package="$1"
     check="$(yay -Qs --color always "${package}" | grep "local" | grep "${package} ")"
     [ -n "${check}" ] && echo 0 || echo 1
 }
 
 # Install packages using pacman if not installed
-_installPackagesPacman() {
+installPackagesPacman() {
     for pkg; do
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed."
@@ -25,7 +25,7 @@ _installPackagesPacman() {
 }
 
 # Install packages using yay if not installed
-_installPackagesYay() {
+installPackagesYay() {
     for pkg; do
         if [[ $(_isInstalledYay "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed."
@@ -35,12 +35,13 @@ _installPackagesYay() {
     done
 }
 
-_installSymLink() {
+Symlink() {
     symlinkName="$1"   # This is just the name for logging purposes
     linkSource="$2"
     linkTarget="$3"
     
     # Remove existing symlink, directory, or file at the target location
+    echo "Removing existing configurations files..."
     [ -L "${linkTarget}" ] && rm "${linkTarget}"
     [ -d "${linkTarget}" ] && rm -rf "${linkTarget}"
     [ -f "${linkTarget}" ] && rm "${linkTarget}"
