@@ -1,6 +1,6 @@
 #!/bin/bash
 # Check if a package is installed using pacman
-_isInstalledPacman() {
+isInstalledPacman() {
     package="$1"
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")"
     [ -n "${check}" ] && echo 0 || echo 1
@@ -27,7 +27,7 @@ installPackagesPacman() {
 # Install packages using yay if not installed
 installPackagesYay() {
     for pkg; do
-        if [[ $(_isInstalledYay "${pkg}") == 0 ]]; then
+        if [[ $(isInstalledYay "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed."
             continue
         fi
