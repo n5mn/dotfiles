@@ -28,6 +28,8 @@
 [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
 
+source ~/.cache/wal/colors.sh
+
 () {
   emulate -L zsh -o extended_glob
 
@@ -39,7 +41,7 @@
 
   # Prompt colors.
   local grey='243'
-  local red='1'
+  local red=$color1
   local yellow='3'
   local blue='4'
   local magenta='5'
