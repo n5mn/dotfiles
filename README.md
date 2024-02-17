@@ -1,30 +1,9 @@
 # Nrmn Arch Dotfiles
 
-Based on Rustybucketz dotfiles (https://github.com/rustybucketz30/dotfiles)
-
-## Changes
-
-1. Update keybinds and Hyprland config to my needs
-2. Create own installer Scripts
-3. Update Waybar to my needs
-4. I dont use nvim, so I added my vim configuration files
-5. Replace .bashrc for .zshrc.example
-6. Added p10k config 
-7. Fix Audio stuff
-8. Enable bluetooth on installer Script
-
-===========================================================
-
-Rusty's README.md
-
-===========================================================
-
 1. [Software](#1-software)
 2. [Directory Structure](#2-directory-structure)
-3. [GUI Software](#3-gui-software)
-4. [Keybindings](#4-keybindings)
-5. [Installation](#5-installation)
-6. [Inspiration & References](#6-inspiration--references)
+3. [Installation](#3-installation)
+4. [Inspiration & References](#4-inspiration--references)
 
 ## 1. Software
 | Category               | Software               | Link                                          |
@@ -35,9 +14,7 @@ Rusty's README.md
 | Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi                   | [GitHub](https://github.com/davatorium/rofi)  |
 | Shell                  | zsh, w/ OhMyZsh        | [GitHub](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) |
-| Browser                | Firefox                | [Website](https://www.mozilla.org/en-US/firefox/new/) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
-| Text Editor            | neovim                 | [Website](https://neovim.io/)                 |
 
 ## 2. Directory Structure
 
@@ -45,6 +22,7 @@ Rusty's README.md
 dotfiles/
 │
 ├── hypr/
+├── install/
 ├── alacritty/
 ├── wlogout/
 ├── waybar/
@@ -61,47 +39,18 @@ dotfiles/
 ├── README.md
 ├── 1-install.sh
 ├── 2-symlink.sh
-└── .bashrc
+├── .xinitrc
+├── .vimrc
+├── .p10k.zsh
+└── .zshrc
 ```
 
-## 3. GUI Software:
-A collection of various GUI-based software for multiple purposes.
-
-- **Multimedia**: `mpv`, `vlc`, `obs`, `kdenlive`, `shotcut`, `gimp`, `blender`
-- **Security**: `ccrypt`, `GnuPG`, `mullvadVPN`, `Kleopatra`, `7zip`
-- **Gaming**: `minecraft`, `godot`, `discord`
-- **Internet & Communication**: `tor`, `newsboat`, `qbittorrent`
-- **Utilities**: `balenaEtcher`, `keepassxc`, `neofetch`, `qemu`, `virtmanager`
-
-## 4. Keybindings
-
-| Key Combination                      | Action                  |
-|--------------------------------------|-------------------------|
-| `Super + Space`                      | Launch Terminal         |
-| `Super + Enter`                      | Thunar                  |
-| `Super + F`                          | Firefox                 |
-| `Super + SHIFT+ T`                   | Tor                     |
-| `Super + BACKSPACE`                  | Quit Active Window      |
-| `Super + R`                          | Rofi                    |
-| `Super + SHIFT + W`                  | Change Wallpaper        |
-| `Super + [1-9]`                      | Switch to Workspace     |
-| `Super + Ctrl + [1-9]`               | Set Current Layout      |
-| `Super + [arrow key]`                | Move to Window          |
-| `Super + J`                          | Toggle Split            |
-| `Super + T`                          | Toggle Float            |
-| `Super + Click and Drag`             | Move Floating Window    |
-| `Super + O`                          | OBS                     |
-| `Super + C`                          | VSCode                  |
-| `Super + N`                          | Newsboat                |
-| `Super + K`                          | KeyPassXC               |
-| `Super + G`                          | GIMP                    |
-
-## 5. Installation
+## 3. Installation
 
 1. **Clone the Repository**: Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/rustybucketz30/dotfiles.git
+git clone https://github.com/n5mn/dotfiles
 ```
 
 2. **Install Packages & Symlinks**: Use the install script using '2-symlink.sh'
@@ -114,10 +63,11 @@ cd dotfiles/
 
 Otherwise, figure it out yourself, sorry
 
-## 6. Appendix
+## 4. Appendix
 
 ## Inspiration and Resources
 
+- [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
 - [end-4/dots-hyprland (summer-gruv)](https://github.com/end-4/dots-hyprland/tree/summer-gruv)
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
@@ -139,6 +89,7 @@ Otherwise, figure it out yourself, sorry
 - [abaan404/dotfiles](https://github.com/abaan404/dotfiles)
 - [hyprland.org Example Configurations](https://wiki.hyprland.org/Configuring/Example-configurations/)
 - [eww by elkowar Documentation](https://elkowar.github.io/eww/)
+
 - [My New Desktop - Hyprland by Chris Titus](https://christitus.com/my-new-desktop-hyprland/)
 - [GPU Passthrough Guide](https://www.youtube.com/watch?v=EujO_5KvCCo)
 - [Random YouTube Video 1](https://www.youtube.com/watch?v=_nyStxAI75s)
