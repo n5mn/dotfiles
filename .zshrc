@@ -140,9 +140,8 @@ alias gtc='/home/nrmn/Scripts/utils/git.sh'
 alias r2='aws s3 --endpoint-url https://4eddd62f7e5c78eae2224001ef53fc74.r2.cloudflarestorage.com'
 #alias r2='aws s3 cp --endpoint-url https://4eddd62f7e5c78eae2224001ef53fc74.r2.cloudflarestorage.com'
 alias Notes='vim ~/Notes/Credentials.md'
-alias reloadNotifications='killall dunst;notify-send config reloaded'
-
-
+alias rdunst='killall dunst;notify-send config reloaded'
+alias dot='cd ~/dotfiles'
 
 # Git
 alias ga='git add'
