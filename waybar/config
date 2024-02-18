@@ -3,11 +3,12 @@
     "position": "top",
     "margin": "10 0 10 10",
   //  "width": 70,
-    "modules-left": ["custom/pacman"],
-    "modules-center": ["hyprland/workspaces"],
-  //  "modules-left": ["hyprlanad/workspaces","custom/pacman"],
-  // "modules-center": [""]
-    "modules-right": [ "battery","custom/spotify","bluetooth","pulseaudio", "network", "custom/power", "clock"],
+    // "modules-left": ["custom/pacman"],
+    // "modules-center": ["hyprland/workspaces"],
+    // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
+    "modules-left": ["custom/pacman","hyprland/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": [ "battery","bluetooth","pulseaudio", "network", "custom/power", "clock"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -17,18 +18,11 @@
         "persistent_workspaces":{
             "1": [],
             "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+            "3": []
         }
       },
     "custom/pacman": {
-        "format": "",
+        "format": "", // Add the {} if u want to see how much packages u need to update "{} ",
         "interval": 3600,
         "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",
         "exec-if": "exit 0",
@@ -40,13 +34,12 @@
     
     "custom/spotify": {
         "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/modules/mediaplayer.py --player spotify",
-        "format": "",
+        "format": "{}  ",
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
         "on-click-middle": "playerctl --player=spotify previous"
     },
-    
     
     "clock": {
         "timezone": "America/Santiago",
@@ -58,7 +51,7 @@
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}%",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
         "interval": 30,
         "states": {
