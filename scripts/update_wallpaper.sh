@@ -23,6 +23,6 @@ swww img $wallpaper \
 ~/dotfiles/waybar/launch.sh
 
 ln -sf ~/.cache/wal/dunstrc ~/dotfiles/dunst/dunstrc
-killall dunst;notify-send Theme reloaded
+killall dunst;notify-send Wallpaper Updated!
 
 echo "DONE!"
