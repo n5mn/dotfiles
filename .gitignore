@@ -1,6 +1,10 @@
-**/*.log
-**/tmp/
+**/*log
+**/*tmp
 **/*bkp
-**/*.bkp 
-**/*.zip
-**/*.old
+**/*zip
+**/*old
+*bkp
+*old
+*tmp
+*zip
+*log
