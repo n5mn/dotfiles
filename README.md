@@ -63,11 +63,12 @@ cd dotfiles/
 
 Otherwise, figure it out yourself, sorry
 
-## 4. Appendix
+## 4. Inspiration & References
 
-## Inspiration and Resources
 
 - [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
+
+  
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
 - [end-4/dots-hyprland (summer-gruv)](https://github.com/end-4/dots-hyprland/tree/summer-gruv)
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
