@@ -41,7 +41,7 @@ source ~/.cache/wal/colors.sh
 
   # Prompt colors.
   local grey='243'
-  local red=$color1
+  local red=$color2
   local yellow='3'
   local blue='4'
   local magenta='5'
