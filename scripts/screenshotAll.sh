@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-grim "$HOME/Pictures/Screenshots/$(date +'%s_grim.png')" | wl-copy
+grim "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S)FullScreen.png" | wl-copy
