@@ -67,7 +67,7 @@ window#waybar {
   
 #workspaces button.active {
     background-color: @color11;
-    opacity: 0.9;
+    opacity: 0.4;
     margin: 8px;
     border-radius: 5px;
 }
@@ -90,6 +90,11 @@ window#waybar {
     color: @color11;
 }
 
+#pulseaudio, #pulseaudio.muted {
+    padding: 0px 5px;
+    /* i fking hate css */
+}
+
 #network {
     padding: 0px 5px;
     /* i fking hate css */
@@ -109,6 +114,13 @@ window#waybar {
     color: @color11;
 }
 
+.custom-spotify {
+    opacity: 0.8;
+    padding: 0 10px;
+    margin: 0 4px;
+    /* background-color: #1DB954; */
+    color: @color11;
+}
 
 #clock {
     font-weight: bold;
@@ -124,7 +136,15 @@ window#waybar {
 #battery.critical:not(.charging) {
     background: #f53c3c;
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.8s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
