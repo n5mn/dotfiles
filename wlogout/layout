@@ -2,7 +2,7 @@
     "label" : "logout",
     "action" : "sleep 1; loginctl terminate-user $USER",
     "text" : "Logout",
-    "keybind" : "e"
+    "keybind" : "1"
 }
 {
     "label" : "shutdown",
@@ -15,4 +15,10 @@
     "action" : "sleep 1; systemctl reboot",
     "text" : "Reboot",
     "keybind" : "r"
+}
+{
+    "label" : "suspend",
+    "action" : "sleep 1; systemctl suspend",
+    "text" : "Suspend",
+    "keybind" : "2"
 }
