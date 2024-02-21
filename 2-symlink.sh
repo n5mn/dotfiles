@@ -64,11 +64,11 @@ echo "Pywal templates initiated!"
 Symlink .gtkrc-2.0 ~/dotfiles/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
 Symlink .Xresources ~/dotfiles/gtk/.Xresources ~/.Xresources
 Symlink .icons ~/dotfiles/gtk/.icons/ ~/.icons
-Symlink xinitrc ~/dotfiles/.xinitrc ~/.xinitrc
-Symlink vim ~/dotfiles/.vim/ ~/.vim 
-Symlink vimrc ~/dotfiles/.vimrc ~/.vimrc
-Symlink zshrc ~/dotfiles/.zshrc ~/.zshrc # move this to the .config directory
-Symlink p10k ~/dotfiles/.p10k ~/.p10k # move this to the .config directory
+Symlink xinitrc ~/dotfiles/home/.xinitrc ~/.xinitrc
+Symlink vim ~/dotfiles/home/.vim/ ~/.vim 
+Symlink vimrc ~/dotfiles/home/.vimrc ~/.vimrc
+Symlink zshrc ~/dotfiles/home/.zshrc ~/.zshrc # move this to the .config directory
+Symlink p10k ~/dotfiles/home/.p10k ~/.p10k # move this to the .config directory
 
 # ----------------------------------------------------------------------------------------- #
 
