@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/nrmn'
-let g:netrw_dirhist_4='/home/nrmn/dotfiles'
-let g:netrw_dirhist_3='/home/nrmn/.oh-my-zsh'
-let g:netrw_dirhist_2='/etc/php'
-let g:netrw_dirhist_1='/home/nrmn/✟𝖈𝖔𝖒𝖕𝖔𝖓𝖊𝖓𝖙𝖊𝖘✟'
