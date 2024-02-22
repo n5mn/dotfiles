@@ -37,14 +37,14 @@ echo "-> Checking if ~/.config exists"
 
 if [ -d ~/.config ]; then
     echo ".config folder already exists."
+    echo "Backing up configuration files..."
+    Backup
+    echo "Backup completed!"
+
 else
     mkdir ~/.config
     echo ".config folder created."
 fi
-
-echo "Backing up configuration files..."
-Backup
-echo "Backup completed!"
 
 echo "-> Installing general dotfiles"
 # ----------------------------------------------------------------------------------------- #
@@ -68,7 +68,7 @@ Symlink xinitrc ~/dotfiles/home/.xinitrc ~/.xinitrc
 Symlink vim ~/dotfiles/home/.vim/ ~/.vim 
 Symlink vimrc ~/dotfiles/home/.vimrc ~/.vimrc
 Symlink zshrc ~/dotfiles/home/.zshrc ~/.zshrc # move this to the .config directory
-Symlink p10k ~/dotfiles/home/.p10k ~/.p10k # move this to the .config directory
+Symlink p10k ~/dotfiles/home/.p10k.zsh ~/.p10k.zsh # move this to the .config directory
 
 # ----------------------------------------------------------------------------------------- #
 
