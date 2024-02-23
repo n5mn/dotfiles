@@ -1,4 +1,3 @@
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
-Hyprland
+/usr/bin/wireplumber  
