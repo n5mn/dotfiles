@@ -90,9 +90,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'preservim/nerdtree'
 
+  Plug 'dylanaraps/wal.vim'
+
   " Themes {{{ 
-  Plug 'yuttie/hydrangea-vim'
-  Plug 'cocopon/iceberg.vim'
+" Plug 'yuttie/hydrangea-vim'
+" Plug 'cocopon/iceberg.vim'
   " }}}
   Plug 'vim-airline/vim-airline'
 "  Plug 'vim-airline/vim-airline-themes'
@@ -106,7 +108,8 @@ call plug#begin('~/.vim/plugged')
 
 " Load the Themes {{{
 " Set the color scheme.
-colorscheme iceberg
+" colorscheme iceberg
+colorscheme wal
 
 " Set the background tone.
 set background=dark
