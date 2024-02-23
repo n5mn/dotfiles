@@ -8,7 +8,7 @@ source ./install/zsh.sh
 # Check if yay is installed
 # ----------------------------------------------------------------------------------------- #
 
-if sudo pacman -Qs yay > /dev/null ; then
+if [[ -x $(command -v yay) ]]; then
     echo "yay is installed. You can proceed with the installation"
 else
     echo "yay is not installed. Will be installed now!"
@@ -20,12 +20,22 @@ else
     echo ""
 fi
 
+nvidiaDrivers
+
 echo "-> Installing main packages"
 
 # ----------------------------------------------------------------------------------------- #
 # Install packages from official repositories and AUR
 installPackagesPacman "${packagesPacman[@]}";
 installPackagesYay "${packagesYay[@]}";
+
+echo "Install optional packages? [y/N]"
+read -r yn
+if [[ $yn =~ ^[yY]$ ]]; then
+    installPackagesPacman "${optionalPackagesPacman[@]]}"
+else 
+    echo "Skipping..."
+fi
 
 # Install pywal
 if [ -f /usr/bin/wal ]; then
