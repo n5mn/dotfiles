@@ -67,8 +67,6 @@ Symlink .icons ~/dotfiles/gtk/.icons/ ~/.icons
 Symlink xinitrc ~/dotfiles/home/.xinitrc ~/.xinitrc
 Symlink vim ~/dotfiles/home/.vim/ ~/.vim 
 Symlink vimrc ~/dotfiles/home/.vimrc ~/.vimrc
-Symlink zshrc ~/dotfiles/home/.zshrc ~/.zshrc # move this to the .config directory
-Symlink p10k ~/dotfiles/home/.p10k.zsh ~/.p10k.zsh # move this to the .config directory
 
 # ----------------------------------------------------------------------------------------- #
 
