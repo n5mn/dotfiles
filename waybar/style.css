@@ -67,7 +67,7 @@ window#waybar {
   
 #workspaces button.active {
     background-color: @color11;
-    opacity: 0.4;
+    opacity: 0.6;
     margin: 8px;
     border-radius: 5px;
 }
