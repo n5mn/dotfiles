@@ -29,7 +29,7 @@ window {
     margin:                       0px; 
     color:                        #FFFFFF;
     border:                       3px;
-    border-color:                 #FFFFFF;
+    border-color:                 @border-color;
     cursor:                       "default";
     transparency:                 "real";
     location:                     center;
@@ -119,7 +119,7 @@ button {
 }
 
 button selected {
-    background-color:             @color11;
+    background-color:             @selected-normal-background;
     text-color:                   @foreground;
 }
 
@@ -169,7 +169,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color:            @color11;
+    background-color:            @selected-normal-background;
     text-color:                  @foreground;
 }
 
