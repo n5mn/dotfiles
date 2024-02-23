@@ -23,10 +23,7 @@ packagesPacman=(
     "python-pip" 
     "pavucontrol" 
     "xdg-desktop-portal-gtk"
-    "xdg-desktop-portal-wlr"
-    "neofetch" 
-    "btop" 
-    "htop"
+    "xdg-desktop-portal-wlr" 
     "networkmanager" 
     "network-manager-applet" # the GUI network manager
     "networkmanager-openvpn" 
@@ -40,3 +37,24 @@ packagesPacman=(
     "polkit" # needed for hyprload
     "cpio" # needed for hyprload
 )
+
+optionalPackagesPacman=(
+    "firefox"
+    "obs-studio"
+    "discord"
+    "spotify-launcher"
+    "neofetch"
+    "gimp"
+    "htop"
+    "steam"
+)
+
+nvidiaDrivers() {
+    echo "Install nvidia drivers? [y/N] "
+    read -r yn
+    if [[ $yn =~ ^[yY]$ ]]; then
+        sudo pacman -S --needed --noconfirm nvidia nvidia-utils
+    else 
+        echo "Skipping..."
+    fi
+}
