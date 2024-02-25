@@ -22,7 +22,7 @@ weather_icons = {
 # to get your own location_id, go to https://weather.com & search your location.
 # once you choose your location, you can see the location_id in the URL(64 chars long hex string)
 # like this: https://weather.com/en-IN/weather/today/l/4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d
-location_id = "4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d"  # TODO
+location_id = "4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d"  # TODO: how do i import this to the config 
 
 # priv_env_cmd = 'cat $PRIV_ENV_FILE | grep weather_location | cut -d "=" -f 2'
 # location_id = subprocess.run(
