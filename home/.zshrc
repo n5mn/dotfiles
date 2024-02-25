@@ -136,9 +136,10 @@ alias c='clear'
 alias la='ls -lah'
 alias dc='docker-compose'
 alias ls='ls -lh --color=auto' 
-alias gtc='/home/nrmn/Scripts/utils/git.sh'
-alias r2='aws s3 --endpoint-url https://4eddd62f7e5c78eae2224001ef53fc74.r2.cloudflarestorage.com'
-#alias r2='aws s3 cp --endpoint-url https://4eddd62f7e5c78eae2224001ef53fc74.r2.cloudflarestorage.com'
+alias gtc='/home/nrmn/Scripts/utils/gtc.sh'
+
+source ~/r2
+alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
 alias notes='vim ~/Notes/Credentials.md'
 alias rdunst='killall dunst;notify-send config reloaded'
 alias dot='cd ~/dotfiles'
