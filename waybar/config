@@ -1,14 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "margin": "10 0 10 10",
-  //  "width": 70,
+    "margin": "2 2 2 2",
+    // "width": 70,
     // "modules-left": ["custom/pacman"],
     // "modules-center": ["hyprland/workspaces"],
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
     "modules-left": ["custom/pacman","hyprland/workspaces"],
-    "modules-center": ["custom/spotify"],
-    "modules-right": [ "battery","bluetooth","pulseaudio", "network", "custom/power", "clock"],
+    "modules-center": ["clock","custom/weather"],
+    "modules-right": ["custom/spotify", "battery", "bluetooth", "pulseaudio", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -23,18 +23,18 @@
       },
     "custom/pacman": {
         "format": "", // Add the {} if u want to see how much packages u need to update "{} ",
-        "interval": 3600,
-        "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",
-        "exec-if": "exit 0",
-        "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-        "signal": 8,
+        // "interval": 3600,
+        // "exec": "(checkupdates;pacman -Qm | aur vercmp) | wc -l",
+        // "exec-if": "exit 0",
+        // "on-click": "foot sh -c 'yay; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+        // "signal": 8,
         "tooltip-position": "right,top",
         "tooltip": false
     },
     
     "custom/spotify": {
         "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/modules/mediaplayer.py --player spotify",
-        "format": "{}  ",
+        "format": "{}   ",
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
@@ -50,7 +50,8 @@
     
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "],
+        // "format-icons": [" ", " ", " ", " ", " "],
+        "format-icons": ["", "", "", "", ""],
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}%",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
         "interval": 30,
@@ -64,14 +65,14 @@
 
     "pulseaudio": {
         "scroll-step": 0.5,
-        "format":"{icon}",
-        "format-muted": "",
+        "format":"{icon} {volume}%",
+        "format-muted": "{icon}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": " ",
             "default": ["", " ", " "]
         },
         "on-click": "pavucontrol",
@@ -88,8 +89,8 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "",
-        "format-ethernet": "",
-        "format-disconnected": "睊",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "  disconnected",
         "on-click": "nm-connection-editor",
         "tooltip": false
     },    
@@ -97,5 +98,18 @@
         "format": "",
         "on-click": "wlogout -b 2",
         "tooltip": false
-    }
+    },
+    "custom/weather": {
+        "exec": "/usr/bin/python3 ~/dotfiles/waybar/modules/weather.py",
+        "restart-interval": 300,
+        "return-type": "json",
+        "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d" // TODO: how to add $(location_id)
+    } 
+    // "temperature": {
+    //     "thermal-zone": 2,
+    //     // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+    //     // "critical-threshold": 80,
+    //     // "format-critical": "{temperatureC}°C ",
+    //     "format": "{temperatureC}°C "
+    // }
 }

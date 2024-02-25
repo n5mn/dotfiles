@@ -3,8 +3,9 @@
 * {
     border: none;
     border-radius: 0;
-    /*font-family: "Hack", "Noto Color Emoji", sans-serif;*/
-    font-size: 18px;
+    /* font-family: "FiraCode Nerd Font"; */
+    /* font-family: "Hack", "Noto Color Emoji", sans-serif; */
+    font-size: 16px;
     /*font-weight: bold;*/
     min-height: 0;
 }
@@ -17,14 +18,13 @@ body,
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 0.5s ease-in-out;
   border: 2px solid @color11;
-  border-radius: 15px;
+  border-radius: 17px;
 }
 
 #waybar:hover,
 .main-container:hover {
   background-color: rgba(0, 0, 0, 0.9);  /* Slightly darker background on hover */
 }
-
 
 window#waybar {
     background: #000000;
@@ -85,32 +85,26 @@ window#waybar {
 }
 
 #bluetooth, #bluetooth.on, #bluetooth.connected, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #pulseaudio.muted, #custom-spotify, #tray, #mode, #idle_inhibitor {
-    padding: 0 1px;
-    margin: 0px 2px;
+    /* padding: 0px 2px; */
     color: @color11;
-}
-
-#pulseaudio, #pulseaudio.muted {
-    padding: 0px 5px;
-    /* i fking hate css */
 }
 
 #network {
     padding: 0px 5px;
-    /* i fking hate css */
-    margin: 0px 6px 0px 0px; 
+    margin-right: 5px;
 }
 
 #custom-pacman {
-    margin-left: 25px;
-    font-size: 30px;
+    margin-left: 18px;
+    font-size: 26px;
     color: @color11;
 }
 
 #custom-power {
-    /* margin: 5px; */
-    padding: 0px 0px;
-    margin: 0px 4px;
+    /* background-color: #ffffff; */
+    /* padding: 0px 16px; */
+    /* margin: 1px 4px; */
+    margin-right: 15px;
     color: @color11;
 }
 
@@ -122,13 +116,54 @@ window#waybar {
     color: @color11;
 }
 
+#custom-weather.severe,
+#custom-weather.sunnyDay, 
+#custom-weather.cloudyFoggyDay, 
+#custom-weather.cloudyFoggyNight, 
+#custom-weather.clearNight, 
+#custom-weather.rainyDay, 
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay, 
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+    color: @color11;
+}
+
+/* #custom-weather.severe {
+    color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+    color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+    color: #2b2b2a;
+}
+
+#custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight {
+    color: #c2ddda;
+}
+
+#custom-weather.rainyDay, #custom-weather.rainyNight {
+    color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay, #custom-weather.snowyIcyNight {
+    color: #d6e7e5;
+}
+
+#custom-weather.default {
+    color: @color11;
+} */
+
 #clock {
     font-weight: bold;
 }
 
 @keyframes blink {
     to {
-        /*background-color: #ffffff;*/
+        /* background-color: #ffffff; */
         color: #000000;
     }
 }
@@ -155,23 +190,19 @@ window#waybar {
 }
 
 #temperature {
-    background: #f0932b;
+    /* background: #f0932b; */
 }
 
 #temperature.critical {
     background: #eb4d4b;
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #tray {
     /*background-color: #2980b9;*/
     color: @color11;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
 }
