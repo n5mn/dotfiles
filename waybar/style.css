@@ -84,7 +84,22 @@ window#waybar {
     border-bottom: 3px solid #ffffff;
 }
 
-#bluetooth, #bluetooth.on, #bluetooth.connected, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #pulseaudio.muted, #custom-spotify, #tray, #mode, #idle_inhibitor {
+#bluetooth, 
+#bluetooth.on, 
+#bluetooth.connected, 
+#clock, 
+#battery, 
+#cpu, 
+#memory, 
+#temperature, 
+#backlight, 
+#network, 
+#pulseaudio, 
+#pulseaudio.muted, 
+#custom-spotify, 
+#tray, 
+#mode, 
+#idle_inhibitor {
     /* padding: 0px 2px; */
     color: @color11;
 }
