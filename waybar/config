@@ -8,7 +8,7 @@
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
     "modules-left": ["custom/pacman","hyprland/workspaces"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["custom/spotify", "battery", "bluetooth", "pulseaudio", "network", "custom/power"],
+    "modules-right": ["custom/spotify", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -70,7 +70,7 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": " ",
             "hands-free": "",
             "headset": " ",
             "default": ["", " ", " "]
@@ -79,12 +79,16 @@
         "tooltip": false
     },
     "bluetooth": {
-        "format": "󰂯",
-        "format-disabled": "",
-        "format-off": "",
+        // "format": "{icon}",
+        "format-alt": "{status}",
+        "format-on": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "format-off": "󰂲",
         "interval": 30,
         "on-click": "blueman-manager",
-        "tooltip": false
+        // "tooltip": false,
+        "tooltip-format": "{status}"
     },
     "network": {
         "format": "{ifname}",
