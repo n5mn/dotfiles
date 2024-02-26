@@ -8,7 +8,7 @@
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
     "modules-left": ["custom/pacman","hyprland/workspaces"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["custom/spotify", "battery", "bluetooth", "pulseaudio", "network", "custom/power"],
+    "modules-right": ["custom/spotify", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -38,7 +38,8 @@
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
-        "on-click-middle": "playerctl --player=spotify previous"
+        "on-click-middle": "playerctl --player=spotify previous",
+        "escape": true
     },
     
     "clock": {
@@ -70,7 +71,7 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": " ",
             "hands-free": "",
             "headset": " ",
             "default": ["", " ", " "]
@@ -79,12 +80,16 @@
         "tooltip": false
     },
     "bluetooth": {
-        "format": "󰂯",
-        "format-disabled": "",
-        "format-off": "",
+        // "format": "{icon}",
+        "format-alt": "{status}",
+        "format-on": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "format-off": "󰂲",
         "interval": 30,
         "on-click": "blueman-manager",
-        "tooltip": false
+        // "tooltip": false,
+        "tooltip-format": "{icon}"
     },
     "network": {
         "format": "{ifname}",
@@ -104,12 +109,12 @@
         "restart-interval": 300,
         "return-type": "json",
         "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d" // TODO: how to add $(location_id)
-    } 
+    }
     // "temperature": {
-    //     "thermal-zone": 2,
-    //     // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
-    //     // "critical-threshold": 80,
-    //     // "format-critical": "{temperatureC}°C ",
+    //     "thermal-zone": 0,
+    //     "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+    //     "critical-threshold": 80,
+    //     "format-critical": "{temperatureC}°C ",
     //     "format": "{temperatureC}°C "
     // }
 }
