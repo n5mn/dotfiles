@@ -38,7 +38,8 @@
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
-        "on-click-middle": "playerctl --player=spotify previous"
+        "on-click-middle": "playerctl --player=spotify previous",
+        "escape": true
     },
     
     "clock": {
@@ -88,7 +89,7 @@
         "interval": 30,
         "on-click": "blueman-manager",
         // "tooltip": false,
-        "tooltip-format": "{status}"
+        "tooltip-format": "{icon}"
     },
     "network": {
         "format": "{ifname}",
@@ -108,12 +109,12 @@
         "restart-interval": 300,
         "return-type": "json",
         "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d" // TODO: how to add $(location_id)
-    } 
+    }
     // "temperature": {
-    //     "thermal-zone": 2,
-    //     // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
-    //     // "critical-threshold": 80,
-    //     // "format-critical": "{temperatureC}°C ",
+    //     "thermal-zone": 0,
+    //     "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+    //     "critical-threshold": 80,
+    //     "format-critical": "{temperatureC}°C ",
     //     "format": "{temperatureC}°C "
     // }
 }
