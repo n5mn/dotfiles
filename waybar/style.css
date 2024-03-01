@@ -100,8 +100,7 @@ window#waybar {
 #tray, 
 #mode, 
 #idle_inhibitor {
-    /* padding: 0px 2px; */
-    /* background-color: rgba(40, 40, 40, 0.2); */
+
     color: @color11;
 }
 
@@ -132,18 +131,6 @@ window#waybar {
 #custom-weather {
     color: @color11;
 }
-/* #custom-weather.severe,
-#custom-weather.sunnyDay, 
-#custom-weather.cloudyFoggyDay, 
-#custom-weather.cloudyFoggyNight, 
-#custom-weather.clearNight, 
-#custom-weather.rainyDay, 
-#custom-weather.rainyNight,
-#custom-weather.showyIcyDay, 
-#custom-weather.snowyIcyNight,
-#custom-weather.default {
-    color: @color11;
-} */
 
 #clock {
     font-weight: bold;
@@ -189,4 +176,10 @@ window#waybar {
 #tray {
     /*background-color: #2980b9;*/
     color: @color11;
+}
+
+#custom-wpreview {
+    color: @color11;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
 }
