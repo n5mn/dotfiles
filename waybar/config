@@ -7,7 +7,7 @@
     // "modules-center": ["hyprland/workspaces"],
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
     "modules-left": ["custom/pacman","hyprland/workspaces","custom/wpreview"],
-    "modules-center": ["clock","custom/weather","custom/swaync"],
+    "modules-center": ["clock","custom/weather","custom/notifications"],
     "modules-right": ["custom/spotify", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
@@ -114,6 +114,12 @@
         "format": " ",
         "on-click": "/usr/bin/python3 ~/dotfiles/scripts/workspaces.py",
         "tooltip": false
+    },
+    "custom/notifications": {
+        "format": "",
+        "on-click": "dunstctl history-pop",
+        "on-click-right": "dunstctl set-paused false",
+        "on-click-middle": "dunstctl set-paused true"
     }
     // "temperature": {
     //     "thermal-zone": 0,

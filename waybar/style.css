@@ -99,7 +99,8 @@ window#waybar {
 #custom-spotify, 
 #tray, 
 #mode, 
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-notifications {
 
     color: @color11;
 }
