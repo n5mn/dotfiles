@@ -1,6 +1,6 @@
 [global]
     # which monitor u want to display the notification
-    monitor = 1
+    monitor = 0
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
     #   keyboard: follow window with keyboard focus
@@ -12,7 +12,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = none
+    follow = mouse
 
     # dynamic width from 0 to 300
     # width = (0, 300)
