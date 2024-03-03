@@ -8,7 +8,7 @@
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
     "modules-left": ["custom/pacman","hyprland/workspaces","custom/wpreview"],
     "modules-center": ["clock","custom/weather","custom/notifications"],
-    "modules-right": ["custom/spotify", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
+    "modules-right": ["custom/spotify", "pulseaudio", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -49,20 +49,20 @@
         "tooltip-position": "right"
     },
     
-    "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        // "format-icons": [" ", " ", " ", " ", " "],
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}%",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
-        "interval": 30,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "tooltip": false,
-        "on-click": "2"
-    },
+    // "battery": {
+    //     "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
+    //     // "format-icons": [" ", " ", " ", " ", " "],
+    //     "format-icons": ["", "", "", "", ""],
+    //     "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}%",
+    //     "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
+    //     "interval": 30,
+    //     "states": {
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "tooltip": false,
+    //     "on-click": "2"
+    // },
 
     "pulseaudio": {
         "scroll-step": 0.5,
@@ -79,18 +79,18 @@
         "on-click": "pavucontrol",
         "tooltip": false
     },
-    "bluetooth": {
-        "format": "{status}",
-        // "format-alt": "{status}",
-        "format-on": "󰂯",
-        "format-disabled": "󰂲",
-        "format-connected": "󰂱",
-        "format-off": "󰂲",
-        "interval": 30,
-        "on-click": "blueman-manager",
-        "tooltip": false,
-        "tooltip-format": "{icon}"
-    },
+    // "bluetooth": {
+    //     "format": "{status}",
+    //     // "format-alt": "{status}",
+    //     "format-on": "󰂯",
+    //     "format-disabled": "󰂲",
+    //     "format-connected": "󰂱",
+    //     "format-off": "󰂲",
+    //     "interval": 30,
+    //     "on-click": "blueman-manager",
+    //     "tooltip": false,
+    //     "tooltip-format": "{icon}"
+    // },
     "network": {
         "format": "{ifname}",
         "format-wifi": "",
@@ -116,7 +116,7 @@
         "tooltip": false
     },
     "custom/notifications": {
-        "format": "",
+        "format": " ",
         "on-click": "dunstctl history-pop",
         "on-click-right": "dunstctl set-paused false",
         "on-click-middle": "dunstctl set-paused true"
