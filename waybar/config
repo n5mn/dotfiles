@@ -6,9 +6,9 @@
     // "modules-left": ["custom/pacman"],
     // "modules-center": ["hyprland/workspaces"],
     // "modules-right": [ "battery","bluetooth","custom/spotify","pulseaudio", "network", "custom/power", "clock"],
-    "modules-left": ["custom/pacman","hyprland/workspaces","custom/wpreview"],
+    "modules-left": ["custom/pacman","hyprland/workspaces","custom/wpreview"], // TODO: fix tray
     "modules-center": ["clock","custom/weather","custom/notifications"],
-    "modules-right": ["custom/spotify", "pulseaudio", "network", "custom/power"],
+    "modules-right": ["custom/media", "pulseaudio", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -31,39 +31,21 @@
         "tooltip-position": "right,top",
         "tooltip": false
     },
-    
-    "custom/spotify": {
+    "custom/media": {
         "exec": "/usr/bin/python3 /home/nrmn/dotfiles/waybar/modules/mediaplayer.py --player spotify",
-        "format": "{}   ",
+        "format": "{}", //  
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
         "on-click-middle": "playerctl --player=spotify previous",
         "escape": true
     },
-    
     "clock": {
         "timezone": "America/Santiago",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%I:%M %p}",
         "tooltip-position": "right"
     },
-    
-    // "battery": {
-    //     "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-    //     // "format-icons": [" ", " ", " ", " ", " "],
-    //     "format-icons": ["", "", "", "", ""],
-    //     "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}%",
-    //     "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon} </span>  Charged",
-    //     "interval": 30,
-    //     "states": {
-    //         "warning": 30,
-    //         "critical": 15
-    //     },
-    //     "tooltip": false,
-    //     "on-click": "2"
-    // },
-
     "pulseaudio": {
         "scroll-step": 0.5,
         "format":"{icon} {volume}%",
@@ -79,26 +61,14 @@
         "on-click": "pavucontrol",
         "tooltip": false
     },
-    // "bluetooth": {
-    //     "format": "{status}",
-    //     // "format-alt": "{status}",
-    //     "format-on": "󰂯",
-    //     "format-disabled": "󰂲",
-    //     "format-connected": "󰂱",
-    //     "format-off": "󰂲",
-    //     "interval": 30,
-    //     "on-click": "blueman-manager",
-    //     "tooltip": false,
-    //     "tooltip-format": "{icon}"
-    // },
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": "",
-        "format-ethernet": "󰈁",
-        "format-disconnected": "  disconnected",
-        "on-click": "nm-connection-editor",
-        "tooltip": false
-    },    
+    // "network": {
+    //     "format": "{ifname}",
+    //     "format-wifi": "",
+    //     "format-ethernet": "󰈁",
+    //     "format-disconnected": "  disconnected",
+    //     "on-click": "nm-connection-editor",
+    //     "tooltip": false
+    // },    
     "custom/power": {
         "format": "",
         "on-click": "wlogout -b 2",
@@ -120,6 +90,10 @@
         "on-click": "dunstctl history-pop",
         "on-click-right": "dunstctl set-paused false",
         "on-click-middle": "dunstctl set-paused true"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
     }
     // "temperature": {
     //     "thermal-zone": 0,
