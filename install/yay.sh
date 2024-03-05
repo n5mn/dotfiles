@@ -10,3 +10,9 @@ packagesYay=(
     "swww" # for wallpapers
     "wlogout" # for logging out
 )
+
+optionalPackagesYay=(
+    "termius" 
+    "brave-bin" 
+    "qownnotes" 
+)
