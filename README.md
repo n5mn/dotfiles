@@ -1,4 +1,8 @@
-# Nrmn Arch Dotfiles
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/archlinux/.github/main/profile/archlinux-logo-dark-scalable.svg" width="96px" height="96px" />
+  <br>
+  NrmN Dotfiles for Arch linux
+</h1>
 
 1. [Software](#1-software)
 2. [Directory Structure](#2-directory-structure)
@@ -13,7 +17,7 @@
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
 | Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi                   | [GitHub](https://github.com/davatorium/rofi)  |
-| Shell                  | zsh, w/ OhMyZsh        | [GitHub](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) |
+| Shell                  | zsh, w/ OhMyZsh + P10K       | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)[P10K](https://github.com/romkatv/powerlevel10k) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
 
 ## 2. Directory Structure
@@ -21,39 +25,34 @@
 ```
 dotfiles/
 │
+├── .vim/
+├── alacritty/
+├── gtk/
+├── home/
 ├── hypr/
 ├── install/
-├── alacritty/
-├── wlogout/
-├── waybar/
-├── wallpapers/
-├── wal/
-├── vim/
-├── scripts/
-├── rofi/
 ├── nvim/
-├── login/
-├── gtk/
-├── dunst/
-├── SampleBackgrounds.png
-├── README.md
+├── rofi/
+├── scripts/
+├── wal/
+├── wallpapers/
+├── waybar/
+├── wlogout/
 ├── 1-install.sh
 ├── 2-symlink.sh
-├── .xinitrc
-├── .vimrc
-├── .p10k.zsh
-└── .zshrc
+├── issue
+└── README.md
 ```
 
 ## 3. Installation
 
-1. **Clone the Repository**: Clone this repository to your local machine.
+1. **Clone the Repository**
 
 ```bash
 git clone https://github.com/n5mn/dotfiles
 ```
 
-2. **Install Packages & Symlinks**: Use the install script using '2-symlink.sh'
+2. **Install Packages & Symlinks**
 
 ```bash
 cd dotfiles/
@@ -65,10 +64,9 @@ Otherwise, figure it out yourself, sorry
 
 ## 4. Inspiration & References
 
+~~Stolen from~~ Inspired by those repos
 
 - [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
-
-  
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
 - [end-4/dots-hyprland (summer-gruv)](https://github.com/end-4/dots-hyprland/tree/summer-gruv)
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
