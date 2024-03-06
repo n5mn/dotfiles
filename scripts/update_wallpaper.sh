@@ -22,6 +22,7 @@ swww img $wallpaper \
 
 ~/dotfiles/waybar/launch.sh
 
+# Load pywal color scheme for notifications and restart it 
 ln -sf ~/.cache/wal/dunstrc ~/dotfiles/dunst/dunstrc
 killall dunst;notify-send Wallpaper Updated!
 

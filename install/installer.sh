@@ -16,7 +16,7 @@ isInstalledYay() {
 # Install packages using pacman if not installed
 installPackagesPacman() {
     for pkg; do
-        if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
+        if [[ $(isInstalledPacman "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed."
             continue
         fi

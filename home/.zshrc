@@ -135,8 +135,8 @@ alias grep='grep --color=auto'
 alias c='clear'
 alias la='ls -lah'
 alias dc='docker-compose'
-alias ls='ls -lh --color=auto' 
-alias gtc='/home/nrmn/Scripts/utils/gtc.sh'
+alias ll='ls -lh --color=auto' 
+alias gtc='~/Scripts/utils/gtc.sh'
 
 source ~/r2
 alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
@@ -157,13 +157,13 @@ alias gc='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gcl='git clone'
-alias ownR='sudo chown -R nrmn:nrmn'
-alias own='sudo chown nrmn:nrmn'
+alias ownR='sudo chown -R $USER:$USER'
+alias own='sudo chown $USER:$USER'
 
 # Root
 alias root='sudo -E zsh'
 
-alias fixP='sudo /home/nrmn/Scripts/utils/fixPermissions.sh'
+alias fixP='sudo ~/Scripts/utils/fixPermissions.sh'
 # Functions
 
 # }}}

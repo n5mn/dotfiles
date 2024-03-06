@@ -96,59 +96,31 @@ window#waybar {
 #network, 
 #pulseaudio, 
 #pulseaudio.muted, 
-#custom-spotify, 
+#custom-media, 
 #tray, 
 #mode, 
-#idle_inhibitor {
-    /* padding: 0px 2px; */
-    /* background-color: rgba(40, 40, 40, 0.2); */
+#idle_inhibitor,
+#custom-notifications,
+#custom-pacman,
+#custom-power,
+#custom-weather,
+#custom-wpreview {
     color: @color11;
 }
-
-#network {
+/* #network {
     padding: 0px 5px;
     margin-right: 5px;
-}
-
+} */
 #custom-pacman {
     margin-left: 18px;
     font-size: 26px;
-    color: @color11;
 }
-
 #custom-power {
     margin-right: 15px;
-    color: @color11;
 }
-
-.custom-spotify {
-    opacity: 0.8;
-    padding: 0 10px;
-    margin: 0 4px;
-    /* background-color: #1DB954; */
-    color: @color11;
-}
-
-#custom-weather {
-    color: @color11;
-}
-/* #custom-weather.severe,
-#custom-weather.sunnyDay, 
-#custom-weather.cloudyFoggyDay, 
-#custom-weather.cloudyFoggyNight, 
-#custom-weather.clearNight, 
-#custom-weather.rainyDay, 
-#custom-weather.rainyNight,
-#custom-weather.showyIcyDay, 
-#custom-weather.snowyIcyNight,
-#custom-weather.default {
-    color: @color11;
-} */
-
 #clock {
     font-weight: bold;
 }
-
 @keyframes blink {
     to {
         /* background-color: #ffffff; */
@@ -156,37 +128,10 @@ window#waybar {
     }
 }
 
-#battery.critical:not(.charging) {
-    background: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning:not(.charging) {
-    animation-name: blink;
-    animation-duration: 0.8s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
 .custom-vlc {
     background: #ffa000;
 }
-
-#temperature.critical {
-    background: #eb4d4b;
-    animation-name: blink;
-    animation-duration: 0.8s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#tray {
-    /*background-color: #2980b9;*/
-    color: @color11;
+#custom-wpreview {
+    background: transparent;
+    transition: all 0.3s ease-in-out;
 }

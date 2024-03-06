@@ -1,4 +1,8 @@
 #!/bin/bash
+source ./install/installer.sh
+source ./install/yay.sh
+source ./install/pacman.sh
+source ./install/zsh.sh
 
 ConfigDirectory=(
     "alacritty"

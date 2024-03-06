@@ -32,7 +32,8 @@ installPackagesYay "${packagesYay[@]}";
 echo "Install optional packages? [y/N]"
 read -r yn
 if [[ $yn =~ ^[yY]$ ]]; then
-    installPackagesPacman "${optionalPackagesPacman[@]]}"
+    installPackagesPacman "${optionalPackagesPacman[@]}"
+    installPackagesYay "${optionalPackagesYay[@]}"
 else 
     echo "Skipping..."
 fi
