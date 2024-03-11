@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "margin": "2 2 2 2",
+    "margin": "2 2 0 2",
     // "width": 70,
     // "modules-left": ["custom/pacman"],
     // "modules-center": ["hyprland/workspaces"],
@@ -16,11 +16,17 @@
         "format": "{}",
         "on-click": "activate",
         "persistent_workspaces":{
-            "1": [],
-            "2": [],
-            "3": []
+            "*": 5
         }
-      },
+    },
+    "hyprland/window": {
+        "max-length": 60,
+        "format": " {}",
+        "rewrite": {
+        " ":" Empty workspace" 
+        },
+        "separate-outputs": true
+    },
     "custom/pacman": {
         "format": "", // Add the {} if u want to see how much packages u need to update "{} ",
         // "interval": 3600,
@@ -116,7 +122,7 @@
         "on-click-middle": "dunstctl set-paused true"
     },
     "tray": {
-        "icon-size": 21,
+        // "icon-size": 21,
         "spacing": 10
     }
     // "temperature": {
