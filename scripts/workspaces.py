@@ -74,7 +74,6 @@ class WorkspaceSelector(Gtk.Window):
                 self.num_columns = 1
 
         # TODO: abstract all this file parsing
-        # Create a symbolic link ln -s ~/.config/wal/colors.json script_path 
         script_dir = os.path.dirname(os.path.abspath(__file__))
         colors_json_path = os.path.join(script_dir, "colors.json")
         if not os.path.isfile(colors_json_path):
@@ -83,7 +82,8 @@ class WorkspaceSelector(Gtk.Window):
             
             try:
                 os.symlink(os.path.expanduser("~/.cache/wal/colors.json"), colors_json_path)
-                print("Symlink created successfully. Run it again!")
+                print("Symlink created successfully.")
+                continue
             except Exception as e:
                 print("Error creating symlink:", e)
             exit()

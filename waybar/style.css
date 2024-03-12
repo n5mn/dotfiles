@@ -113,7 +113,7 @@ window#waybar {
 } */
 #custom-pacman {
     margin-left: 18px;
-    font-size: 26px;
+    font-size: 24px;
 }
 #custom-power {
     margin-right: 15px;
@@ -134,4 +134,15 @@ window#waybar {
 #custom-wpreview {
     background: transparent;
     transition: all 0.3s ease-in-out;
+}
+/* #tray {
+    background-color: #2980b9;
+} */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
 }
