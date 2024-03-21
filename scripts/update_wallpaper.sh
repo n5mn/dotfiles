@@ -35,9 +35,13 @@ swww img $wallpaper \
 ~/dotfiles/waybar/launch.sh
 
 # Load pywal color scheme for notifications and restart it 
-ln -sf ~/.cache/wal/dunstrc ~/dotfiles/dunst/dunstrc
+if [ ! -f ~/dotfiles/dunst/dunstrc ]; then
+    ln -sf ~/.cache/wal/dunstrc ~/dotfiles/dunst/dunstrc
+fi
 
-ln -sf ~/.cache/wal/cava.conf ~/.config/cava/config
+if [ ! -f ~/.config/cava/config ]; then
+    ln -sf ~/.cache/wal/cava.conf ~/.config/cava/config
+fi
 
 killall dunst;notify-send Wallpaper Updated!
 echo "DONE!"
