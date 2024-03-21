@@ -88,7 +88,7 @@ class PlayerManager:
             for player in players[::-1]:
                 if player.props.status == "Playing":
                     return player
-            # if none are playing, show the first one
+            # if none are playing, show the first one 
             return players[0]
         else:
             logger.debug("No players found")
