@@ -83,7 +83,6 @@ class WorkspaceSelector(Gtk.Window):
             try:
                 os.symlink(os.path.expanduser("~/.cache/wal/colors.json"), colors_json_path)
                 print("Symlink created successfully.")
-                continue
             except Exception as e:
                 print("Error creating symlink:", e)
             exit()
