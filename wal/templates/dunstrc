@@ -48,8 +48,8 @@
     # Set the frame width of the progress bar
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
-    progress_bar_max_width = 300
-    progress_bar_corner_radius = 10
+    progress_bar_max_width = 400
+    progress_bar_corner_radius = 5
     
     icon_corner_radius = 0
     
@@ -67,8 +67,8 @@
     separator_height = 2
 
     # Padding between text and separator
-    padding = 8
-    horizontal_padding = 8
+    padding = 10
+    horizontal_padding = 10
     text_icon_padding = 0
   
     # Defines width in pixels of frame around the notification window.
@@ -81,7 +81,7 @@
     font = "Fira Sans Semibold" 11
     line_height = 
     markup = full
-    format = "<b>%s</b>\n%b"
+    format = "<span weight='bold' font='12'>%s</span>\n%b"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -103,7 +103,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 10
+    corner_radius = 5
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
@@ -117,15 +117,18 @@
 [urgency_low]
     background = "{background}"
     foreground = "{foreground}"
+    highlight = "{color11}"
     timeout = 6
 
 [urgency_normal]
     background = "{background}"
     foreground = "{foreground}"
+    highlight = "{color11}"
     timeout = 6
 
 [urgency_critical]
     background = "{background}"
     foreground = "{foreground}"
+    highlight = "{color11}"
     frame_color = "{color11}"
     timeout = 6
