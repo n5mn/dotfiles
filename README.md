@@ -18,7 +18,6 @@
 | Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
 | Shell                  | zsh, w/ OhMyZsh + P10K | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) [P10K](https://github.com/romkatv/powerlevel10k) |
-
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
 
 Probably gonna replace rofi cuz doesnt have wayland support.
