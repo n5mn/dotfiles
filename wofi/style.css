@@ -1,0 +1,64 @@
+* {
+    font-family: 'SF Pro Display Bold';
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+#window {
+    border: 2px solid;
+    border-color: --wofi-color13;
+    border-radius: 10px;
+	background-color: rgba(--wofi-rgb-color0,1);
+	color: --wofi-color13;
+    transition: 1s ease-in-out;
+}
+
+#input {
+    margin: 15px;
+	background-color: --wofi-color0;
+	color: --wofi-color13;
+    border-radius: 25px;
+    border: 2px solid --wofi-color13;
+    transition: 0.5s ease-in-out;
+	box-shadow: none;
+
+}
+#input image {
+	color: rgba(0,0,0,0)
+}
+#input:focus {
+	background-color: rgba(--wofi-rgb-color4,0.2);
+	margin-left: 10px;
+	margin-right: 10px;
+	transition: 0.5s ease-in-out;
+}
+
+label {
+	color: --wofi-color13;
+	transition: 0.5s ease-in-out;
+}
+#scroll {
+    color: --wofi-color13;
+    margin-bottom: 15px;
+}
+
+#entry {
+    margin: 0px 15px;
+}
+
+#entry:selected {
+    /*background-color: /*rgb(245, 98, 36);*/
+	background-color: --wofi-color2;
+    border-radius: 0px;
+    border: none;
+    outline: none;
+}
+
+#entry > box {
+    margin-left: 16px;
+}
+
+#entry image {
+    padding-right: 10px;
+}

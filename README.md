@@ -16,9 +16,13 @@
 | Terminal Manager       | Alacritty              | [Website](https://alacritty.org/)             |
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
 | Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
+| Launcher               | Rofi or Wofi          | [GitHub](https://github.com/davatorium/rofi)  |
+| Shell                  | zsh, w/ OhMyZsh + P10K | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) [P10K](https://github.com/romkatv/powerlevel10k) |
 | Launcher               | Rofi                   | [GitHub](https://github.com/davatorium/rofi)  |
 | Shell                  | zsh, w/ OhMyZsh + P10K       | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) [P10K](https://github.com/romkatv/powerlevel10k) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
+
+Probably gonna replace rofi cuz doesnt have wayland support.
 
 ## 2. Directory Structure
 
@@ -31,13 +35,13 @@ dotfiles/
 ├── home/
 ├── hypr/
 ├── install/
-├── nvim/
 ├── rofi/
 ├── scripts/
 ├── wal/
 ├── wallpapers/
 ├── waybar/
 ├── wlogout/
+├── wofi/
 ├── 1-install.sh
 ├── 2-symlink.sh
 ├── issue
@@ -59,8 +63,6 @@ cd dotfiles/
 ./1-install.sh
 ./2-symlink.sh
 ```
-
-Otherwise, figure it out yourself, sorry
 
 ## 4. Inspiration & References
 
