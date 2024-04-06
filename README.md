@@ -31,7 +31,6 @@ dotfiles/
 ├── home/
 ├── hypr/
 ├── install/
-├── nvim/
 ├── rofi/
 ├── scripts/
 ├── wal/
