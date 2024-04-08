@@ -64,7 +64,8 @@ cd dotfiles/
 
 ## 4. Inspiration & References
 
-~~Stolen from~~ Inspired by those repos
+~~Stolen from:~~ 
+Inspired by those repos:
 
 - [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
