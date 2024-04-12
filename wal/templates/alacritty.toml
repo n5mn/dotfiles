@@ -12,13 +12,16 @@ opacity = 0.7
 x = 15
 y = 15
 
+[cursor.style]
+shape = "Underline"
+blinking = "Always"
+
 [colors.primary]
 background = '{background}'
 foreground = '{foreground}'
 
-[colors.cursor]
-text = '{foreground}'
-cursor = '{cursor}'
+#[colors.cursor]
+#text = '{foreground}'
 
 [colors.normal]
 black   = '{color0}'
