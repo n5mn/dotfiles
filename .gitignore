@@ -1,3 +1,8 @@
+# Ignore everything
+nvim/*
+# Except this
+!nvim/init.lua
+
 **/*log
 **/*tmp
 **/*bkp

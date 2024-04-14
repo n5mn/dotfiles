@@ -16,10 +16,8 @@
 | Terminal Manager       | Alacritty              | [Website](https://alacritty.org/)             |
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
 | Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
-| Launcher               | Rofi or Wofi          | [GitHub](https://github.com/davatorium/rofi)  |
-| Shell                  | zsh, w/ OhMyZsh + P10K | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) [P10K](https://github.com/romkatv/powerlevel10k) |
-| Launcher               | Rofi                   | [GitHub](https://github.com/davatorium/rofi)  |
-| Shell                  | zsh, w/ OhMyZsh + P10K       | [OhMyZsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) [P10K](https://github.com/romkatv/powerlevel10k) |
+| Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
+| Shell                  | zsh, w/ P10K | [P10K](https://github.com/romkatv/powerlevel10k) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
 
 Probably gonna replace rofi cuz doesnt have wayland support.
@@ -42,6 +40,7 @@ dotfiles/
 ├── waybar/
 ├── wlogout/
 ├── wofi/
+├── zsh/
 ├── 1-install.sh
 ├── 2-symlink.sh
 ├── issue
@@ -66,7 +65,8 @@ cd dotfiles/
 
 ## 4. Inspiration & References
 
-~~Stolen from~~ Inspired by those repos
+~~Stolen from:~~ 
+Inspired by those repos:
 
 - [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
