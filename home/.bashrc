@@ -1,5 +1,4 @@
 
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
@@ -8,9 +7,9 @@ PS1='[\u@\h \W]\$ '
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
-alias ls='exa -al'
+alias ls='ls --color=auto'
+alias la='ls -lah'
 alias shutdown='systemctl poweroff'
-alias matrix='cmatrix'
 alias wifi='nmtui'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
@@ -29,5 +28,3 @@ alias wallp='exec ~/dotfiles/waybar/launch.sh'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 eval "$(starship init bash)"
 cat ~/.cache/wal/sequences
-echo ""
-pfetch

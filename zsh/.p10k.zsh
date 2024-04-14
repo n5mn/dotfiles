@@ -73,7 +73,7 @@ source ~/.cache/wal/colors.sh
     # =========================[ Line #2 ]=========================
     newline
   )
-
+  
   # OS icon stuff 
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$red
   typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=$'\uF303'

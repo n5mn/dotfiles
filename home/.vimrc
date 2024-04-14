@@ -91,11 +91,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
 
   Plug 'dylanaraps/wal.vim'
-
-  " Themes {{{ 
-" Plug 'yuttie/hydrangea-vim'
-" Plug 'cocopon/iceberg.vim'
-  " }}}
   Plug 'vim-airline/vim-airline'
 "  Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
@@ -108,7 +103,6 @@ call plug#begin('~/.vim/plugged')
 
 " Load the Themes {{{
 " Set the color scheme.
-" colorscheme iceberg
 colorscheme wal
 
 " Set the background tone.
@@ -119,7 +113,7 @@ set background=dark
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Set the backslash as the leader key.
-let mapleader = '\'
+let mapleader = '-'
 "
 " Press \\ to jump back to the last cursor position.
 "nnoremap <leader>\ ``
