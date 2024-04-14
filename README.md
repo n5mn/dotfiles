@@ -27,7 +27,6 @@ Probably gonna replace rofi cuz doesnt have wayland support.
 ```
 dotfiles/
 │
-├── .vim/
 ├── alacritty/
 ├── gtk/
 ├── home/
