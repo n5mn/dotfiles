@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
 
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
