@@ -71,7 +71,7 @@ random=$(($RANDOM % ${#transitions[@]}))
 swww img $newwall \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
-    --transition-type="center" \
+    --transition-type="${transitions[$random]}" \
     --transition-duration=0.7 \
     --transition-pos "$(hyprctl cursorpos)"
 
