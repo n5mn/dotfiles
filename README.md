@@ -12,10 +12,10 @@
 ## 1. Software
 | Category               | Software               | Link                                          |
 |------------------------|------------------------|-----------------------------------------------|
-| Window Manager         | Hyprland               | [Website](https://hyprland.org/)              |
-| Terminal Manager       | Alacritty              | [Website](https://alacritty.org/)             |
+| Tiling compositor      | Hyprland               | [Website](https://hyprland.org/)              |
+| Terminal Emulator      | Alacritty              | [Website](https://alacritty.org/)             |
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
-| Status Bar             | waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
+| Status Bar             | Waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
 | Shell                  | zsh, w/ P10K | [P10K](https://github.com/romkatv/powerlevel10k) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |

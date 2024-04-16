@@ -10,7 +10,7 @@ fi
 # History in cache directory: {{{
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/logs/.zsh_history
+HISTFILE=~/.cache/.zsh_history
 
 # }}}
 
@@ -38,6 +38,9 @@ setopt share_history
 autoload -U compinit 
 compinit
 
+if [ -z "$ZSH_COMPDUMP" ]; then
+  ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump"
+fi
 
 # }}}
 

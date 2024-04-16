@@ -5,13 +5,14 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias c='clear'
 alias la='ls -lah'
+alias l='ls -lh'
 alias dc='docker-compose'
-alias ownR='sudo chown -R $USER:$USER'
 alias untar="tar -cvzf $1"
 alias notes='cd ~/Notes/'
 alias rdunst='killall dunst && notify-send config reloaded'
 alias dot='cd ~/dotfiles'
 alias own='sudo chown $USER:$USER'
+alias ownR='sudo chown -R $USER:$USER'
 alias root='sudo -E zsh'
 
 # Utils
@@ -34,8 +35,3 @@ alias gc='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gcl='git clone'
-
-
-
-
-
