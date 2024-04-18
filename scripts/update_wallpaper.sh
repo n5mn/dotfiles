@@ -4,8 +4,7 @@ cache_file="$HOME/.cache/current_wallpaper"
 
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
-    touch $cache_file
-    echo "$HOME/dotfiles/wallpaper/1.jpg" > "$cache_file"
+    cp $HOME/dotfiles/wallpaper/1.jpg $cache_file
 fi
 
 current_wallpaper=$(cat "$cache_file")
@@ -28,7 +27,7 @@ case $1 in
         selected=$( find "$HOME/dotfiles/wallpapers" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -g | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/dotfiles/wallpapers/${rfile}\n"
-        done | rofi -dmenu -i -replace -config $HOME/dotfiles/rofi/config.rasi)
+        done | rofi -dmenu -i -replace -config $HOME/dotfiles/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
@@ -45,6 +44,8 @@ esac
 
 # Load current pywal color scheme
 source "$HOME/.cache/wal/colors.sh"
+
+cp $wallpaper $cache_file
 
 # get wallpaper image name
 newwall=$(echo $wallpaper | sed "s|$HOME/dotfiles/wallpapers/||g")
@@ -63,7 +64,6 @@ transitions=(
     "outer"
 )
 
-# i do this cuz some transitions r ugly asf
 random=$(($RANDOM % ${#transitions[@]}))
 
 # Set the new wallpaper
@@ -75,14 +75,7 @@ swww img $newwall \
     --transition-pos "$(hyprctl cursorpos)"
 
 
-
-# Write selected wallpaper into .cache files
-echo "$newwall" > "$cache_file"
-
-# ----------------------------------------------------- 
 # Send notification
-# ----------------------------------------------------- 
-
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else

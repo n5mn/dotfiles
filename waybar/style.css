@@ -1,13 +1,16 @@
+
+/* https://github.com/Alexays/Waybar/wiki */
 @import "../../.cache/wal/colors-waybar.css";
 
 * {
-    border: none;
-    border-radius: 0;
-    /* font-family: "FiraCode Nerd Font"; */
-    /* font-family: "Hack", "Noto Color Emoji", sans-serif; */
-    font-size: 16px;
-    /*font-weight: bold;*/
-    min-height: 0;
+
+  border: none;
+  border-radius: 0;
+  /* font-family: "FiraCode Nerd Font"; */
+  /* font-family: "Hack", "Noto Color Emoji", sans-serif; */
+  font-size: 15px;
+  /*font-weight: bold;*/
+  min-height: 0;
 }
 
 body,
@@ -18,131 +21,115 @@ body,
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 0.5s ease-in-out;
   border: 2px solid @color11;
-  border-radius: 17px;
+  border-radius: 15px;
 }
 
 #waybar:hover,
 .main-container:hover {
-  background-color: rgba(0, 0, 0, 0.9);  /* Slightly darker background on hover */
+  background-color: rgba(0, 0, 0, 0.9); /* Slightly darker background on hover */
 }
 
 window#waybar {
-    background: #000000;
-    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
-    color: #e5e9f0;
-    opacity: 0.8;
+  /* background: #000000; */
+  /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+  color: @color11;
+  opacity: 0.8;
 }
+
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-/*#workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
-}
-
-#workspaces button.focused {
-    background: #4c566a;
-    border-bottom: 3px solid #e5e9f0;
-}
-
-#workspaces button.urgent {
-    background-color: #bf616a;
-}*/
 #workspaces {
-    background: transparent;
-    font-weight: bold;
-    font-style: normal;
-    opacity: 0.8;
-    font-size: 16px;
-    color: @color7;
+  background: transparent;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 16px;
+  color: @color7;
 }
 
 #workspaces button {
-    color: @color7;
-    background: transparent;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.4;
+  color: @color7;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
 }
-  
+
 #workspaces button.active {
-    background-color: @color11;
-    opacity: 0.6;
-    margin: 8px;
-    border-radius: 5px;
+  background-color: @color11;
+  opacity: 0.6;
+  margin: 8px;
+  border-radius: 5px;
 }
-  
+
 #workspaces button:hover {
-    opacity: 0.8;
-    margin-right: 4px;
-    margin-left: 4px;
-    color: white;
+  opacity: 0.8;
+  margin-right: 4px;
+  margin-left: 4px;
+  color: white;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid #ffffff;
+  background: #64727d;
+  border-bottom: 3px solid #ffffff;
 }
 
-#bluetooth, 
-#bluetooth.on, 
-#bluetooth.connected, 
-#clock, 
-#battery, 
-#cpu, 
-#memory, 
-#temperature, 
-#backlight, 
-#network, 
-#pulseaudio, 
-#pulseaudio.muted, 
-#custom-media, 
-#tray, 
-#mode, 
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#pulseaudio.muted,
+#custom-media,
+#tray,
+#mode,
 #idle_inhibitor,
 #custom-notifications,
-#custom-pacman,
+#custom-arch,
 #custom-power,
 #custom-weather,
 #custom-wpreview {
-    color: @color11;
+  color: @color11;
+  font-size: 16px;
 }
-/* #network {
-    padding: 0px 5px;
-    margin-right: 5px;
-} */
-#custom-pacman {
-    margin-left: 18px;
-    font-size: 24px;
+
+#custom-arch {
+  margin-left: 18px;
+  font-size: 20px;
 }
 #custom-power {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 #clock {
-    font-weight: bold;
+  font-weight: bold;
 }
 @keyframes blink {
-    to {
-        /* background-color: #ffffff; */
-        color: #000000;
-    }
+  to {
+    /* background-color: #ffffff; */
+    color: #000000;
+  }
 }
 
 .custom-vlc {
-    background: #ffa000;
+  background: #ffa000;
 }
 #custom-wpreview {
-    background: transparent;
-    transition: all 0.3s ease-in-out;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
 }
 /* #tray {
     background-color: #2980b9;
 } */
-
+/* 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+} */
