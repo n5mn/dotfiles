@@ -50,9 +50,6 @@ cp $wallpaper $cache_file
 # get wallpaper image name
 newwall=$(echo $wallpaper | sed "s|$HOME/dotfiles/wallpapers/||g")
 
-$HOME/dotfiles/waybar/launch.sh
-
-
 transitions=(
     "simple"
     "left"
@@ -67,12 +64,14 @@ transitions=(
 random=$(($RANDOM % ${#transitions[@]}))
 
 # Set the new wallpaper
-swww img $newwall \
+swww img $wallpaper \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
     --transition-type="${transitions[$random]}" \
-    --transition-duration=0.7 \
+    --transition-duration=0.8 \
     --transition-pos "$(hyprctl cursorpos)"
+
+$HOME/dotfiles/waybar/launch.sh
 
 
 # Send notification
