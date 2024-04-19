@@ -16,3 +16,4 @@ nvim/*
 dunst/ 
 .vim/.netrwhist
 scripts/colors.json
+waybar/modules/.env
