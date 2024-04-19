@@ -88,6 +88,7 @@
         "restart-interval": 300,
         "return-type": "json",
         "on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m" // TODO: add $(location_id)
+
     },
     "custom/wpreview": {
         "format": " ",
