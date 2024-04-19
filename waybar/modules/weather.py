@@ -3,7 +3,14 @@
 import subprocess
 from pyquery import PyQuery  
 import json
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+ 
+ 
 # weather icons
 weather_icons = {
     "sunnyDay": "",
@@ -21,15 +28,13 @@ weather_icons = {
 # get location_id
 # to get your own location_id, go to https://weather.com & search your location.
 # once you choose your location, you can see the location_id in the URL(64 chars long hex string)
-# like this: https://weather.com/en-IN/weather/today/l/4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d
-location_id = "4720b146f16f8e1d6c4a95143cb03e17de0d6aba4cfa38f84a7f0df0ef2da16d"  # TODO: how do i import this to the config file
+# like this: https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79
+# location_id = "cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79"  # TODO: import this to the config file
 
-# priv_env_cmd = 'cat $PRIV_ENV_FILE | grep weather_location | cut -d "=" -f 2'
-# location_id = subprocess.run(
-#     priv_env_cmd, shell=True, capture_output=True).stdout.decode('utf8').strip()
+location_id = os.environ.get("WEATHER_LOCATION") # if you want to keep it private
 
 # get html page
-url = "https://weather.com/en-IN/weather/today/l/" + location_id
+url = "https://weather.com/weather/today/l/" + location_id + "?unit=m"
 html_data = PyQuery(url=url)
 
 # current temperature
