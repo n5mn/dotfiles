@@ -64,7 +64,7 @@ cd dotfiles/
 
 ## 4. Inspiration & References
 
-~~Stolen from:~~ 
+~~Stolen from:~~ \
 Inspired by those repos:
 
 - [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
