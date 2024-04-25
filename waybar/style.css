@@ -1,9 +1,7 @@
-
 /* https://github.com/Alexays/Waybar/wiki */
 @import "../../.cache/wal/colors-waybar.css";
 
 * {
-
   border: none;
   border-radius: 0;
   /* font-family: "FiraCode Nerd Font"; */
@@ -26,7 +24,12 @@ body,
 
 #waybar:hover,
 .main-container:hover {
-  background-color: rgba(0, 0, 0, 0.9); /* Slightly darker background on hover */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); /* Slightly darker background on hover */
 }
 
 window#waybar {
@@ -36,14 +39,12 @@ window#waybar {
   opacity: 0.8;
 }
 
-
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces {
-  background: transparent;
+  /* background: transparent; */
   font-weight: bold;
   font-style: normal;
   opacity: 0.8;
-  font-size: 16px;
   color: @color7;
 }
 
@@ -73,9 +74,6 @@ window#waybar {
   border-bottom: 3px solid #ffffff;
 }
 
-#bluetooth,
-#bluetooth.on,
-#bluetooth.connected,
 #clock,
 #battery,
 #cpu,
@@ -93,43 +91,48 @@ window#waybar {
 #custom-arch,
 #custom-power,
 #custom-weather,
-#custom-wpreview {
+#custom-wpreview,
+#custom-wallpaper {
   color: @color11;
   font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#pulseaudio.muted:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#custom-notifications:hover,
+#custom-arch:hover,
+#custom-power:hover,
+#custom-weather:hover,
+#custom-wpreview:hover,
+#custom-wallpaper:hover {
+  color: @color14;
+}
+
+#custom-wallpaper {
+  font-size: 20px;
 }
 
 #custom-arch {
   margin-left: 18px;
   font-size: 20px;
 }
+
 #custom-power {
   margin-right: 15px;
 }
+
 #clock {
   font-weight: bold;
 }
-@keyframes blink {
-  to {
-    /* background-color: #ffffff; */
-    color: #000000;
-  }
-}
-
-.custom-vlc {
-  background: #ffa000;
-}
-#custom-wpreview {
-  background: transparent;
-  transition: all 0.3s ease-in-out;
-}
-/* #tray {
-    background-color: #2980b9;
-} */
-/* 
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
-} */
