@@ -31,6 +31,7 @@ weather_icons = {
 # like this: https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79
 # location_id = "cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79"  # TODO: import this to the config file
 
+
 location_id = os.environ.get("WEATHER_LOCATION") # if you want to keep it private
 
 # get html page
