@@ -3,7 +3,6 @@
 source ./install/installer.sh
 source ./install/yay.sh
 source ./install/pacman.sh
-source ./install/zsh.sh
 
 # Check if yay is installed
 # ----------------------------------------------------------------------------------------- #
@@ -51,4 +50,4 @@ sudo systemctl enable --now bluetooth
 sudo cp ./issue /etc/issue
 wal -i ./wallpapers/default.jpg
 
-echo "Finished! Do a sudo reboot."
+echo "Done! now do ./2-symlink.sh for the symbolics links!"
