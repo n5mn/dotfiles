@@ -19,6 +19,9 @@ alias dot='cd ~/dotfiles'
 alias own='sudo chown $USER:$USER'
 alias ownR='sudo chown -R $USER:$USER'
 alias root='sudo -E zsh'
+alias code='vscodium'
+alias ivm='vim'
+alias vmi='vim'
 
 # Utils
 alias gtc='~/Scripts/utils/gtc.sh'
