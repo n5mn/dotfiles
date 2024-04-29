@@ -41,7 +41,7 @@ source ~/.cache/wal/colors.sh
 
   # Prompt colors.
   local grey='243'
-  local red=$color2
+  local red='1'
   local yellow='3'
   local blue='4'
   local magenta='5'
@@ -152,7 +152,7 @@ source ~/.cache/wal/colors.sh
   # Don't show remote branch, current tag or stashes.
   typeset -g POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind)
   # Don't show the branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=":"
   # When in detached HEAD state, show @commit where branch normally goes.
   typeset -g POWERLEVEL9K_VCS_COMMIT_ICON='@'
   # Don't show staged, unstaged, untracked indicators.

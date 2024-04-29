@@ -2,9 +2,10 @@
 # Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+ # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 # }}}
 
 # History in cache directory: {{{
@@ -19,6 +20,7 @@ source ~/dotfiles/zsh/aliases
 # }}}
 
 # Options {{{
+
 unsetopt menu_complete
 unsetopt flowcontrol
 
@@ -35,12 +37,18 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
-autoload -U compinit 
+autoload -Uz compinit 
 compinit
 
-if [ -z "$ZSH_COMPDUMP" ]; then
-  ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump"
+# Set ZSH_COMPDUMP if not already set
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/"
+_comp_files=($ZSH_COMPDUMP/zcompdump(Nm-20))
+if (( $#_comp_files )); then
+    autoload -Uz compinit -C -d "$ZSH_COMPDUMP/.zcompdump"
+else
+    autoload -Uz compinit -d "$ZSH_COMPDUMP/.zcompdump"
 fi
+
 
 # }}}
 
@@ -55,8 +63,8 @@ zstyle ':completion:*' menu select
 
 # Binds {{{
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 bindkey '^[[1;5C' forward-word
@@ -71,6 +79,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # To customize prompt, run `p10kconfigure` or edit ~/dotfiles/zsh/.p10k.zsh. {{{
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+#[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
+
+eval "$(starship init zsh)"
+cat ~/.cache/wal/sequences
 # }}}

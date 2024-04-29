@@ -17,10 +17,8 @@
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
 | Status Bar             | Waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
-| Shell                  | zsh, w/ P10K | [P10K](https://github.com/romkatv/powerlevel10k) |
+| Shell                  | zsh, w/ Starship| [Starship](https://starship.rs/) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
-
-Probably gonna replace rofi cuz doesnt have wayland support.
 
 ## 2. Directory Structure
 
@@ -34,6 +32,7 @@ dotfiles/
 ├── install/
 ├── rofi/
 ├── scripts/
+├── starship/
 ├── wal/
 ├── wallpapers/
 ├── waybar/
@@ -89,7 +88,6 @@ Inspired by those repos:
 - [abaan404/dotfiles](https://github.com/abaan404/dotfiles)
 - [hyprland.org Example Configurations](https://wiki.hyprland.org/Configuring/Example-configurations/)
 - [eww by elkowar Documentation](https://elkowar.github.io/eww/)
-
 - [My New Desktop - Hyprland by Chris Titus](https://christitus.com/my-new-desktop-hyprland/)
 - [GPU Passthrough Guide](https://www.youtube.com/watch?v=EujO_5KvCCo)
 - [Random YouTube Video 1](https://www.youtube.com/watch?v=_nyStxAI75s)
