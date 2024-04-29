@@ -15,9 +15,9 @@ case $1 in
     "init")
         sleep 1
         if [ -f $cache_file ]; then
-            wal -q -i $current_wallpaper
+            python3.11 /usr/bin/wal -q -i $current_wallpaper
         else
-            wal -q -i $HOME/dotfiles/wallpapers/
+            python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/
         fi
     ;;
 
@@ -32,12 +32,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i $HOME/dotfiles/wallpapers/$selected
+        python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/$selected
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i $HOME/dotfiles/wallpapers/
+        python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/
     ;;
 
 esac
@@ -68,7 +68,7 @@ swww img $wallpaper \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
     --transition-type="${transitions[$random]}" \
-    --transition-duration=0.8 \
+    --transition-duration=0.5 \
     --transition-pos "$(hyprctl cursorpos)"
 
 $HOME/dotfiles/waybar/launch.sh
