@@ -53,9 +53,15 @@ fi
 # }}}
 
 # Theme/plugins {{{
-source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+source ~/dotfiles/zsh/funtions.zsh
+
+add_plugin "zsh-users/zsh-syntax-highlighting"
+add_plugin "zsh-users/zsh-autosuggestions"
+
+#source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zstyle ':completion:*' menu select
 
