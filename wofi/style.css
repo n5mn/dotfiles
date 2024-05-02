@@ -9,7 +9,7 @@
     border: 2px solid;
     border-color: --wofi-color13;
     border-radius: 10px;
-	background-color: rgba(--wofi-rgb-color0,1);
+	background-color: rgba(--wofi-rgb-color0,0.9);
 	color: --wofi-color13;
     transition: 1s ease-in-out;
 }
