@@ -17,7 +17,7 @@
 | File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
 | Status Bar             | Waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
 | Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
-| Shell                  | zsh, w/ Starship| [Starship](https://starship.rs/) |
+| Shell                  | zsh, w/ Starship| [Website](https://starship.rs/) |
 | Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
 
 ## 2. Directory Structure
