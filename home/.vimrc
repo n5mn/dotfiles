@@ -112,8 +112,8 @@ set background=dark
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
-" Set the backslash as the leader key.
-let mapleader = '-'
+" Set the space as the leader key.
+let mapleader = ' '
 "
 " Press \\ to jump back to the last cursor position.
 "nnoremap <leader>\ ``

@@ -14,7 +14,6 @@ alias l='ls -lh'
 alias dc='docker-compose'
 alias untar="tar -cvzf $1"
 alias notes='cd ~/Notes/'
-alias rdunst='killall dunst && notify-send config reloaded'
 alias dot='cd ~/dotfiles'
 alias own='sudo chown $USER:$USER'
 alias ownR='sudo chown -R $USER:$USER'
@@ -22,6 +21,8 @@ alias root='sudo -E zsh'
 alias code='vscodium'
 alias ivm='vim'
 alias vmi='vim'
+alias :q='exit'
+alias SS='sudo systemctl'
 
 # Utils
 alias gtc='~/Scripts/utils/gtc.sh'
@@ -30,7 +31,7 @@ source ~/r2
 alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
 
 # Git
-alias g='git'
+alias g='lazygit'
 alias ga='git add'
 alias gp='git push'
 alias gpl='git pull'

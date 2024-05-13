@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cache_file="$HOME/.cache/current_wallpaper"
 
@@ -15,9 +15,9 @@ case $1 in
     "init")
         sleep 1
         if [ -f $cache_file ]; then
-            python3.11 /usr/bin/wal -q -i $current_wallpaper
+            wal -q -i $current_wallpaper
         else
-            python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/
+            wal -q -i $HOME/dotfiles/wallpapers/
         fi
     ;;
 
@@ -32,12 +32,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/$selected
+        wal -q -i $HOME/dotfiles/wallpapers/$selected
     ;;
 
     # Randomly select wallpaper 
     *)
-        python3.11 /usr/bin/wal -q -i $HOME/dotfiles/wallpapers/
+        wal -q -i $HOME/dotfiles/wallpapers/
     ;;
 
 esac
