@@ -1,7 +1,8 @@
-{
+{   
+    "margin":"2 2 2 2",
     "layer": "top",
     "position": "top",
-    "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], // TODO: fix tray
+    "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
     "modules-center": ["clock","custom/weather","custom/notifications"],
     "modules-right": ["custom/media", "pulseaudio", "custom/power"],
     "spacing": 10,
@@ -23,11 +24,12 @@
         "separate-outputs": true
     },
     "custom/arch": {
-        "format": ""
+        "format": "",
+        "tooltip": false
     },
     "custom/media": {
         "exec": "/usr/bin/python3 ~/dotfiles/waybar/modules/mediaplayer.py --player spotify",
-        "format": "{}", //  
+        "format": "{}",
         "max-length": 55,
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
@@ -91,19 +93,18 @@
         "on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m" // TODO: add $(location_id)
 
     },
-    // "custom/wpreview": {
-    //     "format": " ",
-    //     "on-click": "/usr/bin/python3 ~/dotfiles/scripts/workspaces.py",
-    //     "tooltip": false
-    // },
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/dotfiles/scripts/update_wallpaper.sh select"
+        "on-click": "~/dotfiles/scripts/update_wallpaper.sh",
+        "on-click-right": "~/dotfiles/scripts/update_wallpaper.sh select",
+        "tooltip": false
+
     },
     "custom/notifications": {
         "format": " ",
         "on-click": "dunstctl history-pop",
-        "on-click-right": "dunstctl set-paused toggle"
+        "on-click-right": "dunstctl set-paused toggle",
+        "tooltip": false
     },
     "tray": {
         "spacing": 10
