@@ -1,13 +1,18 @@
-#!/bin/bash
+#!/bin/sh
+
+# . = source
+# avoiding "bashims" 
+# so now is POSIX-compliant
+
 # ----------------------------------------------------------------------------------------- #
-source ./install/installer.sh
-source ./install/yay.sh
-source ./install/pacman.sh
+. ./install/installer.sh
+. ./install/yay.sh
+. ./install/pacman.sh
 
 # Check if yay is installed
 # ----------------------------------------------------------------------------------------- #
 
-if [[ -x $(command -v yay) ]]; then
+if [ -x "`command -v yay`" ]; then
     echo "yay is installed. You can proceed with the installation"
 else
     echo "yay is not installed. Will be installed now!"
@@ -19,23 +24,26 @@ else
     echo ""
 fi
 
-nvidiaDrivers
-
 echo "-> Installing main packages"
 
 # ----------------------------------------------------------------------------------------- #
 # Install packages from official repositories and AUR
-installPackagesPacman "${packagesPacman[@]}";
-installPackagesYay "${packagesYay[@]}";
+install_packages_pacman $packages_pacman;
+install_packages_yay $packages_yay;
+
+nvidia_drivers
 
 echo "Install optional packages? [y/N]"
-read -r yn
-if [[ $yn =~ ^[yY]$ ]]; then
-    installPackagesPacman "${optionalPackagesPacman[@]}"
-    installPackagesYay "${optionalPackagesYay[@]}"
-else 
-    echo "Skipping..."
-fi
+read yn
+case
+    [yY])
+        install_packages_pacman $optional_packages_pacman
+        install_packages_yay $optional_packages_yay
+        ;;
+    *)
+        echo "Skipping..."
+        ;;
+esac
 
 # Install pywal
 if [ -f /usr/bin/wal ]; then
@@ -44,10 +52,9 @@ else
     yay --noconfirm -S pywal
 fi
 
-sudo systemctl enable --now bluetooth
-
 # Install login prompt and init pywal
-sudo cp ./issue /etc/issue
-wal -i ./wallpapers/default.jpg
+# sudo cp ./issue /etc/issue
+
+wal -q -i ./wallpapers/
 
 echo "Done! now do ./2-symlink.sh for the symbolics links!"
