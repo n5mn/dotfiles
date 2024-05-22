@@ -9,8 +9,8 @@
 # }}}
 
 # History in cache directory: {{{
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/.zsh_history
 
 # }}}
@@ -30,12 +30,13 @@ setopt append_history
 setopt auto_menu
 setopt complete_in_word
 setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 autoload -Uz compinit 
 compinit
@@ -54,10 +55,12 @@ fi
 
 # Theme/plugins {{{
 
-source ~/dotfiles/zsh/funtions.zsh
+source ~/dotfiles/zsh/functions.zsh
 
 add_plugin "zsh-users/zsh-syntax-highlighting"
 add_plugin "zsh-users/zsh-autosuggestions"
+add_plugin "Aloxaf/fzf-tab"
+add_plugin "zsh-users/zsh-completions"
 
 #source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
