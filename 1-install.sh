@@ -35,7 +35,7 @@ nvidia_drivers
 
 echo "Install optional packages? [y/N]"
 read yn
-case
+case $yn in
     [yY])
         install_packages_pacman $optional_packages_pacman
         install_packages_yay $optional_packages_yay
