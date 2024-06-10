@@ -71,6 +71,9 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
+  { 'AlphaTechnolog/pywal.nvim' },
+  { 'xiyaowong/transparent.nvim' },
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -79,7 +82,7 @@ require('lazy').setup({
       signs = {
         add = { text = '+' },
         change = { text = '~' },
-        delete = { text = '_' },
+        delete = { text = '-' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
@@ -145,16 +148,6 @@ require('lazy').setup({
       end,
     },
   },
-
-  {
-    'catppuccin/nvim',
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require('catppuccin').load()
-    end,
-  },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -162,7 +155,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'catppuccin',
+        theme = 'pywal-nvim',
         component_separators = '|',
         section_separators = '',
       },

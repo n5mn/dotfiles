@@ -48,7 +48,7 @@ install_packages_yay() {
 nvidia_drivers() {
     echo "Install nvidia drivers? [y/N] "
     read yn
-    case
+    case $yn in
         [yY])
             sudo pacman -S --needed --noconfirm nvidia nvidia-utils
             ;;
