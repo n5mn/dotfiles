@@ -7,8 +7,6 @@ if [ ! -f $cache_file ] ;then
     cp $HOME/dotfiles/wallpaper/1.jpg $cache_file
 fi
 
-current_wallpaper=$(cat "$cache_file")
-
 case $1 in
 
     # Load wallpaper from .cache of last session 
@@ -80,8 +78,8 @@ if [ "$1" == "init" ] ;then
 else
     sleep 0.5
     killall dunst
-    sleep 1
-    notify-send Wallpaper Updated!
+    sleep 0.8
+    dunstify -i $cache_file "Wallpaper Updated!"
 fi
 
 echo "DONE!"
