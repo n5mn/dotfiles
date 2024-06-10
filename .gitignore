@@ -18,3 +18,4 @@ dunst/
 scripts/colors.json
 waybar/modules/.env
 zsh/plugins/*
+gtk/gtk-3.0/bookmarks
