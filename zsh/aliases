@@ -6,27 +6,30 @@ LS_COLORS='no=00:fi=00:di=34:ow=34;40:ln=35:pi=30;44:so=35;44:do=35;44:bd=33;44:
 alias rm="rm -vI" # I don't trust myself anymore
 alias mv="mv -iv"
 alias cp="cp -iv"
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias c='clear'
 alias la='ls -lah'
 alias l='ls -lh'
 alias dc='docker-compose'
-alias untar="tar -cvzf $1"
+alias untar="tar -cvzf"
 alias notes='cd ~/Notes/'
 alias dot='cd ~/dotfiles'
 alias own='sudo chown $USER:$USER'
 alias ownR='sudo chown -R $USER:$USER'
 alias root='sudo -E zsh'
+#alias code='vscodium --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias code='vscodium'
 alias ivm='vim'
 alias vmi='vim'
 alias :q='exit'
 alias SS='sudo systemctl'
+alias neofetch='fastfetch'
+alias kubectl='minikube kubectl --' 
 
 # Utils
 alias gtc='~/Scripts/utils/gtc.sh'
-alias fixP='sudo ~/Scripts/utils/fixPermissions.sh'
+alias fixP='sudo ~/Scripts/utils/fix_permissions.sh'
 source ~/r2
 alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
 
