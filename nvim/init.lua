@@ -226,7 +226,7 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.wo.number = true
-vim.o.mouse = 'a'
+vim.o.mouse = ''
 
 vim.o.breakindent = true
 vim.o.undofile = true
@@ -508,10 +508,10 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
+  clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -601,6 +601,7 @@ cmp.setup {
     { name = 'path' },
   },
 }
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
