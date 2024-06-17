@@ -10,15 +10,15 @@
 4. [Inspiration & References](#4-inspiration--references)
 
 ## 1. Software
-| Category               | Software               | Link                                          |
-|------------------------|------------------------|-----------------------------------------------|
-| Tiling compositor      | Hyprland               | [Website](https://hyprland.org/)              |
-| Terminal Emulator      | Alacritty              | [Website](https://alacritty.org/)             |
-| File Manager           | Thunar                 | [GitHub](https://github.com/xfce-mirror/thunar) |
-| Status Bar             | Waybar                 | [GitHub](https://github.com/Alexays/Waybar)   |
-| Launcher               | Rofi or Wofi          | [Rofi](https://github.com/davatorium/rofi) [Wofi](https://hg.sr.ht/~scoopta/wofi) |
-| Shell                  | zsh, w/ Starship| [Website](https://starship.rs/) |
-| Session Manager        | Wlogout                | [GitHub](https://github.com/ArtsyMacaw/wlogout) |
+| Category               | Software               | Link                                             |
+|------------------------|------------------------|--------------------------------------------------|
+| Tiling compositor      | Hyprland               | [Website](https://hyprland.org/)                 |
+| Terminal Emulator      | Alacritty              | [Website](https://alacritty.org/)                |
+| File Manager           | Thunar                 | [Repo](https://github.com/xfce-mirror/thunar)    |
+| Status Bar             | Waybar                 | [Repo](https://github.com/Alexays/Waybar)        |
+| Launcher               | Rofi                   | [Repo](https://github.com/davatorium/rofi)       |
+| Shell                  | zsh, w/ Starship       | [Website](https://starship.rs/)                  | 
+| Session Manager        | Wlogout                | [Repo](https://github.com/ArtsyMacaw/wlogout)    |
 
 ## 2. Directory Structure
 
