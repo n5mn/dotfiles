@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
     "modules-center": ["clock","custom/weather","custom/notifications"],
-    "modules-right": ["custom/media", "pulseaudio", "custom/power"],
+    "modules-right": ["custom/media", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -65,6 +65,36 @@
         "format-alt": "{:%A, %d %B %Y - %R}",
         "tooltip-position": "right"
     },
+		"battery": {
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Aw          esome 5 Free 11'>{icon} </span>  {capacity}%",
+        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesom          e 5 Free 11'>{icon} </span>  Charged",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip": false,
+        "on-click": "2"
+    },
+		"bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " ",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "  disconnected",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+
     "pulseaudio": {
         "scroll-step": 0.5,
         "format":"{format_source} {icon} {volume}%",

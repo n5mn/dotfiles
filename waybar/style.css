@@ -81,6 +81,7 @@ window#waybar {
 #temperature,
 #backlight,
 #network,
+#bluetooth,
 #pulseaudio,
 #pulseaudio.muted,
 #custom-media,
