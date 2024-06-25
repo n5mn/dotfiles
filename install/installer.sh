@@ -23,7 +23,7 @@ install_packages_pacman() {
 }
 
 # Check if a package is installed using yay
-is_installed_yay() {
+is_installed_aur() {
     package="$1"
     check="`yay -Q "$package"`"
     #[ -n "${check}" ] && echo 0 || echo 1
@@ -35,9 +35,9 @@ is_installed_yay() {
 }
 
 # Install packages using yay if not installed
-install_packages_yay() {
+install_packages_aur() {
     for pkg; do
-        if is_installed_yay "$pkg"; then # TODO: fix this syntax make it compatible with POSIX-compliant shell
+        if is_installed_aur "$pkg"; then # TODO: fix this syntax make it compatible with POSIX-compliant shell
             echo "$pkg is already installed."
             continue
         fi

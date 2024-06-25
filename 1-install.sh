@@ -6,8 +6,7 @@
 
 # ----------------------------------------------------------------------------------------- #
 . ./install/installer.sh
-. ./install/yay.sh
-. ./install/pacman.sh
+. ./install/packages.sh
 
 # Check if yay is installed
 # ----------------------------------------------------------------------------------------- #
@@ -29,7 +28,7 @@ echo "-> Installing main packages"
 # ----------------------------------------------------------------------------------------- #
 # Install packages from official repositories and AUR
 install_packages_pacman $packages_pacman;
-install_packages_yay $packages_yay;
+install_packages_aur $packages_aur;
 
 nvidia_drivers
 
@@ -38,7 +37,7 @@ read yn
 case $yn in
     [yY])
         install_packages_pacman $optional_packages_pacman
-        install_packages_yay $optional_packages_yay
+        install_packages_aur $optional_packages_aur
         ;;
     *)
         echo "Skipping..."
@@ -55,6 +54,6 @@ fi
 # Install login prompt and init pywal
 # sudo cp ./issue /etc/issue
 
-wal -q -i ./wallpapers/
+wal -q -i $HOME/dotfiles/wallpapers/
 
 echo "Done! now do ./2-symlink.sh for the symbolics links!"
