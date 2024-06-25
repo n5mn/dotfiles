@@ -1,7 +1,9 @@
 # Ignore everything
 nvim/*
+gtk/.icons/*
 # Except this
 !nvim/init.lua
+!gtk/.icons/default
 
 **/*log
 **/*tmp
