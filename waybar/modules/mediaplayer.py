@@ -7,7 +7,6 @@ import argparse
 import logging
 import sys
 import signal
-import gi
 import json
 import os
 from typing import List
