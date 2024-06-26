@@ -29,10 +29,10 @@ weather_icons = {
 # to get your own location_id, go to https://weather.com & search your location.
 # once you choose your location, you can see the location_id in the URL(64 chars long hex string)
 # like this: https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79
-# location_id = "cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79"  # TODO: import this to the config file
+# location_id = "cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79"
 
 
-location_id = os.environ.get("WEATHER_LOCATION") # if you want to keep it private
+location_id = os.environ.get("WEATHER_LOCATION") # if you want to keep it private. Edit: its not private, its shows in another file.
 
 # get html page
 url = "https://weather.com/weather/today/l/" + location_id + "?unit=m"
