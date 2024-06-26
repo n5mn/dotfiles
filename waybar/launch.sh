@@ -1,3 +1,3 @@
 #!/bin/sh
 killall waybar
-waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
+waybar -c ~/.config/waybar/config.jsonc -s ~/.config/waybar/style.css
