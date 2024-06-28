@@ -1,6 +1,6 @@
 {   
     "margin":"2 2 2 2",
-    "layer": "overlay",
+    "layer": "top",
     "position": "top",
     "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
     "modules-center": ["clock","custom/weather","custom/notifications"],
