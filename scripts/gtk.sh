@@ -6,7 +6,7 @@ SCHEMA="gsettings set $gnome_schema"
 THEME="Space-Transparent"
 ICONS="Tela-grey"
 FONT="Inter"
-CURSOR="Bibata-Modern-Classic"
+CURSOR="Bibata-Original-Classic"
 
 gtk_settings() {
     ${SCHEMA} gtk-theme "$THEME"
