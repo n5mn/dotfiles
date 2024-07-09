@@ -5,7 +5,7 @@
 
 . ./install/installer.sh
 
-wal -i $HOME/dotfiles/wallpapers/
+wal -q -i $HOME/dotfiles/wallpapers/
 echo "Pywal templates initiated!"
 
 echo "-> Installing general dotfiles"
@@ -13,6 +13,9 @@ echo ""
 echo "This script creates symlinks between $HOME/dotfiles and $HOME/.config directories."
 echo "-> Checking if $HOME/.config exists"
 
+if [ ! -d $HOME/.config/ ]; then
+	mkdir -p $HOME/.config
+fi
 
 symlink alacritty.toml $HOME/.cache/wal/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 symlink dunstrc $HOME/.cache/wal/dunstrc $HOME/.config/dunst/dunstrc
