@@ -7,7 +7,7 @@ bluetooth="blueman bluez bluez-utils"
 
 nvidia_drivers="nvidia nvidia-utils"
 
-optional_packages_pacman="firefox obs-studio spotify-launcher fastfetch gimp htop steam"
+optional_packages_pacman="firefox obs-studio spotify-launcher fastfetch gimp htop steam nvim"
 
 # for the gtk theme I use Space-Transparent. git clone --branch=transparent-sidebar https://github.com/EliverLara/Space Space-Transparent
 
