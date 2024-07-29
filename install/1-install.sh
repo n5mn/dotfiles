@@ -5,8 +5,8 @@
 # so now is POSIX-compliant
 
 # ----------------------------------------------------------------------------------------- #
-. ./install/installer.sh
-. ./install/packages.sh
+. ./installer.sh
+. ./packages.sh
 
 # Check if yay is installed
 # ----------------------------------------------------------------------------------------- #

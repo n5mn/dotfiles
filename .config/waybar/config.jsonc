@@ -8,13 +8,13 @@
     "reload_style_on_change": true,
     "spacing": 10,
     "hyprland/workspaces": {
-        "active-only":false,
+        "active-only": false,
         "all-outputs": false,
         "format": "{}",
         "on-click": "activate",
         "persistent_workspaces":{
             "*": 5
-        }
+				}
     },
     "hyprland/window": {
         "format": " {}",
