@@ -25,7 +25,7 @@ case $1 in
         selected=$( find "$HOME/dotfiles/wallpapers" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -g | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/dotfiles/wallpapers/${rfile}\n"
-        done | rofi -dmenu -i -replace -config $HOME/dotfiles/rofi/config-wallpaper.rasi)
+        done | rofi -dmenu -i -replace -config $HOME/dotfiles/.config/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
@@ -69,7 +69,7 @@ swww img $wallpaper \
     --transition-duration=0.5 \
     --transition-pos "$(hyprctl cursorpos)"
 
-$HOME/dotfiles/waybar/launch.sh
+$HOME/dotfiles/.config/waybar/launch.sh
 
 
 # Send notification
