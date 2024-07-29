@@ -10,76 +10,116 @@
 4. [Inspiration & References](#4-inspiration--references)
 
 ## 1. Software
-| Category               | Software               | Link                                             |
-|------------------------|------------------------|--------------------------------------------------|
-| Tiling compositor      | Hyprland               | [Website](https://hyprland.org/)                 |
-| Terminal Emulator      | Alacritty              | [Website](https://alacritty.org/)                |
-| File Manager           | Thunar                 | [Repo](https://github.com/xfce-mirror/thunar)    |
-| Status Bar             | Waybar                 | [Repo](https://github.com/Alexays/Waybar)        |
-| Launcher               | Rofi                   | [Repo](https://github.com/davatorium/rofi)       |
-| Shell                  | zsh, w/ Starship       | [Website](https://starship.rs/)                  | 
-| Session Manager        | Wlogout                | [Repo](https://github.com/ArtsyMacaw/wlogout)    |
+| Category           | Software               | Link                                             |
+|--------------------|------------------------|--------------------------------------------------|
+| Tiling compositor  | Hyprland               | [Website](https://hyprland.org/)                 |
+| Terminal Emulator  | Alacritty              | [Website](https://alacritty.org/)                |
+| File Manager       | Thunar                 | [Repo](https://github.com/xfce-mirror/thunar)    |
+| Status Bar         | Waybar                 | [Repo](https://github.com/Alexays/Waybar)        |
+| Launcher           | Rofi                   | [Repo](https://github.com/davatorium/rofi)       |
+| Shell              | zsh, w/ Starship       | [Website](https://starship.rs/)                  |
+| Logout Menu        | Wlogout                | [Repo](https://github.com/ArtsyMacaw/wlogout)    |
 
 ## 2. Directory Structure
 
 ```
 dotfiles/
-│
-├── alacritty/
-├── gtk/
-├── home/
-├── hypr/
+├── .bashrc
+├── .config/
+│   ├── fastfetch
+│   ├── gtk-3.0
+│   ├── hypr
+│   ├── nvim
+│   ├── rofi
+│   ├── starship.toml
+│   ├── wal
+│   ├── waybar
+│   ├── wlogout
+│   ├── wofi
+│   └── zsh
+├── .gitignore
+├── .gtkrc-2.0
+├── .icons/
+│   └── default
 ├── install/
-├── rofi/
+│   ├── 1-install.sh
+│   ├── 2-symlink.sh
+│   ├── installer.sh
+│   └── packages.sh
+├── README.md
 ├── scripts/
-├── starship/
-├── wal/
+│   ├── cliphist.sh
+│   ├── gtk.sh
+│   ├── screenshot_all.sh
+│   ├── screenshot_area.sh
+│   └── update_wallpaper.sh
+├── .stow-local-ignore
+├── .vimrc
 ├── wallpapers/
-├── waybar/
-├── wlogout/
-├── wofi/
-├── zsh/
-├── 1-install.sh
-├── 2-symlink.sh
-├── issue
-└── README.md
+├── .Xresources
+└── .zshrc
 ```
 
 ## 3. Installation
-
-1. **Clone the Repository**
+ 
+**Clone the Repository**
 
 ```bash
 git clone https://github.com/n5mn/dotfiles
 ```
 
-2. **Install Packages & Symlinks**
+**Install Packages & Symlinks**
 
 ```bash
-cd dotfiles/
-./1-install.sh
-./2-symlink.sh
+cd dotfiles/install
+./1-install.sh 
+stow -v . 
+# Or you can use the script ./2-symlink.sh 
+# But stow is recommended.
 ```
+<details>
+<summary>
+Manual Installation
+</summary>
+Install packages.
+
+```bash
+pacman-contrib alacritty starship vim rofi dunst lxappearance-gtk3 breeze breeze-gtk tumbler cliphist ttf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd python-pip pavucontrol xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-hyprland networkmanager network-manager-applet networkmanager-openvpn ufw hyprland waybar jq polkit cpio inter-font
+```
+
+For bluetooth
+```bash
+blueman bluez bluez-utils
+```
+
+From the AUR
+```bash
+bibata-cursor-theme swww wlogout tela-icon-theme
+```
+
+Create the symlinks with stow.
+```bash
+stow -v .
+ln -s $HOME/.cache/wal/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+ln -s $HOME/.cache/wal/dunstrc $HOME/.config/dunst/dunstrc
+```
+</details>
 
 ## 4. Inspiration & References
 
 ~~Stolen from:~~ \
 Inspired by those repos:
 
-- [rustybucketz30/dotfiles](https://github.com/rustybucketz30/dotfiles)
 - [notwidow/hyprland](https://github.com/notwidow/hyprland)
-- [end-4/dots-hyprland (summer-gruv)](https://github.com/end-4/dots-hyprland/tree/summer-gruv)
+- [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles)
 - [taylor85345/cyber-hyprland-theme](https://github.com/taylor85345/cyber-hyprland-theme)
 - [hyper-dot/Arch-Hyprland](https://github.com/hyper-dot/Arch-Hyprland)
-- [archcraft-os/archcraft-hyprland](https://github.com/archcraft-os/archcraft-hyprland)
 - [nawfalmrouyan/hyprland](https://github.com/nawfalmrouyan/hyprland)
 - [coffebar/dotfiles](https://github.com/coffebar/dotfiles)
 - [stephan-raabe/dotfiles (GitLab)](https://gitlab.com/stephan-raabe/dotfiles)
 - [linkfrg/dotfiles](https://github.com/linkfrg/dotfiles)
 - [eneshecan/dotfiles](https://github.com/eneshecan/dotfiles)
-- [lauroro/hyprland-dotfiles](https://github.com/lauroro/hyprland-dotfiles)
-- [dxg4268/hyprdots](https://github.com/dxg4268/hyprdots)
 - [prasanthrangan/hyprdots](https://github.com/prasanthrangan/hyprdots)
 - [niraj998/dotfiles (eww config)](https://github.com/niraj998/dotfiles/tree/main/.config/eww)
 - [Saimoomedits/eww-widgets](https://github.com/Saimoomedits/eww-widgets)
@@ -88,7 +128,4 @@ Inspired by those repos:
 - [abaan404/dotfiles](https://github.com/abaan404/dotfiles)
 - [hyprland.org Example Configurations](https://wiki.hyprland.org/Configuring/Example-configurations/)
 - [eww by elkowar Documentation](https://elkowar.github.io/eww/)
-- [My New Desktop - Hyprland by Chris Titus](https://christitus.com/my-new-desktop-hyprland/)
-- [GPU Passthrough Guide](https://www.youtube.com/watch?v=EujO_5KvCCo)
-- [Random YouTube Video 1](https://www.youtube.com/watch?v=_nyStxAI75s)
-- [Random YouTube Video 2](https://www.youtube.com/watch?v=nNvciN4sGKQ&t=69s)
+
