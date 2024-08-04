@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
     "modules-center": ["clock","custom/weather","custom/notifications"],
-    "modules-right": ["custom/media", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
+    "modules-right": ["battery", "pulseaudio", "bluetooth", "network", "custom/power"],
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,

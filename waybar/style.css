@@ -53,12 +53,12 @@ window#waybar {
   background: transparent;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
+  margin: 6px;
 }
 
 #workspaces button.active {
   background-color: @color11;
   opacity: 0.6;
-  margin: 8px;
   border-radius: 5px;
 }
 
