@@ -114,6 +114,31 @@ window#waybar {
   color: @color14;
 }
 
+@keyframes blink {
+	to {
+		color: @color11;
+	}
+  
+}
+
+#battery.critical:not(.charging) {
+	color: red;
+	animation-name: blink;
+	animation-duration: 0.4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+	color: @color15;
+	animation-name: blink;
+	animation-duration: 0.8s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
 #custom-wallpaper {
   font-size: 20px;
 }
