@@ -1,0 +1,132 @@
+/* https://github.com/Alexays/Waybar/wiki */
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  /* font-family: "FiraCode Nerd Font"; */
+  /* font-family: "Hack", "Noto Color Emoji", sans-serif; */
+  font-size: 15px;
+  /*font-weight: bold;*/
+  min-height: 0;
+}
+
+body,
+#waybar,
+.main-container {
+  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 0.5s ease-in-out;
+  border: 2px solid @color11;
+  border-radius: 15px;
+}
+ 
+window#waybar {
+  /* background: #000000; */
+  /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+  color: @color11;
+  opacity: 0.8;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces {
+  /* background: transparent; */
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.8;
+  color: @color7;
+}
+
+#workspaces button {
+  color: @color7;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  opacity: 0.4;
+  margin: 6px;
+}
+
+#workspaces button.active {
+  background-color: @color11;
+  opacity: 0.6;
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  opacity: 0.8;
+  margin-right: 4px;
+  margin-left: 4px;
+  color: white;
+}
+
+#mode {
+  background: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.muted,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-notifications,
+#custom-arch,
+#custom-power,
+#custom-weather,
+#custom-wpreview,
+#custom-wallpaper {
+  color: @color11;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#pulseaudio.muted:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#custom-notifications:hover,
+#custom-arch:hover,
+#custom-power:hover,
+#custom-weather:hover,
+#custom-wpreview:hover,
+#custom-wallpaper:hover {
+  color: @color14;
+}
+
+#custom-wallpaper {
+  font-size: 20px;
+}
+
+#custom-arch {
+  margin-left: 12px;
+  font-size: 20px;
+}
+
+#custom-power {
+  margin-right: 15px;
+}
+
+#clock {
+  font-weight: bold;
+}

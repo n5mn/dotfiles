@@ -1,0 +1,12 @@
+.git
+.gitignore
+ags
+.ags.old
+
+scripts
+wallpapers
+.config/zsh
+install
+
+README.md
+

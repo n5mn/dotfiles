@@ -1,7 +1,9 @@
 # Ignore everything
-nvim/*
+.config/nvim/*
+.icons/*
 # Except this
-!nvim/init.lua
+!.config/nvim/init.lua
+!.icons/default
 
 **/*log
 **/*tmp
@@ -13,9 +15,8 @@ nvim/*
 *tmp
 *zip
 *log
-dunst/ 
 .vim/.netrwhist
 scripts/colors.json
-waybar/modules/.env
-zsh/plugins/*
-gtk/gtk-3.0/bookmarks
+.config/waybar/modules/.env
+.config/zsh/plugins/*
+.config/gtk-3.0/bookmarks
