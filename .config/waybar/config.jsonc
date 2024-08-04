@@ -1,143 +1,143 @@
 {   
-    "margin":"2 2 2 2",
-    "layer": "top",
-    "position": "top",
-    "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
-    "modules-center": ["clock","custom/weather","custom/notifications"],
-    "modules-right": ["custom/media", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
-    "reload_style_on_change": true,
-    "spacing": 10,
-    "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": false,
-        "format": "{}",
-        "on-click": "activate",
-        "persistent_workspaces":{
-            "*": 5
-				}
-    },
-    "hyprland/window": {
-        "format": " {}",
-        "rewrite": {
-            "(.*) - Brave": "$1",
-            " ":" Empty workspace" 
-        },
-        "separate-outputs": true
-    },
-    "custom/arch": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/media": {
-        "exec": "/usr/bin/python3 ~/dotfiles/.config/waybar/modules/mediaplayer.py --player spotify",
-        "format": "{}",
-        "max-length": 55,
-        "return-type": "json",
-        "on-click": "playerctl --player=spotify play-pause",
-        "on-click-right": "playerctl --player=spotify next",
-        "on-click-middle": "playerctl --player=spotify previous",
-        "escape": true
-    },
-    "clock": {
-        "timezone": "America/Santiago",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode"          : "year",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
-            "on-click-right": "mode",
-            "format": {
-                      "months":     "<span color='#ffead3'><b>{}</b></span>",
-                      "days":       "<span color='#fff'><b>{}</b></span>",
-                      "weeks":      "<span color='#fff'><b>W{}</b></span>",
-                      "weekdays":   "<span color='#fff'><b>{}</b></span>",
-                      "today":      "<span color='#FFD700'><b><u>{}</u></b></span>"
-                      }
-        },
-        "actions":  {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        },
-        "format": "{:%H:%M %p}",
-        "format-alt": "{:%A, %d %B %Y - %R}",
-        "tooltip-position": "right"
-    },
-		"battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Aw          esome 5 Free 11'>{icon} </span>  {capacity}%",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesom          e 5 Free 11'>{icon} </span>  Charged",
-        "interval": 30,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "tooltip": false,
-        "on-click": "2"
-    },
-		"bluetooth": {
-        "format": "󰂯",
-        "format-disabled": "󰂲",
-        "format-off": "󰂲",
-        "interval": 30,
-        "on-click": "blueman-manager",
-        "tooltip": false
-    },
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": " ",
-        "format-ethernet": "󰈁",
-        "format-disconnected": "  disconnected",
-        "on-click": "nm-connection-editor",
-        "tooltip": false
-    },
+	"margin":"2 2 2 2",
+	"layer": "top",
+	"position": "top",
+	"modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
+	"modules-center": ["clock","custom/weather","custom/notifications"],
+	"modules-right": ["custom/media", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
+	"reload_style_on_change": true,
+	"spacing": 10,
+	"hyprland/workspaces": {
+		"active-only": false,
+		"all-outputs": false,
+		"format": "{}",
+		"on-click": "activate",
+		"persistent_workspaces":{
+			"*": 5
+		}
+	},
+	"hyprland/window": {
+		"format": " {}",
+		"rewrite": {
+			"(.*) - Brave": "$1",
+			" ":" Empty workspace" 
+		},
+		"separate-outputs": true
+	},
+	"custom/arch": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/media": {
+		"exec": "/usr/bin/python3 ~/dotfiles/.config/waybar/modules/mediaplayer.py --player spotify",
+		"format": "{}",
+		"max-length": 55,
+		"return-type": "json",
+		"on-click": "playerctl --player=spotify play-pause",
+		"on-click-right": "playerctl --player=spotify next",
+		"on-click-middle": "playerctl --player=spotify previous",
+		"escape": true
+	},
+	"clock": {
+		"timezone": "America/Santiago",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode"          : "year",
+			"mode-mon-col"  : 3,
+			"weeks-pos"     : "right",
+			"on-scroll"     : 1,
+			"on-click-right": "mode",
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#fff'><b>{}</b></span>",
+				"weeks":      "<span color='#fff'><b>W{}</b></span>",
+				"weekdays":   "<span color='#fff'><b>{}</b></span>",
+				"today":      "<span color='#FFD700'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions":  {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		},
+		"format": "{:%H:%M %p}",
+		"format-alt": "{:%A, %d %B %Y - %R}",
+		"tooltip-position": "right"
+	},
+	"battery": {
+		"format": "{icon}   {capacity}%",
+		"format-icons": [" ", " ", " ", " ", " "],
+		//"format-icons": ["󰁺", "󰁻", "󰁼", "󰁿", "󰂁", "󰁹"],
+		"format-charging": " {icon}  {capacity}%",
+		"format-full": " {icon}  Charged",
+		"interval": 30,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"tooltip": false
+	},
+	"bluetooth": {
+		"format": "󰂯",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"interval": 30,
+		"on-click": "blueman-manager",
+		"tooltip": false
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": " ",
+		"format-ethernet": "󰈁",
+		"format-disconnected": "  disconnected",
+		"on-click": "nm-connection-editor",
+		"tooltip": false
+	},
 
-    "pulseaudio": {
-        "scroll-step": 0.5,
-        "format":"{format_source} {icon} {volume}%",
-        "format-muted": "{format_source} 󰟎 ",
-        "format-source": "",
-        "format-source-muted": " ", //"",
-        "format-icons": {
-            "headphone": "󰋋 ",
-            "hands-free": "󰋋",
-            "headset": "󰋋 ",
-            "default": ["", "  ", "  "]
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-source-mute 0 toggle",
-        "tooltip": false
-    },
-    "custom/power": {
-        "format": "",
-        "on-click": "wlogout -b 2",
-        "tooltip": false
-    },
-    "custom/weather": {
-        "exec": "/usr/bin/python3 ~/dotfiles/.config/waybar/modules/weather.py",
-        "restart-interval": 300,
-        "return-type": "json",
-        "on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m"
+	"pulseaudio": {
+		"scroll-step": 0.5,
+		"format":"{format_source} {icon} {volume}%",
+		"format-muted": "{format_source} 󰟎 ",
+		"format-source": "",
+		"format-source-muted": " ", //"",
+		"format-icons": {
+			"headphone": "󰋋 ",
+			"hands-free": "󰋋",
+			"headset": "󰋋 ",
+			"default": ["", "  ", "  "]
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "pactl set-source-mute 0 toggle",
+		"tooltip": false
+	},
+	"custom/power": {
+		"format": "",
+		"on-click": "wlogout -b 2",
+		"tooltip": false
+	},
+	"custom/weather": {
+		"exec": "/usr/bin/python3 ~/dotfiles/.config/waybar/modules/weather.py",
+		"restart-interval": 300,
+		"return-type": "json",
+		"on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m"
 
-    },
-    "custom/wallpaper": {
-        "format": "",
-        "on-click": "~/dotfiles/scripts/update_wallpaper.sh",
-        "on-click-right": "~/dotfiles/scripts/update_wallpaper.sh select",
-        "tooltip": false
+	},
+	"custom/wallpaper": {
+		"format": "",
+		"on-click": "~/dotfiles/scripts/update_wallpaper.sh",
+		"on-click-right": "~/dotfiles/scripts/update_wallpaper.sh select",
+		"tooltip": false
 
-    },
-    "custom/notifications": {
-        "format": " ",
-        "on-click": "dunstctl history-pop",
-        "on-click-right": "dunstctl set-paused toggle",
-        "tooltip": false
-    },
-    "tray": {
-        "spacing": 10
-    }
+	},
+	"custom/notifications": {
+		"format": " ",
+		"on-click": "dunstctl history-pop",
+		"on-click-right": "dunstctl set-paused toggle",
+		"tooltip": false
+	},
+	"tray": {
+		"spacing": 10
+	}
 }
