@@ -21,17 +21,7 @@ body,
   border: 2px solid @color11;
   border-radius: 15px;
 }
-
-#waybar:hover,
-.main-container:hover {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.9
-  ); /* Slightly darker background on hover */
-}
-
+ 
 window#waybar {
   /* background: #000000; */
   /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
@@ -52,13 +42,15 @@ window#waybar {
   color: @color7;
   background: transparent;
   transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 4px;
   opacity: 0.4;
 }
 
 #workspaces button.active {
   background-color: @color11;
   opacity: 0.6;
-  margin: 8px;
   border-radius: 5px;
 }
 

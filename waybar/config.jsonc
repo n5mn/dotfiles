@@ -5,6 +5,7 @@
     "modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
     "modules-center": ["clock","custom/weather","custom/notifications"],
     "modules-right": ["custom/media", "battery", "pulseaudio", "bluetooth", "network", "custom/power"],
+    "reload_style_on_change": true,
     "spacing": 10,
     "hyprland/workspaces": {
         "active-only":false,
@@ -120,7 +121,7 @@
         "exec": "/usr/bin/python3 ~/dotfiles/waybar/modules/weather.py",
         "restart-interval": 300,
         "return-type": "json",
-        "on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m" // TODO: add $(location_id)
+        "on-click": "xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m"
 
     },
     "custom/wallpaper": {

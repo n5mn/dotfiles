@@ -1,7 +1,9 @@
 # Ignore everything
 nvim/*
+gtk/.icons/*
 # Except this
 !nvim/init.lua
+!gtk/.icons/default
 
 **/*log
 **/*tmp
@@ -13,7 +15,6 @@ nvim/*
 *tmp
 *zip
 *log
-dunst/ 
 .vim/.netrwhist
 scripts/colors.json
 waybar/modules/.env
