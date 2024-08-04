@@ -2,7 +2,7 @@
 # Check if a package is installed using pacman
 is_installed_pacman() {
 	package="$1"
-	check="`pacman -Q "$package"`"
+	check="`pacman -Qsq "$package"`"
 	#[ -n "${check}" ] && echo 0 || echo 1
 	if [ -n "${check}" ]; then
 		return 0
@@ -25,7 +25,7 @@ install_packages_pacman() {
 # Check if a package is installed using yay
 is_installed_aur() {
 	package="$1"
-	check="`yay -Q "$package"`"
+	check="`yay -Qsq "$package"`"
 	#[ -n "${check}" ] && echo 0 || echo 1
 	if [ -n "${check}" ]; then
 		return 0

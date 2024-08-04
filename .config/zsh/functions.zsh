@@ -1,4 +1,4 @@
-ZSH_DOTFILES="$HOME/dotfiles/zsh"
+ZSH_DOTFILES="$HOME/dotfiles/.config/zsh"
 
 function add_plugin() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2- )

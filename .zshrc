@@ -16,7 +16,7 @@ HISTFILE=~/.cache/.zsh_history
 # }}}
 
 # Aliases {{{
-source ~/dotfiles/zsh/aliases
+source ~/dotfiles/.config/zsh/aliases
 # }}}
 
 # Options {{{
@@ -55,16 +55,12 @@ fi
 
 # Theme/plugins {{{
 
-source ~/dotfiles/zsh/functions.zsh
+source ~/dotfiles/.config/zsh/functions.zsh
 
 add_plugin "zsh-users/zsh-syntax-highlighting"
 add_plugin "zsh-users/zsh-autosuggestions"
 add_plugin "Aloxaf/fzf-tab"
 add_plugin "zsh-users/zsh-completions"
-
-#source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zstyle ':completion:*' menu select
 
@@ -86,10 +82,10 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # }}}
 
-# To customize prompt, run `p10kconfigure` or edit ~/dotfiles/zsh/.p10k.zsh. {{{
+# To customize prompt, run `p10kconfigure` or edit ~/dotfiles/.config/zsh/.p10k.zsh. {{{
 
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
-#[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
+#[[ ! -f ~/dotfiles/.config/zsh/.p10k.zsh ]] || source ~/dotfiles/.config/zsh/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

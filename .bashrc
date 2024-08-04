@@ -7,7 +7,7 @@ PS1="$(starship prompt --status=$STATUS --jobs=$NUM_JOBS)"
 
 
 # ALIASES
-source ~/dotfiles/zsh/aliases
+source ~/dotfiles/.config/zsh/aliases
 # SCRIPTS
 
 
