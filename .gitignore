@@ -5,6 +5,7 @@
 !.config/nvim/init.lua
 !.icons/default
 
+.config/ags/types
 **/*log
 **/*tmp
 **/*bkp
