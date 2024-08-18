@@ -73,7 +73,18 @@ else
 fi
 
 # Init pywal
-
 wal -q -i $HOME/dotfiles/wallpapers/
+
+# Enable pipewire
+if [ ! $EUID -ne 0 ]; then
+	echo "Enabling pipewire and wireplumber..."
+	systemctl enable --user pipewire
+	systemctl enable --user wireplumber
+	systemctl start --user pipewire
+	systemctl start --user wireplumber
+else
+	echo "Please enable pipewire and wireplumber without sudo!"
+	echo "Use the '--user' flag"
+fi
 
 echo "Done! now do ./2-symlink.sh for the symbolics links!"
