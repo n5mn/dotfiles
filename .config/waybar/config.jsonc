@@ -1,5 +1,5 @@
 {   
-	"margin":"2 2 2 2",
+	"margin":"1 1 1 1",
 	"layer": "top",
 	"position": "top",
 	"modules-left": ["custom/arch","hyprland/workspaces","custom/wallpaper"], 
@@ -129,15 +129,11 @@
 		"on-click": "~/dotfiles/scripts/update_wallpaper.sh",
 		"on-click-right": "~/dotfiles/scripts/update_wallpaper.sh select",
 		"tooltip": false
-
 	},
 	"custom/notifications": {
 		"format": " ",
 		"on-click": "dunstctl history-pop",
 		"on-click-right": "dunstctl set-paused toggle",
 		"tooltip": false
-	},
-	"tray": {
-		"spacing": 10
 	}
 }

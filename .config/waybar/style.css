@@ -19,7 +19,7 @@ body,
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 0.5s ease-in-out;
   border: 2px solid @color11;
-  border-radius: 15px;
+/*  border-radius: 15px; */
 }
  
 window#waybar {
@@ -52,7 +52,7 @@ window#waybar {
 #workspaces button.active {
   background-color: @color11;
   opacity: 0.6;
-  border-radius: 5px;
+/*  border-radius: 5px; */
 }
 
 #workspaces button:hover {
@@ -79,6 +79,7 @@ window#waybar {
 #pulseaudio.muted,
 #custom-media,
 #tray,
+#custom-holidays,
 #mode,
 #idle_inhibitor,
 #custom-notifications,
@@ -110,6 +111,7 @@ window#waybar {
 #custom-power:hover,
 #custom-weather:hover,
 #custom-wpreview:hover,
+#custom-holidays:hover,
 #custom-wallpaper:hover {
   color: @color14;
 }

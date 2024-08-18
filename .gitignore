@@ -6,6 +6,7 @@
 !.icons/default
 
 .config/ags/types
+.config/hypr/config/devices.conf
 **/*log
 **/*tmp
 **/*bkp
