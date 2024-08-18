@@ -100,6 +100,10 @@ bibata-cursor-theme swww wlogout tela-icon-theme
 Create the symlinks with stow.
 ```bash
 stow -v .
+
+mkdir -p $HOME/.config/alacritty/ # if doesnt exit
+mkdir -p $HOME/.config/dunst/ # if doesnt exist
+
 ln -s $HOME/.cache/wal/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 ln -s $HOME/.cache/wal/dunstrc $HOME/.config/dunst/dunstrc
 ```
