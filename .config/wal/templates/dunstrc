@@ -8,10 +8,10 @@
     
     height = (0,300)
     
-    origin = top-center
+    origin = top-right
     # origin = top-right
     
-    offset = 0x10
+    offset = 10x10
 
     scale = 0
 
@@ -68,7 +68,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 5
+    corner_radius = 0
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
