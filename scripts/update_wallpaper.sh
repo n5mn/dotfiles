@@ -54,7 +54,7 @@ transitions=(
 	"outer"
 )
 
-random=$($RANDOM % ${#transitions[@]})
+random=$((RANDOM % ${#transitions[@]}))
 
 # Set the new wallpaper
 swww img $wallpaper \
@@ -68,7 +68,8 @@ if [ ! "$1" == "init" ] ;then
 	killall dunst
 	sleep 0.8
 fi
-
+#ags -q
+#ags
 $HOME/dotfiles/.config/waybar/launch.sh
 sleep 0.2
 dunstify -i $cache_file "Wallpaper Updated!"
