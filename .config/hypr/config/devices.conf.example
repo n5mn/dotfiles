@@ -1,0 +1,17 @@
+# Keyboard layout and mouse
+
+$keyboardlayout = latam
+input {
+    kb_layout = $keyboardlayout
+    follow_mouse = 1 
+    sensitivity = 0
+    touchpad {
+        natural_scroll = true
+    }
+}
+
+device {
+    name = your_mouse
+    sensitivity = -0.7	
+}
+
