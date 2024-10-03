@@ -3,7 +3,7 @@
 # Set GTK Themes, Icons, Cursor and Fonts
 gnome_schema="org.gnome.desktop.interface"
 SCHEMA="gsettings set $gnome_schema"
-THEME="Space-Transparent"
+THEME="Arc-Darker"
 ICONS="Tela-grey"
 FONT="Inter"
 CURSOR="Bibata-Original-Classic"
