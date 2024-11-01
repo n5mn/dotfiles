@@ -67,13 +67,10 @@ swww img $wallpaper \
 
 if [ ! "$1" == "init" ] ;then
 	killall dunst
-	sleep 0.8
+	sleep 1
+	notify-send -i $cache_file "Wallpaper Updated!"
 fi
 
-sleep 0.2
-notify-send -i $cache_file "Wallpaper Updated!"
-clear
-echo "DONE!"
 $HOME/dotfiles/.config/waybar/launch.sh
 #ags -q
 #ags
