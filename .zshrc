@@ -34,6 +34,8 @@ setopt SHARE_HISTORY
 autoload -Uz compinit 
 compinit
 
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+
 # Set ZSH_COMPDUMP if not already set
 ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/"
 _comp_files=($ZSH_COMPDUMP/zcompdump(Nm-20))

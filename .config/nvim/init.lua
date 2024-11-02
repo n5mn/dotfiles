@@ -71,7 +71,6 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
-  { 'xiyaowong/transparent.nvim' },
 
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -294,7 +293,24 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
+  pickers = {
+    find_files = {
+      hidden = true
+    }
+  },
   defaults = {
+    file_ignore_patterns = {
+      ".git/", "node_modules/"
+    },
+    ripgrep_arguments = {
+      'rg',
+      '--hidden',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -534,7 +550,7 @@ local servers = {
   gopls = {},
   pyright = {},
   rust_analyzer = {},
-  tsserver = {},
+  -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
