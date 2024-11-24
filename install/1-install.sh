@@ -44,6 +44,7 @@ case $yn in
 esac
 
 echo "Install bluetooth related packages?"
+read yn
 case $yn in
 	[yY])
 		install_packages_pacman $bluetooth
