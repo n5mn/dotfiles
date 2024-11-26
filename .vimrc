@@ -29,8 +29,6 @@ function! InstallVimPlug()
 		echo "Vim-Plug not found. Installing..."
 		silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 		echo "Vim-Plug installed."
-	else
-		echo "Vim-Plug already installed."
 	endif
 endfunction
 
