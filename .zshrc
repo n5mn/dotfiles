@@ -8,7 +8,7 @@ HISTFILE=~/.cache/.zsh_history
 
 # Aliases {{{
 
-source ~/dotfiles/.config/zsh/aliases
+source ~/dotfiles/.config/zsh/aliases.zsh
 
 # }}}
 

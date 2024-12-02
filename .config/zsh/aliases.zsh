@@ -18,8 +18,10 @@ alias ownR='sudo chown -R $USER:$USER'
 alias root='sudo -E zsh'
 #alias code='vscodium --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias code='vscodium'
-alias ivm='vim'
-alias vmi='vim'
+alias ivm='nvim'
+alias vmi='nvim'
+alias vim='nvim'
+alias vi='/usr/bin/vim'
 alias :q='exit'
 alias SS='sudo systemctl'
 alias neofetch='fastfetch'
@@ -27,8 +29,10 @@ alias kubectl='minikube kubectl --'
 # }}}
 
 # Utils {{{
-source ~/r2
-alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
+if [ -f ~/r2 ]; then
+	source ~/r2
+	alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
+fi
 # }}}
 
 # Git {{{
