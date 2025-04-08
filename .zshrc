@@ -1,3 +1,9 @@
+export EDITOR=nvim
+source ~/.zshenv
+# uwsm auto start 
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi
 # History in cache directory: {{{
 
 HISTSIZE=100000000
