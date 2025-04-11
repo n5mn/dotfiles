@@ -34,25 +34,26 @@
 		"max-length": 55,
 		"return-type": "json",
 		"on-click": "playerctl --player=spotify play-pause",
-		"on-click-right": "playerctl --player=spotify next",
-		"on-click-middle": "playerctl --player=spotify previous",
+		"on-scroll-up": "playerctl --player=spotify next",
+		"on-scroll-down": "playerctl --player=spotify previous",
 		"escape": true
 	},
 	"clock": {
+		"format": "{:%A, %d %B %Y - %R}",
+		"format-alt": "{:%H:%M %p}",
 		"timezone": "America/Santiago",
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"calendar": {
-			"mode"          : "year",
-			"mode-mon-col"  : 3,
-			"weeks-pos"     : "right",
-			"on-scroll"     : 1,
-			"on-click-right": "mode",
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
 			"format": {
-				"months":     "<span color='#ffead3'><b>{}</b></span>",
-				"days":       "<span color='#fff'><b>{}</b></span>",
-				"weeks":      "<span color='#fff'><b>W{}</b></span>",
-				"weekdays":   "<span color='#fff'><b>{}</b></span>",
-				"today":      "<span color='#FFD700'><b><u>{}</u></b></span>"
+				"months": "<span color='#fff'><b>{}</b></span>",
+				"days": "<span color='#fff'><b>{}</b></span>",
+				"weeks": "<span color='#ffcc66'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
 			}
 		},
 		"actions":  {
@@ -62,8 +63,6 @@
 			"on-scroll-up": "shift_up",
 			"on-scroll-down": "shift_down"
 		},
-		"format": "{:%H:%M %p}",
-		"format-alt": "{:%A, %d %B %Y - %R}",
 		"tooltip-position": "right"
 	},
 	"battery": {
