@@ -3,6 +3,7 @@
 .icons/*
 # Except this
 !.config/nvim/init.lua
+!.config/nvim/lua
 !.icons/default
 
 .config/ags/types
@@ -12,11 +13,6 @@
 **/*bkp
 **/*zip
 **/*old
-*bkp
-*old
-*tmp
-*zip
-*log
 .vim/.netrwhist
 scripts/colors.json
 .config/waybar/modules/.env

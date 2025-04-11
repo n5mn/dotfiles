@@ -1,3 +1,9 @@
+export EDITOR=nvim
+source ~/.zshenv
+# uwsm auto start 
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi
 # History in cache directory: {{{
 
 HISTSIZE=100000000
@@ -8,7 +14,7 @@ HISTFILE=~/.cache/.zsh_history
 
 # Aliases {{{
 
-source ~/dotfiles/.config/zsh/aliases
+source ~/dotfiles/.config/zsh/aliases.zsh
 
 # }}}
 
@@ -33,6 +39,8 @@ setopt SHARE_HISTORY
 
 autoload -Uz compinit 
 compinit
+
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
 # Set ZSH_COMPDUMP if not already set
 ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/"
