@@ -16,8 +16,6 @@ alias dot='cd ~/dotfiles'
 alias own='sudo chown $USER:$USER'
 alias ownR='sudo chown -R $USER:$USER'
 alias root='sudo -E zsh'
-#alias code='vscodium --enable-features=UseOzonePlatform --ozone-platform=wayland'
-alias code='vscodium'
 alias ivm='nvim'
 alias vmi='nvim'
 alias vim='nvim'
@@ -26,6 +24,9 @@ alias :q='exit'
 alias SS='sudo systemctl'
 alias neofetch='fastfetch'
 alias kubectl='minikube kubectl --' 
+alias tf='terraform'
+alias dotf='cd ~/Projects/inw/devops/digital-ocean/terraform/' 
+alias current_date='date +"%Y-%m-%d_%H-%M"'
 # }}}
 
 # Utils {{{
