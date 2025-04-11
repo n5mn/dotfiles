@@ -18,5 +18,8 @@ function share() {
 	aws s3 presign --expires-in 86400 $S3_OBJECT | wl-copy
 	echo "Done!"
 	echo "Copyed to clipboard"
+}
 
+function math() {
+	echo "$*" | bc -l
 }
