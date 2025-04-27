@@ -6,8 +6,9 @@ local function telescope_live_grep_open_files()
 end
 
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
+keymap.set('n', '<leader>cd', vim.cmd.Ex, { silent = true })
 
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -25,6 +26,7 @@ keymap.set('n', ']d', function()
 end, { desc = "Go to next diagnostic message" })
 keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+keymap.set('n', '<leader>l', vim.diagnostic.setqflist, { desc = 'Open diagnostics quickfix list' })
 
 keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
@@ -45,3 +47,4 @@ keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '
 keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make file executable' })
