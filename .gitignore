@@ -1,5 +1,5 @@
 # Ignore everything
-.config/nvim/*
+# .config/nvim/*
 .icons/*
 # Except this
 !.config/nvim/init.lua
