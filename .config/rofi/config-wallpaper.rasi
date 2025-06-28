@@ -19,7 +19,7 @@ configuration {
 
 /* ---- Window ---- */
 window {
-    width:                        500px;
+    width:                        900px;
     x-offset:                     0px;
     y-offset:                     0px;
     spacing:                      0px;
@@ -34,7 +34,7 @@ window {
     anchor:                       center;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                10px;
+    border-radius:                0px;
     background-color:             transparent;
 }
 
@@ -125,7 +125,7 @@ button selected {
 /* ---- Listview ---- */
 listview {
     enabled:                      true;
-    columns:                      3;
+    columns:                      5;
     lines:                        3;
     cycle:                        true;
     dynamic:                      true;

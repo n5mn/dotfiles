@@ -1,5 +1,8 @@
 export EDITOR=nvim
-source ~/.zshenv
+if [ -f ~/.zshenv ]; then
+	source ~/.zshenv
+fi
+
 # uwsm auto start 
 if uwsm check may-start; then
 	exec systemd-cat -t uwsm_start uwsm start default
