@@ -25,29 +25,12 @@ alias SS='sudo systemctl'
 alias neofetch='fastfetch'
 alias kubectl='minikube kubectl --' 
 alias tf='terraform'
-alias dotf='cd ~/Projects/inw/devops/digital-ocean/terraform/' 
 alias current_date='date +"%Y-%m-%d_%H-%M"'
 # }}}
 
-# Utils {{{
 if [ -f ~/r2 ]; then
 	source ~/r2
-	alias r2='aws s3 --endpoint-url $R2_ENDPOINT'
+	alias r2='aws s3 --profile r2 --endpoint-url $R2_ENDPOINT'
 fi
-# }}}
 
-# Git {{{
 alias g='lazygit'
-alias ga='git add'
-alias gp='git push'
-alias gpl='git pull'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gcl='git clone'
-# }}}
