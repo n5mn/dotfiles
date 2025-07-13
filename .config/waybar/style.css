@@ -16,7 +16,7 @@ body,
 .main-container {
   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
     sans-serif;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   transition: background-color 0.5s ease-in-out;
   border: 2px solid @color11;
 /*  border-radius: 15px; */
@@ -26,7 +26,7 @@ window#waybar {
   /* background: #000000; */
   /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
   color: @color11;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
