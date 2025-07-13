@@ -29,7 +29,7 @@
         {
             "type": "kernel",
             "key": "├",
-            "format": " {2}",
+            "format": "{2}",
             "keyColor": "yellow"
         },
         {
