@@ -81,7 +81,7 @@ temp_min_max = f"  {temp_min}\t\t  {temp_max}"
 # print(temp_min_max)
 
 # wind speed
-wind_speed = html_data("span[data-testid='Wind']").text().split("\n")[1]
+wind_speed = html_data("span[data-testid='Wind']").text().split("\n")[0]
 wind_text = f"煮  {wind_speed}"
 # print(wind_text)
 
@@ -109,7 +109,7 @@ prediction = f"\n\n    (hourly) {prediction}" if len(prediction) > 0 else 
 
 # tooltip text
 tooltip_text = str.format(
-    "\t\t{}\t\t\n{}\n{}\n{}\n\n{}\n{}\n{}{}",
+    "\t\t{}\t\t\n{}\n{}\n{}\n\n{}\n{}\n{}",
     f'<span size="xx-large">{temp}</span>',
     f"<big>{icon}</big>",
     f"<big>{status}</big>",
@@ -117,7 +117,7 @@ tooltip_text = str.format(
     f"<big>{temp_min_max}</big>",
     f"{wind_text}\t{humidity_text}",
     f"{visbility_text}\tAQI {air_quality_index}",
-    f"<i>{prediction}</i>",
+    #f"<i>{prediction}</i>",
 )
 
 # print waybar module data
