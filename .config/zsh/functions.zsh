@@ -10,16 +10,3 @@ function add_plugin() {
 	[ -f "$ZSH_DIRECTORY/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin" ] && source "$ZSH_DIRECTORY/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin"
 }
 
-function share() {
-	local	S3_OBJECT="s3://inw-transfers/$1"
-	echo "Now trying to share $1"
-	aws s3 cp $1 $S3_OBJECT
-
-	aws s3 presign --expires-in 86400 $S3_OBJECT | wl-copy
-	echo "Done!"
-	echo "Copyed to clipboard"
-}
-
-function math() {
-	echo "$*" | bc -l
-}
