@@ -1,3 +1,4 @@
+local keymaps = require("plugins.keymaps.lsp")
 return {
 	{
 		'neovim/nvim-lspconfig',
@@ -11,7 +12,6 @@ return {
 		},
 		config = function()
 			local on_attach = function(_, bufnr)
-				local keymaps = require("plugins.keymaps.lsp")
 				keymaps(bufnr)
 			end
 			local servers = {
