@@ -11,11 +11,8 @@ vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, opts)
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", opts)
 
--- Basic clipboard interaction
-vim.keymap.set({ "n", "x" }, "<leader>y", "+y")
-vim.keymap.set({ "n", "x" }, "<leader>p", "+p")
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to system clipboard" })
 
--- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", opts)
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", opts)
 
@@ -42,8 +39,11 @@ vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { de
 vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 
+-- better indenting
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+
+vim.keymap.set("n", "<C-c>", ":nohlsearch<CR>", { noremap = true, silent = true, desc = "Clear search highlight" })
 
 vim.keymap.set("n",
 	"<leader>S",

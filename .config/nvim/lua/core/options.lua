@@ -5,8 +5,7 @@ vim.g.editorconfig = true
 -- vim.cmd("let g:netrw_banner = 0")
 
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
--- Set highlight on search
-vim.opt.hlsearch = false
+-- vim.opt.hlsearch = false
 vim.opt.number = true
 vim.opt.mouse = ""
 
