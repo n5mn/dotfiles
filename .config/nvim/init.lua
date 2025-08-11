@@ -2,10 +2,10 @@ if vim.loader then
 	vim.loader.enable()
 end
 
-require("config.options")
-require("config.lazy")
-require("config.filetypes")
-require("config.keymaps")
+require("core.options")
+require("core.lazy")
+require("core.filetypes")
+require("core.keymaps")
 
 
 require('mason').setup()

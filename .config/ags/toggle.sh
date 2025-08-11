@@ -2,9 +2,9 @@
 
 if [ -f ~/.cache/ags_disabled ]; then
     rm ~/.cache/ags_disabled
-    ags &
+		ags run
 
 else
     touch ~/.cache/ags_disabled
-    ags -q
+    ags quit
 fi

@@ -18,3 +18,4 @@ scripts/colors.json
 .config/waybar/modules/.env
 .config/zsh/plugins/*
 .config/gtk-3.0/bookmarks
+.config/zsh/custom.zsh
