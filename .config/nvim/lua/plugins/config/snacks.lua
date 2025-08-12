@@ -18,8 +18,8 @@ return {
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			-- scroll = { enabled = true },
-			statuscolumn = { enabled = true },
-			words = { enabled = true },
+			-- statuscolumn = { enabled = true }, -- one of those broke my lsp shit
+			-- words = { enabled = true },
 			styles = {
 				notification = {
 					-- wo = { wrap = true } -- Wrap notifications
