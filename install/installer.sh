@@ -1,74 +1,51 @@
 #!/bin/sh
-# Check if a package is installed using pacman
-is_installed_pacman() {
-	package="$1"
-	check="`pacman -Qsq "$package"`"
-	#[ -n "${check}" ] && echo 0 || echo 1
-	if [ -n "${check}" ]; then
-		return 0
-	else
-		return 1 
-	fi
-}
 
-# Install packages using pacman if not installed
-install_packages_pacman() {
-	for pkg in "$@"; do
-		if is_installed_pacman "$pkg"; then
-			echo "$pkg is already installed."
-			continue
-		fi
-			sudo pacman --noconfirm -S $pkg
+install_pacman() {
+	for pkg in $1; do
+		sudo pacman --noconfirm --needed -S "$pkg" || echo "Failed to install $pkg" >> "$HOME/dotfiles/packages.log"
 	done
 }
 
-# Check if a package is installed using yay
-is_installed_aur() {
-	package="$1"
-	check="`yay -Qsq "$package"`"
-	#[ -n "${check}" ] && echo 0 || echo 1
-	if [ -n "${check}" ]; then
-		return 0
-	else
-		return 1 
-	fi
-}
-
-# Install packages using yay if not installed
-install_packages_aur() {
-	for pkg; do
-		if is_installed_aur "$pkg"; then # TODO: fix this syntax make it compatible with POSIX-compliant shell
-			echo "$pkg is already installed."
-			continue
-		fi
-		yay --noconfirm -S $pkg
+install_aur() {
+	for pkg in $1; do
+		yay --noconfirm --needed -S "$pkg" || echo "Failed to install $pkg" >> "$HOME/dotfiles/packages.log"
 	done
 }
 
 symlink() {
-	symlink_name="$1"   # This is just the name for logging purposes
+	symlink_name="$1"
 	link_source="$2"
 	link_target="$3"
 
-	# Backing up the old files 
-	backup_directory="$HOME/.config/.backup"
+	backup_dir="$HOME/.config/.backup"
 
-	if [ ! -d $backup_directory ]; then
-			mkdir -p $backup_directory
+	mkdir -p "$backup_dir"
+
+	if [ -e "$link_target" ] && [ ! -L "$link_target" ]; then
+		cp -r "$link_target" "$backup_dir/"
+		echo "Backing up $link_target to $backup_dir"
 	fi
 
-	if [ -e "$link_target" ] && [ ! -L "$link_target"]; then
-			cp -r "$link_target" "$backup_directory/"
-			echo "Backing up old configuration files!"
-	fi
-
-	# Remove existing symlink, directory, or file at the target location
 	echo "Removing existing configurations files..."
-	[ -L "$link_target" ] && rm "$link_target"
-	[ -d "$link_target" ] && rm -rf "$link_target"
-	[ -f "$link_target" ] && rm "$link_target"
-	
-	# Create the new symlink
-	ln -sf "$link_source" "$link_target"
-	echo "Symlink $link_source -> $link_target created (Named: $symlink_name)." > $HOME/dotfiles/symlinks.log
+	if [ -L "$link_target" ] || [ -d "$link_target" ] || [ -f "$link_target" ]; then
+		rm -rf "$link_target"
+		echo "Removed $link_target"
+	fi
+
+	ln -s "$link_source" "$link_target"
+	echo "$(date '+%Y-%m-%d %H:%M:%S') Symlink: $link_source -> $link_target created (Named: $symlink_name)." >> "$HOME/dotfiles/symlinks.log"
+}
+
+install_pywal() {
+	if ! command -v pipx >/dev/null 2>&1; then
+		echo "pipx not found, installing..."
+		sudo python3 -m pip install --user pipx || { echo "Failed to install pipx"; exit 1; }
+	fi
+
+	if command -v wal > /dev/null 2>&1;then
+		echo "pywal already installed."
+	else
+		echo "Installing pywal..."
+		pipx install pywal16 --force || { echo "Failed to install pywal"; exit 1 }
+	fi
 }
