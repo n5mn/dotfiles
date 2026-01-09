@@ -1,6 +1,8 @@
 # Keyboard layout and mouse
 
 $keyboardlayout = latam
+$mouse = your_mouse
+
 input {
     kb_layout = $keyboardlayout
     follow_mouse = 1 
@@ -11,7 +13,7 @@ input {
 }
 
 device {
-    name = your_mouse
+    name = $mouse 
     sensitivity = -0.7	
 }
 

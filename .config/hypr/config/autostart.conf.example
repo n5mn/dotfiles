@@ -1,12 +1,10 @@
 # autostart
+exec-once = hyprctl setcursor Bibata-Original-Classic 24
 exec-once = swww-daemon
 exec-once = dunst
 exec-once = ~/dotfiles/scripts/update_wallpaper.sh init
 exec-once = ~/dotfiles/scripts/gtk.sh
-exec-once = hyprctl setcursor Bibata-Original-Classic 24
 exec-once = ~/dotfiles/.config/waybar/launch.sh
 exec-once = wl-paste --watch cliphist store
-
-exec-once = [workspace 10 silent] spotify-launcher
-exec-once = [workspace 2 silent] brave
-exec-once = [workspace 3 silent] thunderbird
+exec-once = [workspace 1 silent] alacritty
+exec-once = [workspace 2 silent] spotify-launcher

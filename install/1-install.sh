@@ -12,23 +12,22 @@
 # ----------------------------------------------------------------------------------------- #
 clear
 echo "Checking if yay is installed..."
-echo ""
-if [ -x "`command -v yay`" ]; then
-	echo "yay is installed. You can proceed with the installation"
+echo
+if command -v yay > /dev/null 2>&1; then
+	echo "yay is already installed!"
 else
-	echo "yay is not installed. Will be installed now!"
-	git clone https://aur.archlinux.org/yay-git.git $HOME/yay-git
-	cd $HOME/yay-git && makepkg -si
-	cd $HOME/dotfiles/
-	clear
+	echo "yay not found. Installing..."
+	tmpdir=$(mktemp -d) || { echo "Failed to create temp directory"; exit 1 }
+	git clone https://aur.archlinux.org/yay-git.git "$tmpdir/yay-git" || exit 1
+	cd "$tmpdir/yay-git" || exit 1 
+	makepkg -si --noconfirm || exit 1
 	echo "yay has been installed successfully."
+	cd - > /dev/null || true
+	clear
 	echo ""
 fi
 
 echo "-> Installing main packages"
-
-# ----------------------------------------------------------------------------------------- #
-# Install packages from official repositories and AUR
 install_packages_pacman $packages_pacman;
 install_packages_aur $packages_aur;
 
@@ -66,13 +65,6 @@ case $yn in
 		;;
 esac
 
-# Install pywal
-if [ -f /usr/bin/wal ]; then
-	echo "pywal already installed."
-else
-	yay --noconfirm -S pywal 
-fi
-
 # Init pywal
 wal -q -i $HOME/dotfiles/wallpapers/
 
@@ -88,4 +80,4 @@ else
 	echo "Use the '--user' flag"
 fi
 
-echo "Done! now do ./2-symlink.sh for the symbolics links!"
+echo "Done! now do ./2-symlink.sh for the symbolics links or just use stow"

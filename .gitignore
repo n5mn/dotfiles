@@ -19,3 +19,4 @@ scripts/colors.json
 .config/zsh/plugins/*
 .config/gtk-3.0/bookmarks
 .config/zsh/custom.zsh
+.config/hypr/config/autostart.conf
