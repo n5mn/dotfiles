@@ -1,5 +1,3 @@
-#!/bin/sh
-
 install_pacman() {
 	for pkg in $1; do
 		sudo pacman --noconfirm --needed -S "$pkg" || echo "Failed to install $pkg" >> "$HOME/dotfiles/packages.log"
