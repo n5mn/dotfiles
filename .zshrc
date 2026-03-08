@@ -8,7 +8,7 @@ if [ -f ~/dotfiles/.config/zsh/custom.zsh ]; then
 fi
 
 # uwsm auto start 
-if uwsm check may-start; then
+if uwsm check may-start > /dev/null; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
 # History in cache directory: {{{
