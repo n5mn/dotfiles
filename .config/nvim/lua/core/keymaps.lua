@@ -51,3 +51,23 @@ vim.keymap.set("n",
 	{ desc = "Replace word cursor is on globally" }
 )
 
+-- for simple scripting, not for complex projects with args and shit
+local runners = {
+	python = "python %",
+	go = "go run %",
+	rust = "cargo run",
+	c =	"gcc % -o %:r && ./%:r",
+	sh = "./%", -- <leader>x makes the file executable, so we can just run it
+	javascript = "node %",
+}
+
+vim.keymap.set("n", "<leader>R", function ()
+	local filetype = vim.bo.filetype
+	local cmd = runners[filetype]
+	if cmd then
+		vim.cmd("w") -- save the shit before running
+		vim.cmd("!" .. cmd)
+	else
+		print("No runner for filetype " .. filetype)
+	end
+end, { desc = "Run current file" })
