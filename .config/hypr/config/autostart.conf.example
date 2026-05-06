@@ -1,6 +1,6 @@
 # autostart
 exec-once = hyprctl setcursor Bibata-Original-Classic 24
-exec-once = swww-daemon
+exec-once = awww-daemon
 exec-once = dunst
 exec-once = ~/dotfiles/scripts/update_wallpaper.sh init
 exec-once = ~/dotfiles/scripts/gtk.sh

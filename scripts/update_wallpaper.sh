@@ -58,7 +58,7 @@ transitions=(
 random=$((RANDOM % ${#transitions[@]}))
 
 # Set the new wallpaper
-swww img $wallpaper \
+awww img $wallpaper \
 	--transition-bezier .43,1.19,1,.4 \
 	--transition-fps=60 \
 	--transition-type="${transitions[$random]}" \
