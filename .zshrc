@@ -30,6 +30,7 @@ source ~/dotfiles/.config/zsh/aliases.zsh
 unsetopt menu_complete
 unsetopt flowcontrol
 
+setopt globdots
 setopt prompt_subst
 setopt always_to_end
 setopt append_history

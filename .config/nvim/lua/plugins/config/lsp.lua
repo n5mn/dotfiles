@@ -37,14 +37,14 @@ return {
 				ensure_installed = vim.tbl_keys(servers),
 			}
 
-			local lspconfig = require 'lspconfig'
 			for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-				lspconfig[server].setup {
+				vim.lsp.config(server, {
 					capabilities = capabilities,
 					on_attach = on_attach,
 					settings = servers[server],
 					filetypes = (servers[server] or {}).filetypes,
-				}
+				})
+				vim.lsp.enable(server)
 			end
 		end
 	}
