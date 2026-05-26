@@ -38,7 +38,6 @@ bind("SUPER + mouse:274", exec("playerctl --player=spotify play-pause"))
 
 bind("SUPER + SHIFT + M", exec("dunstctl set-paused toggle"))
 
-
 -- Window management
 bind("SUPER + P", function()
 	hl.dispatch(hl.dsp.window.float({action = "toggle"}))
@@ -78,21 +77,10 @@ bind("ALT + SHIFT + SPACE",  exec(dotfiles .. "/scripts/kblayout.sh"))
 bind("SUPER + TAB", hl.dsp.focus({workspace = "e+1"}))
 bind("SUPER + SHIFT + TAB", hl.dsp.focus({workspace = "e-1"}))
 
-for i = 1, 9 do
-	bind("SUPER + " .. i, hl.dsp.focus({workspace = "" .. i}))
+for i = 1, 5 do
+	bind("SUPER + " .. i, exec(dotfiles .. "/scripts/workspace.sh " .. i .. " 5"))
 end
 
-bind("SUPER + 0", hl.dsp.focus({workspace = "10"}))
--- FIXME: update workspace script to the new syntax or just make it in lua
--- for i = 1, 5 do
--- 	bind("SUPER + " .. i, exec(dotfiles .. "/scripts/workspace.sh " .. i .. " 5"))
--- end
---
--- for i = 1, 5 do
--- 	bind("SUPER + SHIFT + " .. i, exec(dotfiles .. "/scripts/workspace.sh move " .. i .. " 5"))
--- end
-
--- Mouse binds to move windows and change workspaces
--- bind = SUPER, mouse_down, workspace, e+1
--- bind = SUPER, mouse_up, workspace, e-1
-
+for i = 1, 5 do
+	bind("SUPER + SHIFT + " .. i, exec(dotfiles .. "/scripts/workspace.sh move " .. i .. " 5"))
+end
