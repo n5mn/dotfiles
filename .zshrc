@@ -13,6 +13,7 @@ if uwsm check may-start > /dev/null; then
 fi
 # History in cache directory: {{{
 
+. <(fzf --zsh)
 HISTSIZE=100000000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/.zsh_history
