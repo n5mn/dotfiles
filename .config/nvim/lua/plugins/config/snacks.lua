@@ -15,7 +15,7 @@ return {
 				timeout = 3000,
 			},
 			picker = { enabled = false }, -- i use telescope
-			quickfile = { enabled = true },
+			quickfile = { enabled = false },
 			scope = { enabled = true },
 			styles = {
 				notification = {
