@@ -7,8 +7,8 @@ hl.config({
 		gaps_out = 1,
 		border_size = 2,
 		allow_tearing = true,
-		-- col.active_border = colors.color11,
-		-- col.inactive_border = colors.color14,
+		["col.active_border"] = colors.color11,
+		["col.inactive_border"] = colors.color14,
 		layout = "master",
 	},
 
