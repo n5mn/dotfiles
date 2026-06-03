@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: make it with lua
+
 check_file="/tmp/kblayout"
 
 if ! [ -f "$check_file" ]; then
@@ -16,6 +18,5 @@ else
 fi
 
 echo "$new_layout" > "$check_file"
-hyprctl keyword input:kb_layout "$new_layout"
-
+hyprctl eval "hl.config({ input = { kb_layout = \"$new_layout\" } })"
 notify-send "Keyboard Layout" "$new_layout"
