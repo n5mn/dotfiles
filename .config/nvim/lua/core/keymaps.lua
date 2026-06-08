@@ -9,7 +9,7 @@ local opts = { noremap = true, silent = true }
 
 local map = vim.keymap.set
 
-map("t", "<Esc>", [[<C-\><C-n>]])
+map("t", "<C-Esc>", [[<C-\><C-n>]])
 map("n", "<leader>cd", vim.cmd.Ex, opts)
 map({ "n", "v" }, "<Space>", "<Nop>", opts)
 map({ "n", "x" }, "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to system clipboard" })
