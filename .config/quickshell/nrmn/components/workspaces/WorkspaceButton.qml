@@ -1,6 +1,6 @@
 import Quickshell
 import QtQuick
-import "../colors/colors-quickshell.js" as Wal
+import "../../colors/colors-quickshell.js" as Wal
 
 Rectangle {
 	id: wsButton
@@ -12,9 +12,9 @@ Rectangle {
 	required property bool isFocused
 
 	height: 25
-	width: 28
-	// implicitWidth: text.implicitWidth + 12
-	// implicitHeight: text.implicitHeight + 8
+	width: 30
+	implicitWidth: text.implicitWidth
+	implicitHeight: text.implicitHeight
 	color: {
 		if (mouseArea.containsMouse) {
 			return backgroundColor
@@ -35,9 +35,8 @@ Rectangle {
 		id: text
 		anchors.centerIn: parent
 		text: Workspaces.getWorkspaceNames(wsButton.workspaces)
-		// color: isFocused ? Wal.colors.background : Wal.colors.color11
 		color: isFocused ? Wal.colors.color2 : Wal.colors.color1
-		font.family: "JetBrains Mono"
+		font.family: "Fira Code"
 		font.bold: (wsButton.workspaces === Workspaces.focusedWorkspace())
 	}
 

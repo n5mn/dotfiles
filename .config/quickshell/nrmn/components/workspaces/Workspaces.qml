@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell.Hyprland
 
 pragma Singleton
+
 Item {
 	id: hyprlandWorkspaces
 	property int focusedWs: Hyprland.focusedWorkspace
@@ -24,9 +25,7 @@ Item {
 	}
 
 	function focusedWorkspace() {
-		return Hyprland.focusedWorkspace.id 
-			? Hyprland.focusedWorkspace.id
-			: -1
+		return Hyprland.focusedWorkspace?.id ?? -1
 	}
 
 	function switchToWorkspace(workspaceId) {

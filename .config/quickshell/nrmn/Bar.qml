@@ -1,6 +1,10 @@
 import Quickshell
 import QtQuick
-import "components"
+import QtQuick.Layouts
+import "components/workspaces"
+import "components/weather"
+import "components/mediaplayer"
+import "components/clock"
 import "./colors/colors-quickshell.js" as Wal
 
 Scope {
@@ -14,8 +18,8 @@ Scope {
 			id: panel
 			required property var modelData
 			property int screenIndex: Quickshell.screens.indexOf(modelData)
-			// property int screenIndex: 0
 			screen: modelData
+
 			anchors {
 				top: true
 				left: true
@@ -30,33 +34,54 @@ Scope {
 				border.color: Wal.colors.color11
 				border.width: 2
 
-				Text {
-					padding: 5
-					anchors.centerIn: parent
-					text: Time.clock
-					font.family: "JetBrains Mono"
-					color: Wal.colors.color11 
-				}
-
-				Row {
-					anchors.verticalCenter: parent.verticalCenter
-					anchors.left: parent.left
-					spacing: 8
-					padding: 6
-
-					Repeater {
-						id: ws
-						model: Workspaces.getWorkspacesForScreen(panel.screenIndex)
-						delegate: WorkspaceButton {
-							workspaces: ws.model[index]
-							isFocused: Workspaces.focusedWorkspace() === ws.model[index]
-							onClicked: Workspaces.switchToWorkspace(ws.model[index])
-							// onClicked: console.log(ws.model) // Workspaces.switchToWorkspace(ws.model[index])
-							// onClicked: console.log()
-						}
+				RowLayout {
+					anchors.fill: parent
+					anchors.margins: 5
+					// anchors.rightMargin: 10
+					// anchors.leftMargin: 10
+					spacing: 5
+					Row {
+						Layout.preferredWidth: parent.width * 0.4
+						Layout.fillHeight: true
+						Layout.alignment: Qt.AlignLeft
+						spacing: 5
+						// Rectangle {
+						// 	color: "green"
+						// 	width: parent.width
+						// 	height: parent.height
+						// }
+						ClockButton {}
+						WeatherButton {}
 					}
-				}
+					Row {
+						Layout.alignment: Qt.AlignVCenter
+						Layout.fillHeight: true
+						Layout.fillWidth: true
+						spacing: 5
+						// Rectangle {
+						// 	color: "blue"
+						// 	width: parent.width
+						// 	height: parent.height
+						// }
+						WorkspacesRow {}
+					}
+					Row {
+						Layout.fillHeight: true
+						Layout.preferredWidth: parent.width * 0.4
+						Layout.alignment: Qt.AlignRight
+						layoutDirection: Qt.RightToLeft
+						spacing: 5
+						// Rectangle {
+						// 	color: "red"
+						// 	width: parent.width
+						// 	height: parent.height
+						// }
+						Mediaplayer {}
+
+					}
+				}	
 			}
 		}
 	}
 }
+
