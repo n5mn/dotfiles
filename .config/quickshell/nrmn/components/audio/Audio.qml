@@ -39,13 +39,6 @@ Rectangle {
 	property string displayText: mText + vText
 	color: Wal.colors.background
 
-
-	PwNodeLinkTracker {
-		id: linkTracker
-		node: node
-
-	}
-
 	Text {
 		id: text
 		anchors.centerIn: parent
