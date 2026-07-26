@@ -5,7 +5,8 @@ import "components/workspaces"
 import "components/weather"
 import "components/mediaplayer"
 import "components/clock"
-import "./colors/colors-quickshell.js" as Wal
+import "components/audio"
+import "./components/colors-quickshell.js" as Wal
 
 Scope {
 	id: root
@@ -36,15 +37,13 @@ Scope {
 
 				RowLayout {
 					anchors.fill: parent
-					anchors.margins: 5
-					// anchors.rightMargin: 10
-					// anchors.leftMargin: 10
+					anchors.margins: 10
 					spacing: 5
 					Row {
 						Layout.preferredWidth: parent.width * 0.4
 						Layout.fillHeight: true
 						Layout.alignment: Qt.AlignLeft
-						spacing: 5
+						spacing: 10
 						// Rectangle {
 						// 	color: "green"
 						// 	width: parent.width
@@ -57,7 +56,7 @@ Scope {
 						Layout.alignment: Qt.AlignVCenter
 						Layout.fillHeight: true
 						Layout.fillWidth: true
-						spacing: 5
+						spacing: 10
 						// Rectangle {
 						// 	color: "blue"
 						// 	width: parent.width
@@ -70,18 +69,22 @@ Scope {
 						Layout.preferredWidth: parent.width * 0.4
 						Layout.alignment: Qt.AlignRight
 						layoutDirection: Qt.RightToLeft
-						spacing: 5
+						spacing: 10
 						// Rectangle {
 						// 	color: "red"
 						// 	width: parent.width
 						// 	height: parent.height
 						// }
+						Audio {}
 						Mediaplayer {}
-
 					}
 				}	
 			}
+			// Component.onCompleted: {
+			// 	console.log(Quickshell.screens)
+			// 	console.log(modelData)
+			// 	console.log(screenIndex)
+			// }
 		}
 	}
 }
-

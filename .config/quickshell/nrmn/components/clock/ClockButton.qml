@@ -1,8 +1,10 @@
 import Quickshell
 import QtQuick
-import "../../colors/colors-quickshell.js" as Wal
+import "../colors-quickshell.js" as Wal
+import "../notifications"
 
 Rectangle {
+	property var notificationRef
 	id: clock
 	implicitWidth: Math.min(text.implicitWidth, 400)
 	// implicitHeight: text.implicitHeight 
@@ -16,5 +18,11 @@ Rectangle {
 		font.bold: true
 		font.pixelSize: 16
 		color: Wal.colors.color2 
+	}
+	signal clicked()
+	MouseArea {
+		anchors.fill: parent
+		onClicked: console.log("open calendar or some shit")
+		// onClicked: notificationRef?.toggle()
 	}
 }

@@ -1,7 +1,7 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.Mpris
-import "../../colors/colors-quickshell.js" as Wal
+import "../colors-quickshell.js" as Wal
 
 Rectangle {
 	id: mediaplayer

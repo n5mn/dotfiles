@@ -1,6 +1,6 @@
 import Quickshell
 import QtQuick
-import "../../colors/colors-quickshell.js" as Wal
+import "../colors-quickshell.js" as Wal
 
 Rectangle {
 	id: workspacesRow
