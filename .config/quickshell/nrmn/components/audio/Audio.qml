@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import Quickshell.Services.Pipewire
 import "../colors-quickshell.js" as Wal
+import "../utils/"
 
 Rectangle {
 	id: audio
@@ -16,6 +17,8 @@ Rectangle {
 
 	property int volume: defaultNode.audio.volume * 100
 	property bool isMicMuted: micNode.audio.muted
+
+	property var sh: Sh { command: "" }
 
 	property string mText: {
 		if (isMicMuted) {
@@ -57,9 +60,10 @@ Rectangle {
 		onClicked: (mouse) => {
 
 			if (mouse.button === Qt.LeftButton) {
-				console.log("default node volume: " + audio.volume + "%")
-				console.log("mic node volume: " + audio.micVolume + "%")
-				console.log("mic muted: " + audio.isMicMuted)
+				// in the future i can replace this with a custom mixer
+				// too much work tbh
+				audio.sh.command = "pavucontrol"
+				audio.sh.exec()
 			} else {
 				audio.micNode.audio.muted = !audio.micNode.audio.muted
 			}
