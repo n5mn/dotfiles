@@ -6,6 +6,8 @@ import "components/weather"
 import "components/mediaplayer"
 import "components/clock"
 import "components/audio"
+import "components/notifications"
+import "components/wlogout"
 import "./components/colors-quickshell.js" as Wal
 
 Scope {
@@ -75,6 +77,8 @@ Scope {
 						// 	width: parent.width
 						// 	height: parent.height
 						// }
+						Wlogout {}
+						Notifications {}
 						Audio {}
 						Mediaplayer {}
 					}
