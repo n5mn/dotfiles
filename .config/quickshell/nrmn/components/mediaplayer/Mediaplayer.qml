@@ -1,15 +1,9 @@
 import Quickshell
 import QtQuick
 import Quickshell.Services.Mpris
-import "../colors-quickshell.js" as Wal
+import ".."
 
-Rectangle {
-	id: mediaplayer
-
-	implicitWidth: Math.min(text.implicitWidth, 500)
-	implicitHeight: parent.height
-	color: Wal.colors.background
-	// color: "red"
+BarItem {
 	property var spotify: Mpris.players.values.find(
 		p => p.identity === "Spotify"
 	)
@@ -27,47 +21,20 @@ Rectangle {
 		} 
 		else { return "" }
 	}
-	Text {
-		id: text
-		elide: Text.ElideRight
-		width: parent.width
-		anchors.centerIn: parent
-		text: mediaplayer.icon + mediaplayer.trackInfo
-		color: {
-			if (mouseArea.containsMouse) {
-				return Wal.colors.color4
-			}
-			return Wal.colors.color2
-		}
+	id: mediaplayer
 
-		font.family: "Fira Code"
-		font.pixelSize: 16
-		font.bold: true
+	relativeWidth: 500
 
-		Behavior on color {
-			ColorAnimation { duration: 200 }
-		}
+	displayText: mediaplayer.icon + mediaplayer.trackInfo
 
-	}
-	signal clicked()
+	onLeftClicked: mediaplayer.spotify.togglePlaying()
+	onRightClicked: console.log("right click maybe a popup someday")
+
+	// custom shit
 	signal wheel()
-
 	MouseArea {
-		id: mouseArea
-
 		anchors.fill: parent
-		hoverEnabled: true
-		// onClicked: mediaplayer.spotify.togglePlaying()
-		acceptedButtons: Qt.LeftButton | Qt.RightButton
-		onClicked: (mouse) => {
-			if (mouse.button === Qt.LeftButton) {
-				// console.log(mediaplayer.implicitWidth)
-				mediaplayer.spotify.togglePlaying()
-			} else {
-				console.log("right button shoudl be a popup")
-			}
-
-		}
+		acceptedButtons: Qt.NoButton
 		onWheel: (event) => {
 			if (event.angleDelta.y > 0) {
 				mediaplayer.spotify.next()
