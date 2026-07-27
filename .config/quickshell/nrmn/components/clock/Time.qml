@@ -5,10 +5,12 @@ import QtQuick
 
 Singleton {
   id: root
-  readonly property string time: {
-    Qt.formatDateTime(clock.date, "dddd, dd/MM hh:mm |")
+  readonly property string date: {
+    Qt.formatDateTime(clock.date, "hh:mm |")
   }
-
+	readonly property string fullDate: {
+    Qt.formatDateTime(clock.date, "dddd, dd/MM hh:mm |")
+	}
   SystemClock {
     id: clock 
     precision: SystemClock.Seconds
