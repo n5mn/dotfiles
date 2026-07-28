@@ -2,8 +2,10 @@ import Quickshell
 import QtQuick
 import "../colors-quickshell.js" as Wal
 
+pragma ComponentBehavior: Bound
 Rectangle {
 	id: workspacesRow
+	property int focused: Workspaces.focused
 	height: parent.height
 	width: parent.width
 	// color: "red"
@@ -19,7 +21,7 @@ Rectangle {
 
 			delegate: WorkspaceButton {
 				workspaces: ws.model[index]
-				isFocused: Workspaces.focusedWorkspace() === ws.model[index]
+				isFocused: workspacesRow.focused === ws.model[index]
 				onClicked: Workspaces.switchToWorkspace(ws.model[index])
 			}
 		}

@@ -16,12 +16,7 @@ Rectangle {
 	implicitWidth: text.implicitWidth
 	implicitHeight: text.implicitHeight
 	color: {
-		if (mouseArea.containsMouse) {
-			return backgroundColor
-		}
-		if (workspaces === Workspaces.focusedWorkspace()) {
-			return backgroundColor
-		}
+		if (mouseArea.containsMouse || isFocused) return backgroundColor
 		return Wal.colors.color0
 	}
 
@@ -37,7 +32,7 @@ Rectangle {
 		text: Workspaces.getWorkspaceNames(wsButton.workspaces)
 		color: isFocused ? Wal.colors.color2 : Wal.colors.color1
 		font.family: "Fira Code"
-		font.bold: (wsButton.workspaces === Workspaces.focusedWorkspace())
+		font.bold: wsButton.isFocused
 	}
 
 	MouseArea {
