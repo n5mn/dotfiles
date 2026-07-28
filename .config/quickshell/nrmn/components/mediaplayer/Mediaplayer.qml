@@ -7,25 +7,17 @@ BarItem {
 	property var spotify: Mpris.players.values.find(
 		p => p.identity === "Spotify"
 	)
+	property string trackInfo: spotify.trackArtist + " - " + spotify.trackTitle
+	property string icon: spotify.isPlaying ? " " : " "
+	property int maxSize: 60
 
-	property string trackInfo: {
-		if (spotify) {
-			return spotify.trackArtist + " - " + spotify.trackTitle 
-		} else {
-			return "No track playing"
-		}
-	}
-	property string icon: {
-		if (spotify) {
-			if (spotify.isPlaying) { return " " } else { return " "}
-		} 
-		else { return "" }
-	}
+	property string info: icon + trackInfo
+	property string text: info.length > maxSize ? info.substring(0, maxSize) + "..." : info
 	id: mediaplayer
 
-	relativeWidth: 500
+	relativeWidth: 600
 
-	displayText: mediaplayer.icon + mediaplayer.trackInfo
+	displayText: mediaplayer.text
 
 	onLeftClicked: mediaplayer.spotify.togglePlaying()
 	onRightClicked: console.log("right click maybe a popup someday")
