@@ -2,7 +2,7 @@
 
 require("lua.animations")
 require("lua.autostart")
-require("lua.devices")
+-- require("lua.devices")
 require("lua.enviroment")
 require("lua.keybindings")
 require("lua.monitors")
