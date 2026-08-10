@@ -1,7 +1,7 @@
+require("lua.init")
+
 local bind = hl.bind
 local exec = hl.dsp.exec_cmd
-
-local dotfiles = os.getenv("HOME") .. "/dotfiles"
 
 -- Apps
 bind("SUPER + SPACE", exec("alacritty"))
@@ -13,9 +13,6 @@ bind("SUPER + C", exec("chatterino"))
 bind("SUPER + M", exec("thunderbird"))
 bind("SUPER + T", exec("termius"))
 bind("SUPER + S", exec("spotify-launcher"))
-bind("SUPER + SHIFT + D", exec("vesktop"))
-bind("SUPER + A", exec("authy"))
-bind("SUPER + SHIFT + A", exec("coppwr"))
 
 -- Screenshots
 bind("SUPER + PRINT", exec("hyprshot -m window"))
@@ -32,8 +29,8 @@ bind("XF86AudioNext", exec("playerctl --player=spotify next"))
 bind("XF86AudioPrev", exec("playerctl --player=spotify previous"))
 bind("XF86AudioStop", exec("playerctl --player=spotify pause"))
 bind("SUPER + Z", exec("pactl set-source-mute 0 toggle"))
-bind("SUPER + mouse:276", exec("playerctl --player=spotify next"))
-bind("SUPER + mouse:275", exec("playerctl --player=spotify previous"))
+bind("SUPER + mouse:276", exec("playerctl --player=spotify next"), { mouse = true })
+bind("SUPER + mouse:275", exec("playerctl --player=spotify previous"), { mouse = true })
 bind("SUPER + mouse:274", exec("playerctl --player=spotify play-pause"))
 
 bind("SUPER + SHIFT + M", exec("dunstctl set-paused toggle"))
@@ -54,10 +51,10 @@ bind("SUPER + CTRL + left", hl.dsp.window.move({direction = "l"}))
 bind("SUPER + CTRL + up", hl.dsp.window.move({direction = "u"}))
 bind("SUPER + CTRL + down", hl.dsp.window.move({direction = "d"}))
 
-bind("SUPER + SHIFT + right", hl.dsp.window.resize({ x = 100, y = 0, relative = true})) --("resizeactive, 100 0"))
+bind("SUPER + SHIFT + right", hl.dsp.window.resize({ x = 100, y = 0, relative = true}))
 bind("SUPER + SHIFT + left", hl.dsp.window.resize({ x = -100, y = 0, relative = true}))
-bind("SUPER + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -100, relative = true})) --("resizeactive, 0 -100"))
-bind("SUPER + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 100, relative = true})) --exec("resizeactive, 0 100"))
+bind("SUPER + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -100, relative = true}))
+bind("SUPER + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 100, relative = true}))
 
 bind("SUPER + BACKSPACE", hl.dsp.window.close()) -- no args takes the active window
 bind("SUPER + ESCAPE", hl.dsp.window.close())
@@ -67,20 +64,20 @@ bind("SUPER + RETURN", hl.dsp.window.fullscreen())
 -- TODO: rewrite all .sh scripts with lua so i just call them like:
 -- require(xyz)
 bind("SUPER + CTRL + Q", exec("wlogout -b 2"))
-bind("SUPER + SHIFT + W", exec(dotfiles .. "/scripts/update_wallpaper.sh"))
-bind("SUPER + CTRL + W", exec(dotfiles .. "/scripts/update_wallpaper.sh select"))
-bind("SUPER + SHIFT + B", exec(dotfiles .. "/.config/waybar/toggle.sh"))
-bind("SUPER + V", exec(dotfiles .. "/scripts/cliphist.sh"))
-bind("ALT + SHIFT + SPACE",  exec(dotfiles .. "/scripts/kblayout.sh"))
+bind("SUPER + SHIFT + W", exec(DOTFILES .. "/scripts/update_wallpaper.sh"))
+bind("SUPER + CTRL + W", exec(DOTFILES .. "/scripts/update_wallpaper.sh select"))
+bind("SUPER + SHIFT + B", exec(DOTFILES .. "/.config/waybar/toggle.sh"))
+bind("SUPER + V", exec(DOTFILES .. "/scripts/cliphist.sh"))
+bind("ALT + SHIFT + SPACE",  exec(DOTFILES .. "/scripts/kblayout.sh"))
 
 -- Binds for changing the workspace
 bind("SUPER + TAB", hl.dsp.focus({workspace = "e+1"}))
 bind("SUPER + SHIFT + TAB", hl.dsp.focus({workspace = "e-1"}))
 
 for i = 1, 5 do
-	bind("SUPER + " .. i, exec(dotfiles .. "/scripts/workspace.sh " .. i .. " 5"))
+	bind("SUPER + " .. i, exec(DOTFILES .. "/scripts/workspace.sh " .. i .. " 5"))
 end
 
 for i = 1, 5 do
-	bind("SUPER + SHIFT + " .. i, exec(dotfiles .. "/scripts/workspace.sh move " .. i .. " 5"))
+	bind("SUPER + SHIFT + " .. i, exec(DOTFILES .. "/scripts/workspace.sh move " .. i .. " 5"))
 end

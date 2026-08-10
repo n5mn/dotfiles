@@ -1,5 +1,6 @@
 -- # use `hyprctl monitors` to see description params
 -- # monitor=name,resolution,position,scale
+require("lua.variables")
 
 hl.monitor({
 	output = "eDP-1",

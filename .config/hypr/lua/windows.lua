@@ -14,6 +14,8 @@ hl.config({
 
 	decoration = {
 		rounding = 0,
+		-- blur = { enabled = false }
+
 		blur = {
 			enabled = true,
 			size = 2,
@@ -28,14 +30,6 @@ hl.config({
 	-- inactive_opacity = 1,
 	-- fullscreen_opacity = 1,
 
-	shadow = {
-		-- enabled = false,
-		-- range = 3,
-		-- offset = 2, 2,
-		-- render_power = 3,
-		-- color = 0x66000000,
-	},
-
 	misc = {
 		enable_swallow = true,
 		disable_hyprland_logo = true,
@@ -46,9 +40,6 @@ hl.config({
 		preserve_split = true,
 		force_split = 2,
 	},
-	-- 	gestures = {
-	-- 		workspace_swipe = false, 
-	-- }
 })
 
 
