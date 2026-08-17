@@ -19,4 +19,3 @@ var colors = {
 	color14: "{color14}",
 	color15: "{color15}"
 }
-return colors
