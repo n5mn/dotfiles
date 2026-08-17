@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell.Io
 
+pragma Singleton
 QtObject {
 	id: sh
 	property string command

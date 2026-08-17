@@ -11,7 +11,7 @@ BarItem {
 	property int volume: defaultNode.audio.volume * 100
 	property bool isMicMuted: micNode.audio.muted
 
-	property var sh: Sh { command: "" }
+	// property var sh: Sh { command: "" }
 
 	// needed to track changes
 	PwObjectTracker { objects: [ audio.defaultNode, audio.micNode ]}
@@ -33,7 +33,8 @@ BarItem {
 
 	displayText: "| " + mText + vText  
 	onLeftClicked: {
-		audio.sh.exec("pavucontrol")
+		// audio.sh.exec("pavucontrol")
+		Sh.exec("pavucontrol")
 	}
 	onRightClicked: {
 		audio.micNode.audio.muted = !audio.micNode.audio.muted

@@ -3,6 +3,7 @@ import QtQuick
 import Qt5Compat.GraphicalEffects
 import "../colors-quickshell.js" as Wal
 import ".."
+import "../utils"
 
 BarItem {
 	id: weather
@@ -53,5 +54,5 @@ BarItem {
 			}
 		}
 	}
-	onLeftClicked: console.log("open weather app or some shit")
+	onLeftClicked: Sh.exec("xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m")
 } 
