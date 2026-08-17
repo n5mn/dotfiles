@@ -66,7 +66,7 @@ bind("SUPER + RETURN", hl.dsp.window.fullscreen())
 bind("SUPER + CTRL + Q", exec("wlogout -b 2"))
 bind("SUPER + SHIFT + W", exec(DOTFILES .. "/scripts/update_wallpaper.sh"))
 bind("SUPER + CTRL + W", exec(DOTFILES .. "/scripts/update_wallpaper.sh select"))
-bind("SUPER + SHIFT + B", exec(DOTFILES .. "/.config/waybar/toggle.sh"))
+bind("SUPER + SHIFT + B", exec(DOTFILES .. "/.config/quickshell/nrmn/toggle.sh"))
 bind("SUPER + V", exec(DOTFILES .. "/scripts/cliphist.sh"))
 bind("ALT + SHIFT + SPACE",  exec(DOTFILES .. "/scripts/kblayout.sh"))
 
