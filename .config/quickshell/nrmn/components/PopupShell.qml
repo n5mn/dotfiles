@@ -18,7 +18,7 @@ PopupWindow {
 		"right": panelWindow.width
 	}[root.position]) 
 
-	anchor.rect.y: panelWindow.height + 3
+	anchor.rect.y: panelWindow.height + 2
 	grabFocus: true // lsp is retarded and says doesnt exist
 	implicitWidth: iWidth
 	implicitHeight: iHeight

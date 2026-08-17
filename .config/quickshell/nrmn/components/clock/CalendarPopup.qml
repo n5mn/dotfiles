@@ -15,7 +15,7 @@ PopupShell {
 			font.family: "Fira Code"
 			font.pixelSize: 16
 			font.bold: true
-			color: Wal.colors.color1
+			color: Wal.colors.color14
 			horizontalAlignment: Text.AlignHCenter
 			Layout.fillWidth: true
 			Layout.margins: 5
