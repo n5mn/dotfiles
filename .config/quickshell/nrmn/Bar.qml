@@ -47,7 +47,7 @@ Scope {
 						Layout.alignment: Qt.AlignLeft
 						spacing: 10
 						ClockButton { onRightClicked: calendarPopup.visible = !calendarPopup.visible }
-						WeatherButton {}
+						WeatherButton { onRightClicked: weatherPopup.visible = !weatherPopup.visible }
 					}
 					Row {
 						Layout.alignment: Qt.AlignVCenter
@@ -71,6 +71,10 @@ Scope {
 			}
 			CalendarPopup { 
 				id: calendarPopup 
+				panelWindow: panel
+			}
+			WeatherPopup {
+				id: weatherPopup
 				panelWindow: panel
 			}
 		}
