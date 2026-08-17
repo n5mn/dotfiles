@@ -7,7 +7,7 @@ import "../utils"
 
 BarItem {
 	id: weather
-	displayText: Weather.weatherText
+	displayText: WeatherService.currentTemperature + WeatherService.currentTemperatureUnits
 	relativeWidth: 300
 	content: Row {
 		id: row
@@ -19,8 +19,8 @@ BarItem {
 			// anchors.left: parent.left
 			Image {
 				id: icon
-				source: Weather.weatherIcon
-				visible: Weather.weatherIcon != ""
+				source: WeatherService.icon
+				visible: WeatherService.icon != ""
 				height: parent.height
 				fillMode: Image.PreserveAspectFit
 			}
@@ -33,10 +33,7 @@ BarItem {
 		}
 		Text {
 			id: text
-			// anchors.centerIn: parent
-			// width: parent.widthh
-			// anchors.right: parent.right
-			text: Weather.weatherText
+			text: WeatherService.currentTemperature + WeatherService.currentTemperatureUnits
 			font.family: "Fira Code"
 			font.bold: true
 			font.pixelSize: 16
