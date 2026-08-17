@@ -46,12 +46,7 @@ Scope {
 						Layout.fillHeight: true
 						Layout.alignment: Qt.AlignLeft
 						spacing: 10
-						// Rectangle {
-						// 	color: "green"
-						// 	width: parent.width
-						// 	height: parent.height
-						// }
-						ClockButton {}
+						ClockButton { onRightClicked: calendarPopup.visible = !calendarPopup.visible }
 						WeatherButton {}
 					}
 					Row {
@@ -59,11 +54,6 @@ Scope {
 						Layout.fillHeight: true
 						Layout.fillWidth: true
 						spacing: 10
-						// Rectangle {
-						// 	color: "blue"
-						// 	width: parent.width
-						// 	height: parent.height
-						// }
 						WorkspacesRow {}
 					}
 					Row {
@@ -72,11 +62,6 @@ Scope {
 						Layout.alignment: Qt.AlignRight
 						layoutDirection: Qt.RightToLeft
 						spacing: 10
-						// Rectangle {
-						// 	color: "red"
-						// 	width: parent.width
-						// 	height: parent.height
-						// }
 						Wlogout {}
 						Notifications {}
 						Audio {}
@@ -84,11 +69,10 @@ Scope {
 					}
 				}	
 			}
-			// Component.onCompleted: {
-			// 	console.log(Quickshell.screens)
-			// 	console.log(modelData)
-			// 	console.log(screenIndex)
-			// }
+			CalendarPopup { 
+				id: calendarPopup 
+				panelWindow: panel
+			}
 		}
 	}
 }
