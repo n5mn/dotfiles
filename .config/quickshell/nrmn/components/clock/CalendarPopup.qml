@@ -6,12 +6,26 @@ import ".."
 import "../colors-quickshell.js" as Wal
 
 PopupShell {
+	property int currentMonth: new Date().getMonth()
+	property int currentYear: new Date().getFullYear()
+
+	property string monthName: Qt.formatDateTime(new Date(currentYear, currentMonth, 1),"MMMM")
+
+	id: root
 	position: "left"
+	onVisibleChanged: {
+		if (!root.visible) {
+			root.currentMonth = new Date().getMonth()
+			root.currentYear = new Date().getFullYear()
+
+		}
+	}
 	content: ColumnLayout {
+		id: content
 		anchors.fill: parent
 
 		Text {
-			text: Qt.formatDateTime(new Date(), "MMMM")
+			text: root.monthName + " - " + root.currentYear
 			font.family: "Fira Code"
 			font.pixelSize: 16
 			font.bold: true
@@ -53,8 +67,8 @@ PopupShell {
 
 		MonthGrid {
 			id: grid
-			month: new Date().getMonth()
-			year: new Date().getFullYear()
+			month: root.currentMonth
+			year: root.currentYear
 			delegate: Text {
 				required property var model
 				text: model.day
@@ -69,6 +83,18 @@ PopupShell {
 			Layout.margins: 5
 			Layout.fillWidth: true
 			Layout.fillHeight: true
+		}
+	}
+	MouseArea {
+		id: mouseArea
+		acceptedButtons: Qt.LeftButton | Qt.RightButton
+		anchors.fill: parent
+		hoverEnabled: true
+		onClicked: (mouse) => {
+			const offset = mouse.button === Qt.LeftButton ? 1 : -1
+			const date = new Date(root.currentYear, root.currentMonth + offset, 1)
+			root.currentMonth = date.getMonth()
+			root.currentYear = date.getFullYear()
 		}
 	}
 }
