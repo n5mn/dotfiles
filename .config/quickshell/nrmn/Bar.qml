@@ -65,7 +65,7 @@ Scope {
 						Wlogout {}
 						Notifications {}
 						Audio {}
-						Mediaplayer {}
+						Mediaplayer { onRightClicked: mediaplayerPopup.visible = !mediaplayerPopup.visible }
 					}
 				}	
 			}
@@ -75,6 +75,10 @@ Scope {
 			}
 			WeatherPopup {
 				id: weatherPopup
+				panelWindow: panel
+			}
+			MediaplayerPopup {
+				id: mediaplayerPopup
 				panelWindow: panel
 			}
 		}
