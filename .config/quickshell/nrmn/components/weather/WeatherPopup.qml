@@ -19,7 +19,8 @@ PopupShell {
 		Layout.fillWidth: true
 	}
 
-	content: ColumnLayout {
+	ColumnLayout {
+		anchors.fill: parent
 		WeatherInfo {
 			text: "Feels like: " + WeatherService.apparentTemperature + WeatherService.apparentTemperatureUnits
 			font.pixelSize: 20

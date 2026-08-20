@@ -20,7 +20,7 @@ PopupShell {
 
 		}
 	}
-	content: ColumnLayout {
+	ColumnLayout {
 		id: content
 		anchors.fill: parent
 

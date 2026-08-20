@@ -4,8 +4,6 @@ import "colors-quickshell.js" as Wal
 
 PopupWindow {
 	required property var panelWindow
-	required property Component content
-	// for more custom shit
 	property int iWidth: 300
 	property int iHeight: 300
 	property string position: "center" // left, center, right
@@ -28,11 +26,6 @@ PopupWindow {
 		anchors.fill: parent
 		color: Wal.colors.background
 		border.color: Wal.colors.color11
-
-		Loader {
-			sourceComponent: root.content
-			anchors.fill: parent
-		}
 	}
 }
 
