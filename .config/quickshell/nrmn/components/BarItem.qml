@@ -4,29 +4,22 @@ import "./colors-quickshell.js" as Wal
 
 Rectangle {
 
-	property string displayText
+	property string displayText: ""
 	required property int relativeWidth
-	property Component content: null
 	readonly property bool isHovered: mouseArea.containsMouse
 
 	id: root 
-	implicitWidth: Math.min(text.implicitWidth, relativeWidth)
+	implicitWidth: root.displayText !== "" ? Math.min(text.implicitWidth, relativeWidth) : relativeWidth
 	implicitHeight: parent.height
 	color: Wal.colors.background
 
-	// load content if provided, otherwise show a simple button with text
-	Loader {
-		sourceComponent: root.content
-		anchors.centerIn: parent
-	}
-
 	Text {
 		id: text
-		visible: root.content === null
+		visible: root.displayText !== ""
 		anchors.centerIn: parent
 		text: root.displayText
 		color: {
-			if (mouseArea.containsMouse) {
+			if (root.isHovered) {
 				return Wal.colors.color4
 			}
 			return Wal.colors.color2

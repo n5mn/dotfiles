@@ -7,9 +7,8 @@ import "../utils"
 
 BarItem {
 	id: weather
-	displayText: WeatherService.currentTemperature + WeatherService.currentTemperatureUnits
-	relativeWidth: 300
-	content: Row {
+	relativeWidth: 60
+	Row {
 		id: row
 		anchors.centerIn: parent
 		spacing: 10
@@ -39,8 +38,7 @@ BarItem {
 			font.pixelSize: 16
 
 			color: {
-				// isHovered is a property of BarItem
-				if (isHovered) {
+				if (weather.isHovered) {
 					return Wal.colors.color4
 				}
 				return Wal.colors.color2
