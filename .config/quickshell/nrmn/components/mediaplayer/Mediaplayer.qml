@@ -20,8 +20,6 @@ BarItem {
 	displayText: mediaplayer.text
 
 	onLeftClicked: mediaplayer.spotify.togglePlaying()
-	onRightClicked: console.log("right click maybe a popup someday")
-
 	// custom shit
 	signal wheel()
 	MouseArea {
