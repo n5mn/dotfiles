@@ -3,12 +3,12 @@ import QtQuick
 import Qt5Compat.GraphicalEffects
 import "../colors-quickshell.js" as Wal
 import ".."
+import "../utils"
 
 BarItem {
 	id: weather
-	displayText: Weather.weatherText
-	relativeWidth: 300
-	content: Row {
+	relativeWidth: 60
+	Row {
 		id: row
 		anchors.centerIn: parent
 		spacing: 10
@@ -18,8 +18,8 @@ BarItem {
 			// anchors.left: parent.left
 			Image {
 				id: icon
-				source: Weather.weatherIcon
-				visible: Weather.weatherIcon != ""
+				source: WeatherService.icon
+				visible: WeatherService.icon != ""
 				height: parent.height
 				fillMode: Image.PreserveAspectFit
 			}
@@ -32,17 +32,13 @@ BarItem {
 		}
 		Text {
 			id: text
-			// anchors.centerIn: parent
-			// width: parent.widthh
-			// anchors.right: parent.right
-			text: Weather.weatherText
+			text: WeatherService.currentTemperature + WeatherService.currentTemperatureUnits
 			font.family: "Fira Code"
 			font.bold: true
 			font.pixelSize: 16
 
 			color: {
-				// isHovered is a property of BarItem
-				if (isHovered) {
+				if (weather.isHovered) {
 					return Wal.colors.color4
 				}
 				return Wal.colors.color2
@@ -53,5 +49,5 @@ BarItem {
 			}
 		}
 	}
-	onLeftClicked: console.log("open weather app or some shit")
+	onLeftClicked: Sh.exec("xdg-open https://weather.com/weather/today/l/cb0b09b804fbcfb93b3485607c771c23607ce00484606431defb3c0cd10efb79?unit=m")
 } 

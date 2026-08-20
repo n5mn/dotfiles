@@ -1,13 +1,10 @@
 # Ignore everything
 # .config/nvim/*
 .icons/*
-# Except this
 !.config/nvim/init.lua
 !.config/nvim/lua
 !.icons/default
 
-.config/ags/types
-.config/hypr/config/devices.conf
 **/*log
 **/*tmp
 **/*bkp
@@ -19,4 +16,8 @@ scripts/colors.json
 .config/zsh/plugins/*
 .config/gtk-3.0/bookmarks
 .config/zsh/custom.zsh
-.config/hypr/config/autostart.conf
+
+/.config/hypr/lua/autostart.lua
+/.config/hypr/lua/devices.lua
+/.config/hypr/lua/enviroment.lua
+/.config/quickshell/nrmn/.qmlls.ini

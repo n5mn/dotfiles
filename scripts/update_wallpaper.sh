@@ -71,6 +71,10 @@ if [ ! "$1" == "init" ] ;then
 	notify-send -i $cache_file "Wallpaper Updated!"
 fi
 
-$HOME/dotfiles/.config/waybar/launch.sh
-#ags -q
-#ags
+list_instances="$(qs list --all)"
+
+# should be a better way to do this but im lazy
+if [ "$list_instances" != "No running instances." ]; then
+	qs -c nrmn kill
+fi
+qs -c nrmn -d

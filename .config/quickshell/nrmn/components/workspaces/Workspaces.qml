@@ -5,7 +5,7 @@ pragma Singleton
 
 Item {
 	id: hyprlandWorkspaces
-	property int focusedWs: Hyprland.focusedWorkspace
+	readonly property int focused: Hyprland.focusedWorkspace
 		? Hyprland.focusedWorkspace.id 
 		: -1
 	property int wsCount
@@ -22,10 +22,6 @@ Item {
 	function getWorkspaceNames(workspaceId) {
 		const roman = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
 		return roman[workspaceId - 1]
-	}
-
-	function focusedWorkspace() {
-		return Hyprland.focusedWorkspace?.id ?? -1
 	}
 
 	function switchToWorkspace(workspaceId) {
