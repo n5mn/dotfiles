@@ -8,6 +8,7 @@ import "components/clock"
 import "components/audio"
 import "components/notifications"
 import "components/wlogout"
+import "components/battery"
 import "./components/colors-quickshell.js" as Wal
 
 Scope {
@@ -64,6 +65,7 @@ Scope {
 						spacing: 10
 						Wlogout {}
 						Notifications {}
+						Battery {}
 						Audio {}
 						Mediaplayer { onRightClicked: mediaplayerPopup.visible = !mediaplayerPopup.visible }
 					}
