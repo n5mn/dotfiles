@@ -1,14 +1,17 @@
 return {
 	{
-		-- Highlight, edit, and navigate code
 		'nvim-treesitter/nvim-treesitter',
-		dependencies = {
-			'nvim-treesitter/nvim-treesitter-textobjects',
-		},
+		branch = "main",
 		build = ':TSUpdate',
+		dependencies = {
+			{
+				'nvim-treesitter/nvim-treesitter-textobjects',
+				branch = "main",
+			},
+		},
 		config = function()
 			vim.defer_fn(function()
-				require('nvim-treesitter.configs').setup {
+				require('nvim-treesitter').setup {
 					ensure_installed = {
 						'go',
 						'lua',
