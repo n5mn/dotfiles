@@ -39,8 +39,9 @@ Scope {
 
 				RowLayout {
 					anchors.fill: parent
-					anchors.margins: 10
+					anchors.margins: 5
 					spacing: 5
+
 					Row {
 						Layout.preferredWidth: parent.width * 0.4
 						Layout.fillHeight: true
